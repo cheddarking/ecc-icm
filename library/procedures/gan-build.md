@@ -21,7 +21,7 @@ This command orchestrates a three-agent build loop inspired by Anthropic's March
 
 ### Phase 1: Planning (Planner Agent)
 Unless `--skip-planner` is set:
-1. Launch the `gan-planner` agent via Task tool with the user's brief
+1. Launch the `gan-planner` role via Task tool with the user's brief
 2. Wait for it to produce `gan-harness/spec.md` and `gan-harness/eval-rubric.md`
 3. Display the spec summary to the user
 4. Proceed to Phase 2
@@ -101,3 +101,7 @@ while iteration <= max_iterations:
 ```
 
 Write the full report to `gan-harness/build-report.md`.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

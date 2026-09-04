@@ -1,6 +1,6 @@
 # Role: react-build-resolver
 
-Source: ECC agents/react-build-resolver.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC $PLUGIN/library/roles/react-build-resolver.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: Diagnose and fix React build failures across Vite, webpack, Next.js, CRA, Parcel, esbuild, and Bun. Handles JSX/TSX compile errors, hydration mismatches, server/client component boundary failures, missing types, and bundler-specific configuration issues with minimal, surgical changes. MUST BE USED when a React build fails.
 
@@ -197,6 +197,10 @@ Final: `Build Status: SUCCESS | Errors Fixed: N | Files Modified: <list>` or `Bu
 ## Related
 
 - Agent: `react-reviewer` for code review after build is green
-- Rules: `rules/react/coding-style.md`, `rules/react/patterns.md`
-- Skills: `skills/react-patterns/`, `skills/frontend-patterns/`
-- Commands: `/react-build`, `/react-review`
+- Rules: `$PLUGIN/library/rules/react/coding-style.md`, `$PLUGIN/library/rules/react/patterns.md`
+- Skills: `$PLUGIN/library/skills/react-patterns/`, `$PLUGIN/library/skills/frontend-patterns/`
+- Commands: `react-build` procedure, `react-review` procedure
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

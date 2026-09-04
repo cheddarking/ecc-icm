@@ -17,7 +17,7 @@ This skill ensures all code development follows TDD principles with comprehensiv
 - Refactoring existing code
 - Adding API endpoints
 - Creating new components
-- Continuing from a `/plan` output or another `*.plan.md` implementation plan
+- Continuing from a `plan` procedure output or another `*.plan.md` implementation plan
 
 ## Plan Handoff
 
@@ -92,7 +92,7 @@ Do not assume `npm test`. The commands in the steps and examples below use `<tes
 1. **Run the package-manager detector** (ships with ECC):
 
    ```bash
-   node scripts/setup-package-manager.js --detect
+   node $PLUGIN/library/scripts/setup-package-manager.js --detect
    ```
 
    It resolves the package manager (npm / pnpm / yarn / bun) from, in order: `CLAUDE_PACKAGE_MANAGER`, `.claude/package-manager.json`, the `package.json` `packageManager` field, the lockfile, then global config.
@@ -232,7 +232,7 @@ Recommended path:
 Store the evidence report in the project's standard documentation directory, for example:
 
 ```text
-docs/testing/<plan-or-task-name>.tdd.md
+$PLUGIN/library/docs/testing/<plan-or-task-name>.tdd.md
 .github/tdd/<plan-or-task-name>.tdd.md
 .claude/tdd/<plan-or-task-name>.tdd.md
 ```
@@ -581,3 +581,7 @@ test('updates user', () => {
 ---
 
 **Remember**: Tests are not optional. They are the safety net that enables confident refactoring, rapid development, and production reliability.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

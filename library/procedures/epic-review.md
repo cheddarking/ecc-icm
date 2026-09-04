@@ -7,7 +7,7 @@ description: Mark epic review requested, approved, or changes requested.
 Coordinate review state for an epic issue.
 
 ```bash
-node scripts/github-coordination.js review <issue-number> --repo <owner/repo> --review approved
+node $PLUGIN/library/scripts/github-coordination.js review <issue-number> --repo <owner/repo> --review approved
 ```
 
 What this does:
@@ -19,5 +19,9 @@ What this does:
 
 Compatibility aliases:
 
-- `/review-pr`
-- `/code-review`
+- `review-pr` procedure
+- `code-review` procedure
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

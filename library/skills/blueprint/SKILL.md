@@ -80,7 +80,7 @@ This skill ships with Everything Claude Code. No separate installation is needed
 If you are working from the ECC repository checkout, verify the skill is present with:
 
 ```bash
-test -f skills/blueprint/SKILL.md
+test -f $PLUGIN/library/skills/blueprint/SKILL.md
 ```
 
 To update later, review the ECC diff before updating:
@@ -94,7 +94,7 @@ git checkout <reviewed-full-sha>          # pin to a specific reviewed commit
 
 ### Vendored standalone install
 
-If you are vendoring only this skill outside the full ECC install, copy the reviewed file from the ECC repository into `~/.claude/skills/blueprint/SKILL.md`. Vendored copies do not have a git remote, so update them by re-copying the file from a reviewed ECC commit rather than running `git pull`.
+If you are vendoring only this skill outside the full ECC install, copy the reviewed file from the ECC repository into `$PLUGIN/library/skills/blueprint/SKILL.md`. Vendored copies do not have a git remote, so update them by re-copying the file from a reviewed ECC commit rather than running `git pull`.
 
 ## Requirements
 
@@ -104,3 +104,7 @@ If you are vendoring only this skill outside the full ECC install, copy the revi
 ## Source
 
 Inspired by antbotlab/blueprint — upstream project and reference design.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

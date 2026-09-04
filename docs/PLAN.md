@@ -59,7 +59,7 @@ The edit-source loop from the paper's section 6.3 is mechanical: `verify.js` kee
 | 0 Baseline, dynamic | three benchmark tasks on ECC and on this plugin | protocol written, not run; it costs real tokens and needs a target repository |
 | 1 Pilot workspace | engineering, scripts, hooks, tests, plugin manifests | done; validated by tests and a headless session, not yet by a real feature run |
 | 2 Doctrine and hooks | single-agent rule, minimal hooks | done here; ECC's own files were never changed |
-| 3 Catalog reduction | roles from agents, library from skills and commands | done by copy and conversion; nothing deleted anywhere |
+| 3 Catalog reduction | roles from agents, library from skills and commands | done by copy and conversion; nothing deleted anywhere. Later the same day the library became a full mirror of ECC (scripts, hooks, docs, Codex mirror, guides) rebuilt by `sync-library.sh`, and `adapt-library.js` rewrote ECC-specific references so they resolve here; see `library/ECC-MAPPING.md` |
 | 4 More workspaces | research, content, security, harness-ops, workspace builder | first drafts; each passes the validator; contracts are grounded in the named ECC skill sections but have not been run |
 | 5 Edit-source loop | `_edits.jsonl`, `.agent/` snapshots, learn stages | mechanism done; the proposals stage is a contract the agent follows, not a script |
 

@@ -4,7 +4,7 @@ description: "Extract reusable patterns from the session, self-evaluate quality 
 
 # /learn-eval - Extract, Evaluate, then Save
 
-Extends `/learn` with a quality gate, save-location decision, and knowledge-placement awareness before writing any skill file.
+Extends `learn` procedure with a quality gate, save-location decision, and knowledge-placement awareness before writing any skill file.
 
 ## What to Extract
 
@@ -151,3 +151,7 @@ This version replaces the previous 5-dimension numeric scoring rubric (Specifici
 - Focus on patterns that will save time in future sessions
 - Keep skills focused — one pattern per skill
 - When the verdict is Absorb, append to the existing skill rather than creating a new file
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

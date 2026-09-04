@@ -7,7 +7,7 @@ description: Sweep blocked epic issues and reopen anything whose dependencies ar
 Sweep blocked epics whose declared dependencies are complete.
 
 ```bash
-node scripts/github-coordination.js unblock --repo <owner/repo>
+node $PLUGIN/library/scripts/github-coordination.js unblock --repo <owner/repo>
 ```
 
 What this does:
@@ -19,4 +19,8 @@ What this does:
 
 Compatibility aliases:
 
-- `/loop-status`
+- `loop-status` procedure
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

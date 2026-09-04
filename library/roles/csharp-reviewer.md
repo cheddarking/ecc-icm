@@ -1,6 +1,6 @@
 # Role: csharp-reviewer
 
-Source: ECC agents/csharp-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/csharp-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert C# code reviewer specializing in .NET conventions, async patterns, security, nullable reference types, and performance. Use for all C# code changes. MUST BE USED for C# projects.
 
@@ -91,3 +91,7 @@ For testing guidelines, see skill: `csharp-testing`.
 ---
 
 Review with the mindset: "Would this code pass review at a top .NET shop or open-source project?"
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

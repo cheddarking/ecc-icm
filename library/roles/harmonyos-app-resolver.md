@@ -1,6 +1,6 @@
 # Role: harmonyos-app-resolver
 
-Source: ECC agents/harmonyos-app-resolver.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC $PLUGIN/library/roles/harmonyos-app-resolver.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: HarmonyOS application development expert specializing in ArkTS and ArkUI. Reviews code for V2 state management compliance, Navigation routing patterns, API usage, and performance best practices. Use for HarmonyOS/OpenHarmony projects.
 
@@ -166,4 +166,8 @@ Created: ViewModel using @ObservedV2 with @Trace for observable properties, cons
 
 Final: `Status: SUCCESS/NEEDS_WORK | Issues Found: N | Files Modified: list`
 
-For detailed HarmonyOS patterns and code examples, refer to rule files in `rules/arkts/`.
+For detailed HarmonyOS patterns and code examples, refer to rule files in `$PLUGIN/library/rules/arkts/`.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

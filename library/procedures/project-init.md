@@ -42,14 +42,14 @@ When the ECC checkout is available, use `config/project-stack-mappings.json` as 
 1. Identify the target harness. Default to `claude` unless the user asks for `cursor`, `codex`, `gemini`, `opencode`, `codebuddy`, `joycode`, or `qwen`.
 2. Detect stacks from project files and show the evidence for each match.
 3. Resolve the smallest useful ECC plan:
-   - project has an `ecc-install.json`: `node scripts/install-plan.js --config ecc-install.json --json`
-   - user named a profile: `node scripts/install-plan.js --profile <profile> --target <target> --json`
-   - user named skills: `node scripts/install-plan.js --skills <skill-ids> --target <target> --json`
+   - project has an `ecc-install.json`: `node $PLUGIN/library/scripts/install-plan.js --config ecc-install.json --json`
+   - user named a profile: `node $PLUGIN/library/scripts/install-plan.js --profile <profile> --target <target> --json`
+   - user named skills: `node $PLUGIN/library/scripts/install-plan.js --skills <skill-ids> --target <target> --json`
    - only language stacks are detected: use the legacy language install dry-run with those language names
 4. Run a dry-run apply command before writing:
 
 ```bash
-node scripts/install-apply.js --target <target> --dry-run --json <language-or-profile-args>
+node $PLUGIN/library/scripts/install-apply.js --target <target> --dry-run --json <language-or-profile-args>
 ```
 
 5. Summarize detected stacks, selected modules/components/skills, target paths, skipped unsupported modules, and files that would be changed.
@@ -81,6 +81,10 @@ Never replace an existing `CLAUDE.md` without showing a diff and receiving appro
 ## Related
 
 - `config/project-stack-mappings.json` for stack-to-surface hints
-- `scripts/install-plan.js` for deterministic plan resolution
-- `scripts/install-apply.js` for dry-run and apply operations
-- `/ecc-guide` for interactive feature discovery before installing
+- `$PLUGIN/library/scripts/install-plan.js` for deterministic plan resolution
+- `$PLUGIN/library/scripts/install-apply.js` for dry-run and apply operations
+- `ecc-guide` procedure for interactive feature discovery before installing
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

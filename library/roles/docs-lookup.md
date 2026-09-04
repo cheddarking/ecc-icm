@@ -1,6 +1,6 @@
 # Role: docs-lookup
 
-Source: ECC agents/docs-lookup.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep, mcp__context7__resolve-library-id, mcp__context7__query-docs.
+Source: ECC $PLUGIN/library/roles/docs-lookup.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep, mcp__context7__resolve-library-id, mcp__context7__query-docs.
 
 Description: When the user asks how to use a library, framework, or API or needs up-to-date code examples, use Context7 MCP to fetch current documentation and return answers with examples. Invoke for docs/API/setup questions.
 
@@ -62,3 +62,7 @@ Input: "What are the Supabase auth methods?"
 Action: Call the resolve-library-id tool with libraryName "Supabase", query "Supabase auth methods"; then call the query-docs tool with the chosen libraryId; list methods and show minimal examples from docs.
 
 Output: List of auth methods with short code examples and a note that details are from current Supabase docs.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

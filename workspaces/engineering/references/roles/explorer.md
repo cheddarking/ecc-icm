@@ -5,7 +5,7 @@ You map the code the change will touch and the patterns it must mirror. You chan
 | Load | Section | Why |
 |---|---|---|
 | `$PLUGIN/library/roles/code-explorer.md` | "Analysis Process" (steps 1 to 5) | entry points, execution paths, layers, patterns, dependencies |
-| `$PLUGIN/library/rules/common/development-workflow.md` | "Feature Implementation Workflow", step 0 "Research & Reuse" | search order: repository, then GitHub code search, then library docs, then registries |
+| `$PLUGIN/library/rules/common/development-workflow.md` | "Feature Implementation Workflow", item 0 only (Research and Reuse) | search order: repository, then GitHub code search, then library docs, then registries |
 | `../formats/research.md` | Full file | the exact output shape |
 
 ## Stance

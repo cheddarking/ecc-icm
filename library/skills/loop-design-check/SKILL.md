@@ -141,3 +141,7 @@ The naive loop and the reviewed loop differ by four lines of constraint — and 
 
 > Lineage: Wiener's two-level feedback (*The Human Use of Human Beings*, 1950) for the judgment/execution split and red lines; the plan/build/judge pattern from Anatoli's *Loops explained* and Addy's *Loop Engineering*.
 > Mechanism layer (how to wire the loop architecture): see `autonomous-loops` / `continuous-agent-loop`. This skill does not re-implement mechanism; it covers goal definition and runaway prevention only.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

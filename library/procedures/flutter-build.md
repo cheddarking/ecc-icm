@@ -4,7 +4,7 @@ description: Fix Dart analyzer errors and Flutter build failures incrementally. 
 
 # Flutter Build and Fix
 
-This command invokes the **dart-build-resolver** agent to incrementally fix Dart/Flutter build errors with minimal changes.
+This command invokes the **dart-build-resolver** role to incrementally fix Dart/Flutter build errors with minimal changes.
 
 ## What This Command Does
 
@@ -16,7 +16,7 @@ This command invokes the **dart-build-resolver** agent to incrementally fix Dart
 
 ## When to Use
 
-Use `/flutter-build` when:
+Use `flutter-build` procedure when:
 - `flutter analyze` reports errors
 - `flutter build` fails for any platform
 - `dart pub get` / `flutter pub get` fails with version conflicts
@@ -154,11 +154,15 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `/flutter-test` — Run tests after build succeeds
-- `/flutter-review` — Review code quality
+- `flutter-test` procedure — Run tests after build succeeds
+- `flutter-review` procedure — Review code quality
 - `verification-loop` skill — Full verification loop
 
 ## Related
 
-- Agent: `agents/dart-build-resolver.md`
-- Skill: `skills/flutter-dart-code-review/`
+- Agent: `$PLUGIN/library/roles/dart-build-resolver.md`
+- Skill: `$PLUGIN/library/skills/flutter-dart-code-review/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -1,6 +1,6 @@
 # Role: silent-failure-hunter
 
-Source: ECC agents/silent-failure-hunter.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/silent-failure-hunter.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Review code for silent failures, swallowed errors, bad fallbacks, and missing error propagation.
 
@@ -44,3 +44,7 @@ For each finding:
 - issue
 - impact
 - fix recommendation
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

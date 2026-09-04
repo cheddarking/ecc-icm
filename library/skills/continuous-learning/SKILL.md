@@ -83,7 +83,7 @@ Add to your `~/.claude/settings.json`:
       "matcher": "*",
       "hooks": [{
         "type": "command",
-        "command": "~/.claude/skills/continuous-learning/evaluate-session.sh"
+        "command": "$PLUGIN/library/skills/continuous-learning/evaluate-session.sh"
       }]
     }]
   }
@@ -99,7 +99,7 @@ Add to your `~/.claude/settings.json`:
 ## Related
 
 - [The Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) - Section on continuous learning
-- `/learn` command - Manual pattern extraction mid-session
+- `learn` procedure command - Manual pattern extraction mid-session
 
 ---
 
@@ -129,4 +129,8 @@ Homunculus v2 takes a more sophisticated approach:
 4. **Domain tagging** - code-style, testing, git, debugging, etc.
 5. **Evolution path** - Cluster related instincts into skills/commands
 
-See: `docs/continuous-learning-v2-spec.md` for full spec.
+See: `$PLUGIN/library/docs/continuous-learning-v2-spec.md` for full spec.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

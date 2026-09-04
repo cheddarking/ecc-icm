@@ -31,8 +31,8 @@ each phase to an existing ECC agent or command. This file is that pipeline.
 | `orch-build-mvp` | mvp | bootstrap from a design/spec doc | ingest doc → vertical slices |
 
 > These wrappers **compose** existing ECC commands rather than replace them:
-> `/feature-dev`, `/plan`, `/code-review`, `/build-fix`, `/refactor-clean`, and
-> `/gan-build`, plus the `tdd-workflow` skill. The orch-* family adds the shared
+> `feature-dev` procedure, `plan` procedure, `code-review` procedure, `build-fix` procedure, `refactor-clean` procedure, and
+> `gan-build` procedure, plus the `tdd-workflow` skill. The orch-* family adds the shared
 > size classifier and the two gates
 > on top of them, so one umbrella covers all five operations consistently.
 
@@ -59,16 +59,16 @@ Each phase delegates — it does not do the work inline.
 
 - **0. Intake** — restate the request. For `orch-build-mvp`, read the spec/design
   doc and extract scope, locked decisions, and a feature list.
-- **1. Research & Reuse** — per `rules/common/development-workflow.md`: `gh search repos` /
+- **1. Research & Reuse** — per `$PLUGIN/library/rules/common/development-workflow.md`: `gh search repos` /
   `gh search code`, then Context7 / vendor docs, then package registries, then
   Exa. Prefer adopting a proven implementation over net-new code.
-- **2. Plan** — delegate to the `planner` agent (or `architect` /
+- **2. Plan** — delegate to the `planner` role (or `architect` /
   `code-architect` for structural decisions). Output a `task_list` ordered as
   thin vertical slices. → **GATE 1.**
 - **3. Scaffold** — `orch-build-mvp` only: stand up the first end-to-end slice.
-- **4. Implement (TDD)** — drive each task through the `tdd-guide` agent (or the `tdd-workflow` skill):
+- **4. Implement (TDD)** — drive each task through the `tdd-guide` role (or the `tdd-workflow` skill):
   red → green → refactor. Honor the operation's first-move rule.
-- **5. Review** — `code-reviewer` agent / `/code-review`. Add `security-reviewer`
+- **5. Review** — `code-reviewer` role / `code-review` procedure. Add `security-reviewer`
   whenever the diff touches a security trigger (below).
 - **6. Commit** — conventional commits (`feat:` / `fix:` / `refactor:` / …), one
   per logical chunk. → **GATE 2.**
@@ -90,10 +90,10 @@ Everything between the gates flows without stopping.
 |-------|---------|----------------------|
 | Intake / understand | `code-explorer` | trace existing paths before a tweak, fix, or refactor |
 | Plan | `planner` | `architect`, `code-architect` for structural calls |
-| Implement | `tdd-guide` (or `tdd-workflow` skill) | `build-error-resolver` / `/build-fix` on build breaks |
-| Review | `code-reviewer` / `/code-review` | language reviewer (`python-reviewer`, `typescript-reviewer`, …) |
+| Implement | `tdd-guide` (or `tdd-workflow` skill) | `build-error-resolver` / `build-fix` procedure on build breaks |
+| Review | `code-reviewer` / `code-review` procedure | language reviewer (`python-reviewer`, `typescript-reviewer`, …) |
 | Security | `security-reviewer` | — |
-| MVP inner loop | `/gan-build "<brief>" --skip-planner` | drives `gan-generator` → `gan-evaluator`; tune `--max-iterations` / `--pass-threshold` |
+| MVP inner loop | `gan-build` procedure (`"<brief>" --skip-planner`) | drives `gan-generator` → `gan-evaluator`; tune `--max-iterations` / `--pass-threshold` |
 
 Match the language reviewer to the repo (see the repo's own `CLAUDE.md`).
 
@@ -101,7 +101,7 @@ Match the language reviewer to the repo (see the repo's own `CLAUDE.md`).
 
 Pull in `security-reviewer` when the diff touches any of: authentication or
 authorization, user-input handling, database queries, file-system paths,
-external API calls, cryptography, or secrets / credentials. (Per `rules/common/security.md`.)
+external API calls, cryptography, or secrets / credentials. (Per `$PLUGIN/library/rules/common/security.md`.)
 
 ## Handoff artifacts
 
@@ -109,7 +109,7 @@ The pipeline carries no hidden state — the planning docs *are* the handoff:
 
 - `task_list` (from Plan) drives the Implement loop.
 - Larger work may also emit PRD / architecture / system_design under the repo's
-  `docs/` per `rules/common/development-workflow.md`.
+  `docs/` per `$PLUGIN/library/rules/common/development-workflow.md`.
 - Review findings (CRITICAL / HIGH) must be resolved before Gate 2.
 
 ## Verification
@@ -118,4 +118,8 @@ The pipeline carries no hidden state — the planning docs *are* the handoff:
 - Gate 1 (plan) and Gate 2 (commit) were both honored
 - `security-reviewer` ran iff a security trigger was touched
 - commits are conventional and scoped to one logical change
-- new / changed behavior has tests; coverage ≥ 80% per `rules/common/testing.md`
+- new / changed behavior has tests; coverage ≥ 80% per `$PLUGIN/library/rules/common/testing.md`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -91,7 +91,11 @@ with four decimals, larger amounts with two.
 
 ## Related
 
-- `/cost-report` - Command-form report over the same metrics log.
+- `cost-report` procedure - Command-form report over the same metrics log.
 - `cost-aware-llm-pipeline` - Model-routing and budget-design patterns.
 - `token-budget-advisor` - Context and token-budget planning.
 - `strategic-compact` - Context compaction to reduce repeated token spend.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

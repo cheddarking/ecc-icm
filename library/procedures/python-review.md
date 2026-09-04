@@ -4,7 +4,7 @@ description: Comprehensive Python code review for PEP 8 compliance, type hints, 
 
 # Python Code Review
 
-This command invokes the **python-reviewer** agent for comprehensive Python-specific code review.
+This command invokes the **python-reviewer** role for comprehensive Python-specific code review.
 
 ## What This Command Does
 
@@ -17,7 +17,7 @@ This command invokes the **python-reviewer** agent for comprehensive Python-spec
 
 ## When to Use
 
-Use `/python-review` when:
+Use `python-review` procedure when:
 - After writing or modifying Python code
 - Before committing Python changes
 - Reviewing pull requests with Python code
@@ -202,8 +202,8 @@ The reviewer checks for:
 
 ## Related
 
-- Agent: `agents/python-reviewer.md`
-- Skills: `skills/python-patterns/`, `skills/python-testing/`
+- Agent: `$PLUGIN/library/roles/python-reviewer.md`
+- Skills: `$PLUGIN/library/skills/python-patterns/`, `$PLUGIN/library/skills/python-testing/`
 
 ## Common Fixes
 
@@ -295,3 +295,7 @@ The reviewer notes when code uses features from newer Python versions:
 | Type unions (&#96;x &#124; None&#96;) | 3.10+ |
 
 Ensure your project's `pyproject.toml` or `setup.py` specifies the correct minimum Python version.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

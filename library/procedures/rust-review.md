@@ -4,7 +4,7 @@ description: Comprehensive Rust code review for ownership, lifetimes, error hand
 
 # Rust Code Review
 
-This command invokes the **rust-reviewer** agent for comprehensive Rust-specific code review.
+This command invokes the **rust-reviewer** role for comprehensive Rust-specific code review.
 
 ## What This Command Does
 
@@ -17,7 +17,7 @@ This command invokes the **rust-reviewer** agent for comprehensive Rust-specific
 
 ## When to Use
 
-Use `/rust-review` when:
+Use `rust-review` procedure when:
 - After writing or modifying Rust code
 - Before committing Rust changes
 - Reviewing pull requests with Rust code
@@ -131,12 +131,16 @@ Recommendation: Block merge until CRITICAL issue is fixed
 
 ## Integration with Other Commands
 
-- Use `/rust-test` first to ensure tests pass
-- Use `/rust-build` if build errors occur
-- Use `/rust-review` before committing
-- Use `/code-review` for non-Rust-specific concerns
+- Use `rust-test` procedure first to ensure tests pass
+- Use `rust-build` procedure if build errors occur
+- Use `rust-review` procedure before committing
+- Use `code-review` procedure for non-Rust-specific concerns
 
 ## Related
 
-- Agent: `agents/rust-reviewer.md`
-- Skills: `skills/rust-patterns/`, `skills/rust-testing/`
+- Agent: `$PLUGIN/library/roles/rust-reviewer.md`
+- Skills: `$PLUGIN/library/skills/rust-patterns/`, `$PLUGIN/library/skills/rust-testing/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

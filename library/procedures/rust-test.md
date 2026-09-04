@@ -17,7 +17,7 @@ This command enforces test-driven development methodology for Rust code using `#
 
 ## When to Use
 
-Use `/rust-test` when:
+Use `rust-test` procedure when:
 - Implementing new Rust functions, methods, or traits
 - Adding test coverage to existing Rust code
 - Fixing bugs (write failing test first)
@@ -298,11 +298,15 @@ cargo test --no-fail-fast
 
 ## Related Commands
 
-- `/rust-build` - Fix build errors
-- `/rust-review` - Review code after implementation
+- `rust-build` procedure - Fix build errors
+- `rust-review` procedure - Review code after implementation
 - `verification-loop` skill - Run full verification loop
 
 ## Related
 
-- Skill: `skills/rust-testing/`
-- Skill: `skills/rust-patterns/`
+- Skill: `$PLUGIN/library/skills/rust-testing/`
+- Skill: `$PLUGIN/library/skills/rust-patterns/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

@@ -1,6 +1,6 @@
 # Role: network-config-reviewer
 
-Source: ECC agents/network-config-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
+Source: ECC $PLUGIN/library/roles/network-config-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
 
 Description: Reviews router and switch configurations for security, correctness, stale references, risky change-window commands, and missing operational guardrails.
 
@@ -92,3 +92,7 @@ present.
   `show ip access-lists`, `show ip route`, `show logging`, and `show interfaces`.
 - If a command changes device state, label it as a proposed fix and require a
   maintenance window, rollback plan, and verification step.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

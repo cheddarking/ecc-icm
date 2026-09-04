@@ -1,6 +1,6 @@
 # Role: typescript-reviewer
 
-Source: ECC agents/typescript-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/typescript-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert TypeScript/JavaScript code reviewer specializing in type safety, async correctness, Node/web security, and idiomatic patterns. Use for all TypeScript and JavaScript code changes. MUST BE USED for TypeScript/JavaScript projects.
 
@@ -49,7 +49,7 @@ Description: Expert TypeScript/JavaScript code reviewer specializing in type saf
 
 ### MEDIUM -- React / Next.js (when applicable)
 
-> **For React-specific review, prefer `react-reviewer` via `/react-review`.** This block remains as a fallback only — when the diff contains `.tsx`/`.jsx` files, both agents should be invoked. See `agents/react-reviewer.md` for the full React-specific CRITICAL/HIGH rule set (hooks rules, `dangerouslySetInnerHTML`, RSC boundaries, accessibility, render performance).
+> **For React-specific review, prefer `react-reviewer` via `react-review` procedure.** This block remains as a fallback only — when the diff contains `.tsx`/`.jsx` files, both agents should be invoked. See `$PLUGIN/library/roles/react-reviewer.md` for the full React-specific CRITICAL/HIGH rule set (hooks rules, `dangerouslySetInnerHTML`, RSC boundaries, accessibility, render performance).
 
 - **Missing dependency arrays**: `useEffect`/`useCallback`/`useMemo` with incomplete deps — use exhaustive-deps lint rule
 - **State mutation**: Mutating state directly instead of returning new objects
@@ -94,3 +94,7 @@ This repo does not yet ship a dedicated `typescript-patterns` skill. For detaile
 ---
 
 Review with the mindset: "Would this code pass review at a top TypeScript shop or well-maintained open-source project?"
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

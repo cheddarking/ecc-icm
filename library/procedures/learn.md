@@ -8,7 +8,7 @@ Analyze the current session and extract any patterns worth saving as skills.
 
 ## Trigger
 
-Run `/learn` at any point during a session when you've solved a non-trivial problem.
+Run `learn` procedure at any point during a session when you've solved a non-trivial problem.
 
 ## What to Extract
 
@@ -105,3 +105,7 @@ when to load the skill automatically.
 - Don't extract one-time issues (specific API outages, etc.)
 - Focus on patterns that will save time in future sessions
 - Keep skills focused - one pattern per skill
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

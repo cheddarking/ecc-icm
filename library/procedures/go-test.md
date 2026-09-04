@@ -17,7 +17,7 @@ This command enforces test-driven development methodology for Go code using idio
 
 ## When to Use
 
-Use `/go-test` when:
+Use `go-test` procedure when:
 - Implementing new Go functions
 - Adding test coverage to existing code
 - Fixing bugs (write failing test first)
@@ -258,11 +258,15 @@ go test -race -cover ./...
 
 ## Related Commands
 
-- `/go-build` - Fix build errors
-- `/go-review` - Review code after implementation
+- `go-build` procedure - Fix build errors
+- `go-review` procedure - Review code after implementation
 - `verification-loop` skill - Run full verification loop
 
 ## Related
 
-- Skill: `skills/golang-testing/`
-- Skill: `skills/tdd-workflow/`
+- Skill: `$PLUGIN/library/skills/golang-testing/`
+- Skill: `$PLUGIN/library/skills/tdd-workflow/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

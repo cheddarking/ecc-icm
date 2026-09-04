@@ -1,6 +1,6 @@
 # Role: spec-miner
 
-Source: ECC agents/spec-miner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob, Bash, Write.
+Source: ECC $PLUGIN/library/roles/spec-miner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob, Bash, Write.
 
 Description: Extracts behavioral specs from existing codebases for OpenSpec. Produces flat Requirement and Invariant blocks with structured metadata (entities, enforced, id, test anchors). Outputs openspec/specs/<capability>/spec.md. Fully self-bootstrapping — no dependency on codebase-onboarding. Use when onboarding a brownfield project to spec-driven development.
 
@@ -198,3 +198,7 @@ Write the `description` in the frontmatter to include a summary of the module's 
 - FAIL: Using `###` for anything other than `Requirement:` or `Invariant:` — breaks OpenSpec delta compatibility
 - FAIL: Reading every file in a large module instead of using sample-and-expand — wastes tokens and hits context limits
 - FAIL: Recording `depends_on` / `triggers` for cross-module or async event-driven relationships — those are not statically traceable
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -176,5 +176,9 @@ proposed → accepted → [deprecated | superseded by ADR-NNNN]
 
 ## Integration with Other Skills
 
-- **Planner agent**: when the planner proposes architecture changes, suggest creating an ADR
+- **Planner role**: when the planner proposes architecture changes, suggest creating an ADR
 - **Code reviewer agent**: flag PRs that introduce architectural changes without a corresponding ADR
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

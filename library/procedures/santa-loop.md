@@ -173,3 +173,7 @@ Result:     [PUSHED / ESCALATED TO USER]
 - The rubric is the most important input. Tighten it if reviewers rubber-stamp or flag subjective style issues.
 - Commits happen on NAUGHTY rounds so fixes are preserved even if the loop is interrupted.
 - Push only happens after NICE — never mid-loop.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

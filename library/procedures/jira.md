@@ -80,7 +80,7 @@ Recommended Next Steps:
 This command requires Jira credentials. Choose one:
 
 **Option A — MCP Server (recommended):**
-Add `jira` to your `mcpServers` config (see `mcp-configs/mcp-servers.json` for the template).
+Add `jira` to your `mcpServers` config (see `$PLUGIN/library/mcp-configs/mcp-servers.json` for the template).
 
 **Option B — Environment variables:**
 ```bash
@@ -94,13 +94,17 @@ If credentials are missing, stop and direct the user to set them up.
 ## Integration with Other Commands
 
 After analyzing a ticket:
-- Use `/plan` to create an implementation plan from the requirements
+- Use `plan` procedure to create an implementation plan from the requirements
 - Use the `tdd-workflow` skill to implement with test-driven development
-- Use `/code-review` after implementation
-- Use `/jira comment` to post progress back to the ticket
-- Use `/jira transition` to move the ticket when work is complete
+- Use `code-review` procedure after implementation
+- Use `jira` procedure (`comment`) to post progress back to the ticket
+- Use `jira` procedure (`transition`) to move the ticket when work is complete
 
 ## Related
 
-- **Skill:** `skills/jira-integration/`
-- **MCP config:** `mcp-configs/mcp-servers.json` → `jira`
+- **Skill:** `$PLUGIN/library/skills/jira-integration/`
+- **MCP config:** `$PLUGIN/library/mcp-configs/mcp-servers.json` → `jira`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

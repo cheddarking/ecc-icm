@@ -1,6 +1,6 @@
 # Role: vue-reviewer
 
-Source: ECC agents/vue-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/vue-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert Vue.js code reviewer specializing in Composition API correctness, reactivity pitfalls, component architecture, template security, and Vue-specific performance. Use for any change touching .vue, .ts/.js files with Vue imports, or Vue ecosystem code (Pinia, Vue Router, Nuxt). MUST BE USED for Vue projects.
 
@@ -186,10 +186,14 @@ Verdict: BLOCK — HIGH issues must be fixed before merge.
 ## Related
 
 - Agents: `typescript-reviewer` (generic TS/JS, invoked alongside on `.vue`/`.ts`), `security-reviewer` (project-wide audit)
-- Rules: `rules/vue/coding-style.md`, `rules/vue/hooks.md`, `rules/vue/patterns.md`, `rules/vue/security.md`, `rules/vue/testing.md`
-- Skills: `skills/vue-patterns/`
-- Commands: `/vue-review`
+- Rules: `$PLUGIN/library/rules/vue/coding-style.md`, `$PLUGIN/library/rules/vue/hooks.md`, `$PLUGIN/library/rules/vue/patterns.md`, `$PLUGIN/library/rules/vue/security.md`, `$PLUGIN/library/rules/vue/testing.md`
+- Skills: `$PLUGIN/library/skills/vue-patterns/`
+- Commands: `vue-review` procedure
 
 ---
 
 Review with the mindset: "Would this code pass review on the Vue.js core team or a well-maintained open-source Vue project?"
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

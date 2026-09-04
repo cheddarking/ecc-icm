@@ -1,6 +1,6 @@
 # Role: react-reviewer
 
-Source: ECC agents/react-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/react-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert React/JSX code reviewer specializing in hook correctness, render performance, server/client component boundaries, accessibility, and React-specific security. Use for any change touching .tsx/.jsx files or React component logic. MUST BE USED for React projects.
 
@@ -147,10 +147,14 @@ Always include the file path and line number. Quote the offending snippet when i
 ## Related
 
 - Agents: `typescript-reviewer` (generic TS/JS, invoked alongside on `.tsx`/`.jsx`), `security-reviewer` (project-wide audit)
-- Rules: `rules/react/coding-style.md`, `rules/react/hooks.md`, `rules/react/patterns.md`, `rules/react/security.md`, `rules/react/testing.md`
-- Skills: `skills/react-patterns/`, `skills/react-testing/`, `skills/accessibility/`
-- Commands: `/react-review`, `/react-build`, `/react-test`
+- Rules: `$PLUGIN/library/rules/react/coding-style.md`, `$PLUGIN/library/rules/react/hooks.md`, `$PLUGIN/library/rules/react/patterns.md`, `$PLUGIN/library/rules/react/security.md`, `$PLUGIN/library/rules/react/testing.md`
+- Skills: `$PLUGIN/library/skills/react-patterns/`, `$PLUGIN/library/skills/react-testing/`, `$PLUGIN/library/skills/accessibility/`
+- Commands: `react-review` procedure, `react-build` procedure, `react-test` procedure
 
 ---
 
 Review with the mindset: "Would this code pass review at a top React shop or well-maintained open-source library?"
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

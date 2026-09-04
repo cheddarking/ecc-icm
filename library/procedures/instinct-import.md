@@ -11,13 +11,13 @@ command: true
 Run the instinct CLI using the plugin root path:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT}/skills/continuous-learning-v2/scripts/instinct-cli.py" import <file-or-url> [--dry-run] [--force] [--min-confidence 0.7] [--scope project|global]
+python3 "${CLAUDE_PLUGIN_ROOT}/library/skills/continuous-learning-v2/scripts/instinct-cli.py" import <file-or-url> [--dry-run] [--force] [--min-confidence 0.7] [--scope project|global]
 ```
 
 Or if `CLAUDE_PLUGIN_ROOT` is not set (manual installation):
 
 ```bash
-python3 ~/.claude/skills/continuous-learning-v2/scripts/instinct-cli.py import <file-or-url>
+python3 $PLUGIN/library/skills/continuous-learning-v2/scripts/instinct-cli.py import <file-or-url>
 ```
 
 Import instincts from local file paths or HTTP(S) URLs.

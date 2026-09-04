@@ -11,10 +11,10 @@ Shows learned instincts for the current project plus global instincts, grouped b
 ## Implementation
 
 Run the instinct CLI, resolving the active ECC plugin root the same way
-`hooks/hooks.json` and the other slash commands (`/sessions`, `/skill-health`)
+`$PLUGIN/library/hooks/hooks.json` and the other slash commands (`sessions` procedure, `skill-health` procedure)
 do — env var → standard install → known plugin roots → plugin cache → fallback.
 This avoids the divergence that happens when `CLAUDE_PLUGIN_ROOT` is unset
-while a legacy `~/.claude/skills/continuous-learning-v2/` directory still
+while a legacy `$PLUGIN/library/skills/continuous-learning-v2/` directory still
 exists (#2037).
 
 ```bash
@@ -57,3 +57,7 @@ python3 "$ECC_ROOT/skills/continuous-learning-v2/scripts/instinct-cli.py" status
     █████████░  85%  validate-user-input [global]
               trigger: when handling user input
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

@@ -142,7 +142,7 @@ git merge feat/billing
 ECC now includes a helper for external tmux-pane orchestration with separate git worktrees:
 
 ```bash
-node scripts/orchestrate-worktrees.js plan.json --execute
+node $PLUGIN/library/scripts/orchestrate-worktrees.js plan.json --execute
 ```
 
 Example `plan.json`:
@@ -173,8 +173,8 @@ Use `seedPaths` when workers need access to dirty or untracked local files that 
 {
   "sessionName": "workflow-e2e",
   "seedPaths": [
-    "scripts/orchestrate-worktrees.js",
-    "scripts/lib/tmux-worktree-orchestrator.js",
+    "$PLUGIN/library/scripts/orchestrate-worktrees.js",
+    "$PLUGIN/library/scripts/lib/tmux-worktree-orchestrator.js",
     ".claude/plan/workflow-e2e-test.json"
   ],
   "launcherCommand": "bash {repo_root}/scripts/orchestrate-codex-worker.sh {task_file} {handoff_file} {status_file}",
@@ -190,3 +190,7 @@ Use `seedPaths` when workers need access to dirty or untracked local files that 
 - **Merge conflicts:** Use git worktrees to isolate file changes per pane.
 - **High token usage:** Reduce number of parallel panes. Each pane is a full agent session.
 - **tmux not found:** Install with `brew install tmux` (macOS) or `apt install tmux` (Linux).
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

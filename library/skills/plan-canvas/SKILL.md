@@ -14,18 +14,18 @@ and delivering an **Approve plan / Request changes** verdict — while you block
 on a single CLI call that returns their feedback as JSON.
 
 Inspired by [lavish-axi](https://github.com/kunchenguid/lavish-axi); rebuilt
-ECC-native around the `/plan` confirmation gate, with zero dependencies.
+ECC-native around the `plan` procedure confirmation gate, with zero dependencies.
 
 ## When to Use
 
-- You just wrote a plan artifact (`.claude/plans/*.plan.md` from `/plan`) and
+- You just wrote a plan artifact (`.claude/plans/*.plan.md` from `plan` procedure) and
   need the CONFIRM/approve decision — the canvas verdict replaces a typed
   "yes/proceed".
 - The user should *point at* what to change: reviewing designs, comparisons,
   reports, or any local `.md` / `.html` artifact.
-- The user asks for `/plan-canvas`, a visual review, or "open it in the browser".
+- The user asks for `plan-canvas` procedure, a visual review, or "open it in the browser".
 
-Do NOT use for: code review of diffs (`/code-review`), running web apps, or
+Do NOT use for: code review of diffs (`code-review` procedure), running web apps, or
 remote URLs. The canvas serves local artifact files only.
 
 ## How It Works
@@ -40,7 +40,7 @@ ids to track.
 The workflow is a plain CLI-plus-JSON loop, so it is model- and harness-agnostic:
 any agent that can run a shell command and read stdout drives it the same way
 (Claude Code, Codex, Cursor, Gemini, OpenCode, Copilot). Trigger it however your
-harness surfaces skills — e.g. `/plan-canvas` in Claude Code, `$plan-canvas` in
+harness surfaces skills — e.g. `plan-canvas` procedure in Claude Code, `$plan-canvas` in
 Codex — or just run the `ecc-plan-canvas` commands directly.
 
 ```bash
@@ -194,3 +194,7 @@ ecc-plan-canvas await <file> --reply "Reworked the risk table."
   and keep the terminal summary to one line.
 - Parsing the canvas chat from state files — everything you need arrives via
   `await`.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

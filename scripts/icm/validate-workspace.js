@@ -139,6 +139,24 @@ function validateWorkspace(wsDir, opts = {}) {
     if (/\/(references|shared)\//.test(entry.path) && text.split('\n').length > 200) {
       warnings.push(`W1 ${rel(entry.path)}: ${text.split('\n').length} lines (guideline 200)`);
     }
+    // W2: a table row that names a file and quotes section names must point
+    // at headings that exist, so selective section routing cannot go stale.
+    for (const line of text.split('\n')) {
+      if (!line.trim().startsWith('|')) continue;
+      const cells = line.split('|').map(c => c.trim());
+      for (let i = 1; i < cells.length - 1; i += 1) {
+        const pm = cells[i].match(/^`(\$PLUGIN\/[^`]+|\.\.?\/[^`]+)`$/);
+        if (!pm) continue;
+        const names = [...(cells[i + 1] || '').matchAll(/"([^"]+)"/g)].map(m => m[1]);
+        if (!names.length) continue;
+        const target = pm[1].startsWith('$PLUGIN/') ? path.join(pluginRoot, pm[1].slice(8)) : path.join(path.dirname(entry.path), pm[1]);
+        if (!fs.existsSync(target) || fs.statSync(target).isDirectory()) continue;
+        const heads = [...fs.readFileSync(target, 'utf8').matchAll(/^#{1,6}\s+(.+)$/gm)].map(m => m[1].replace(/[*`]/g, '').trim().toLowerCase());
+        for (const n of names) {
+          if (!heads.some(h => h.includes(n.toLowerCase()))) warnings.push(`W2 ${rel(entry.path)}: no heading "${n}" in ${pm[1]}`);
+        }
+      }
+    }
   }
 
   return { workspace: rel(wsDir) || path.basename(wsDir), stages: stages.length, errors, warnings };

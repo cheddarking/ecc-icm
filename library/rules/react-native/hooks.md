@@ -26,3 +26,7 @@ These are recommended PostToolUse automations to keep RN/Expo code healthy. Wire
 - Do not run heavy native builds inside fast edit hooks; keep edit-time hooks to typecheck/lint/format.
 - Reserve `eas build` / E2E for explicit commands or CI, not per-edit automation.
 - Keep these consistent with ECC hook runtime controls (`ECC_HOOK_PROFILE`, `ECC_DISABLED_HOOKS`).
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

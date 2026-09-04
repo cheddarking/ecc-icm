@@ -30,9 +30,17 @@ Layer 3 reference material copied from Everything Claude Code (MIT). Nothing in 
 | Supply chain, logistics, procurement, and manufacturing domain skills. | `$PLUGIN/library/skills/INDEX-supply-chain-domain.md` (8 skills) |
 | Document processing, conversion, and translation skills. | `$PLUGIN/library/skills/INDEX-document-processing.md` (2 skills) |
 | Skills not listed in any ECC install module. | `$PLUGIN/library/skills/INDEX-uncategorised.md` (1 skills) |
+| ECC's hook scripts, CLI scripts and helper libraries (opt-in, not wired) | `$PLUGIN/library/scripts/`, `$PLUGIN/library/hooks/hooks.json` |
+| MCP server catalog used by research skills | `$PLUGIN/library/mcp-configs/mcp-servers.json` |
+| ECC's prompt contexts (dev, review, research) | `$PLUGIN/library/contexts/` |
+| ECC's documentation, English only, unmodified | `$PLUGIN/library/docs/` |
+| Writing guides for long-form, short-form and security content | `$PLUGIN/library/the-longform-guide.md`, `the-shortform-guide.md`, `the-security-guide.md` |
+| Codex mirror of 39 skills, unmodified | `$PLUGIN/library/.agents/skills/` |
+| How every ECC surface maps here, and which doctrine ICM supersedes | `$PLUGIN/library/ECC-MAPPING.md` |
 
 ## Rules of use
 
 - One-way: the library never points back at a workspace.
 - Load a section, not a folder. Every index row is one file.
 - Skills here are library files, not registered skills. Do not invoke them with the Skill tool; read the SKILL.md.
+- Skills, roles, procedures, rules and guides were adapted by `scripts/icm/adapt-library.js`: `/command` mentions became procedures, agent mentions became roles, ECC paths point into this folder. Each adapted file ends with an "ECC-ICM notes" paragraph. Counts: `$PLUGIN/library/_meta/adaptation-report.json`.

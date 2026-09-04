@@ -125,7 +125,7 @@ scope. When `$CLAUDE_PLUGIN_ROOT` is available, pass the successful setup
 `already-migrated`) to the bundled renderer:
 
 Before invoking it, require the provider-reported version to match
-`ECC_VERSION_PATTERN` from `scripts/lib/terminal-welcome.js`. Reject unexpected
+`ECC_VERSION_PATTERN` from `$PLUGIN/library/scripts/lib/terminal-welcome.js`. Reject unexpected
 version text instead of interpolating it into a shell command.
 
 ```bash
@@ -204,3 +204,7 @@ npx --yes --package ecc-universal ecc welcome --action configured
 ```
 
 Do not claim that Kimi installed or configured ECC lifecycle hooks.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

@@ -32,8 +32,8 @@ Use when:
 | --- | --- |
 | Ambiguous go/no-go decision with real tradeoffs | `council` |
 | You want to hand-pick which agents participate | `team-builder` |
-| Single-role deep-dive (e.g. architecture only) | the `architect` agent |
-| Code review | the `code-reviewer` agent or `/code-review` |
+| Single-role deep-dive (e.g. architecture only) | the `architect` role |
+| Code review | the `code-reviewer` role or `code-review` procedure |
 | Structured adversarial challenge | `santa-method` |
 
 ## Personas
@@ -162,15 +162,15 @@ After presenting, offer:
 
 - "Go deeper with one role" — re-engage a single persona for more detail
 - "Resolve a tension" — use `council` if a specific tradeoff needs a verdict
-- "Plan the work" — use `/plan` for an implementation plan, or the `epic-*` commands
-  (`/epic-decompose`) for issue-backed breakdown
+- "Plan the work" — use `plan` procedure for an implementation plan, or the `epic-*` commands
+  (`epic-decompose` procedure) for issue-backed breakdown
 
 ## Persistence Rule
 
 Do not write session output to files by default. If the user explicitly asks to save the session:
 
 - save to `docs/team-sessions/team-session-YYYY-MM-DD.md` (append `-2`, `-3` if a file for that date already exists)
-- or use `/save-session`
+- or use `save-session` procedure
 
 ## Anti-Patterns
 
@@ -199,5 +199,9 @@ Run `dev-team` to shape a proposal, then `council` if a specific decision within
 - `council` — adversarial decision-making under ambiguity
 - `team-builder` — pick-your-own agent team when the preset four roles don't fit
 - `architect` (agent) — deep single-role architecture design
-- `/plan-prd` (command) — product requirements document before the team session
-- `/epic-decompose` (command) — break the outcome into issue-backed work
+- `plan-prd` procedure (command) — product requirements document before the team session
+- `epic-decompose` procedure (command) — break the outcome into issue-backed work
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

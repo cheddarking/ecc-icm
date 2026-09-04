@@ -518,3 +518,7 @@ docker network inspect <project>_default
 # BAD: Putting secrets in docker-compose.yml
 # Use .env files (gitignored) or Docker secrets
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

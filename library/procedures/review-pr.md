@@ -6,7 +6,7 @@ Run a comprehensive multi-perspective review of a pull request.
 
 ## Usage
 
-`/review-pr [PR-number-or-URL] [--focus=comments|tests|errors|types|code|simplify]`
+`review-pr` procedure (`[PR-number-or-URL] [--focus=comments|tests|errors|types|code|simplify]`)
 
 If no PR is specified, review the current branch's PR. If no focus is specified, run the full review stack.
 
@@ -35,3 +35,7 @@ Only report issues with confidence >= 80:
 - Critical: bugs, security, data loss
 - Important: missing tests, quality problems, style violations
 - Advisory: suggestions only when explicitly requested
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

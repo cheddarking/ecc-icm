@@ -146,7 +146,7 @@ Continuous-learning-v2 stores observer data outside `~/.claude` so Claude Code's
 Existing users with data at `~/.claude/homunculus` can migrate once:
 
 ```bash
-bash skills/continuous-learning-v2/scripts/migrate-homunculus.sh
+bash $PLUGIN/library/skills/continuous-learning-v2/scripts/migrate-homunculus.sh
 ```
 
 ## Quick Start
@@ -155,9 +155,9 @@ bash skills/continuous-learning-v2/scripts/migrate-homunculus.sh
 
 **If installed as a plugin** (recommended):
 
-No extra `settings.json` hook block is required. Claude Code v2.1+ auto-loads the plugin `hooks/hooks.json`, and `observe.sh` is already registered there.
+No extra `settings.json` hook block is required. Claude Code v2.1+ auto-loads the plugin `$PLUGIN/library/hooks/hooks.json`, and `observe.sh` is already registered there.
 
-If you previously copied `observe.sh` into `~/.claude/settings.json`, remove that duplicate `PreToolUse` / `PostToolUse` block. Duplicating the plugin hook causes double execution and `${CLAUDE_PLUGIN_ROOT}` resolution errors because that variable is only available inside plugin-managed `hooks/hooks.json` entries.
+If you previously copied `observe.sh` into `~/.claude/settings.json`, remove that duplicate `PreToolUse` / `PostToolUse` block. Duplicating the plugin hook causes double execution and `${CLAUDE_PLUGIN_ROOT}` resolution errors because that variable is only available inside plugin-managed `$PLUGIN/library/hooks/hooks.json` entries.
 
 **If installed manually** to `~/.claude/skills`, add this to your `~/.claude/settings.json`:
 
@@ -168,14 +168,14 @@ If you previously copied `observe.sh` into `~/.claude/settings.json`, remove tha
       "matcher": "*",
       "hooks": [{
         "type": "command",
-        "command": "~/.claude/skills/continuous-learning-v2/hooks/observe.sh"
+        "command": "$PLUGIN/library/skills/continuous-learning-v2/hooks/observe.sh"
       }]
     }],
     "PostToolUse": [{
       "matcher": "*",
       "hooks": [{
         "type": "command",
-        "command": "~/.claude/skills/continuous-learning-v2/hooks/observe.sh"
+        "command": "$PLUGIN/library/skills/continuous-learning-v2/hooks/observe.sh"
       }]
     }]
   }
@@ -208,12 +208,12 @@ mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/ecc-homunculus"/{instincts/{perso
 
 | Command | Description |
 |---------|-------------|
-| `/instinct-status` | Show all instincts (project-scoped + global) with confidence |
-| `/evolve` | Cluster related instincts into skills/commands, suggest promotions |
-| `/instinct-export` | Export instincts (filterable by scope/domain) |
-| `/instinct-import <file>` | Import instincts with scope control |
-| `/promote [id]` | Promote project instincts to global scope |
-| `/projects` | List all known projects and their instinct counts |
+| `instinct-status` procedure | Show all instincts (project-scoped + global) with confidence |
+| `evolve` procedure | Cluster related instincts into skills/commands, suggest promotions |
+| `instinct-export` procedure | Export instincts (filterable by scope/domain) |
+| `instinct-import` procedure (`<file>`) | Import instincts with scope control |
+| `promote` procedure (`[id]`) | Promote project instincts to global scope |
+| `projects` procedure | List all known projects and their instinct counts |
 
 ## Configuration
 
@@ -318,7 +318,7 @@ python3 instinct-cli.py promote
 python3 instinct-cli.py promote --dry-run
 ```
 
-The `/evolve` command also suggests promotion candidates.
+The `evolve` procedure command also suggests promotion candidates.
 
 ## Confidence Scoring
 
@@ -375,3 +375,7 @@ v2.1 is fully compatible with v2.0 and v1:
 ---
 
 *Instinct-based learning: teaching Claude your patterns, one project at a time.*
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

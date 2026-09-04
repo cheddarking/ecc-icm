@@ -1,6 +1,6 @@
 # Role: opensource-packager
 
-Source: ECC agents/opensource-packager.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC $PLUGIN/library/roles/opensource-packager.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: Generate complete open-source packaging for a sanitized project. Produces CLAUDE.md, setup.sh, README.md, LICENSE, CONTRIBUTING.md, and GitHub issue templates. Makes any repo immediately usable with Claude Code. Third stage of the opensource-pipeline skill.
 
@@ -243,3 +243,7 @@ Output: 5 files generated, setup.sh executable, "Using with Claude Code" section
 - **Read** the actual project code to understand it — do not guess at architecture
 - CLAUDE.md must be accurate — wrong commands are worse than no commands
 - If the project already has good docs, enhance them rather than replace
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

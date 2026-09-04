@@ -1,6 +1,6 @@
 # Role: swift-reviewer
 
-Source: ECC agents/swift-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/swift-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert Swift code reviewer specializing in protocol-oriented design, value semantics, ARC memory management, Swift Concurrency, and idiomatic patterns. Use for all Swift code changes. MUST BE USED for Swift projects.
 
@@ -96,3 +96,7 @@ if command -v swift-format >/dev/null 2>&1; then swift-format lint -r . 2>&1 | h
 For detailed Swift patterns and rules, see rules: `swift/coding-style`, `swift/patterns`, `swift/security`, `swift/testing`. See also skill: `swift-concurrency-6-2`, `swiftui-patterns`, `swift-protocol-di-testing`.
 
 Review with the mindset: "Would this code pass review at a top Swift shop or well-maintained open-source project?"
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

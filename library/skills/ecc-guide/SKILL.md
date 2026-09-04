@@ -28,12 +28,12 @@ Answer from current files, not memory. ECC changes quickly, so hard-coded catalo
 When the ECC repository is available, inspect the relevant files before giving a concrete answer:
 
 ```bash
-node scripts/ci/catalog.js --json
+node $PLUGIN/library/scripts/ci/catalog.js --json
 find skills -maxdepth 2 -name SKILL.md | sort
 find commands -maxdepth 1 -name '*.md' | sort
 find agents -maxdepth 1 -name '*.md' | sort
-node scripts/install-plan.js --list-profiles
-node scripts/install-plan.js --list-components --json
+node $PLUGIN/library/scripts/install-plan.js --list-profiles
+node $PLUGIN/library/scripts/install-plan.js --list-components --json
 ```
 
 Use the smallest set of reads needed for the user's question.
@@ -47,7 +47,7 @@ Use the smallest set of reads needed for the user's question.
 - `skills/*/SKILL.md`: reusable workflows and domain playbooks
 - `agents/*.md`: delegated subagent role prompts
 - `rules/`: language and harness rules
-- `hooks/README.md`, `hooks/hooks.json`, `scripts/hooks/`: hook behavior and safety gates
+- `hooks/README.md`, `$PLUGIN/library/hooks/hooks.json`, `$PLUGIN/library/scripts/hooks/`: hook behavior and safety gates
 - `manifests/install-*.json`: selective install modules, components, profiles, and target support
 - `docs/`: harness guides, architecture notes, translated docs, release docs
 
@@ -83,7 +83,7 @@ Give a short menu:
 - run a harness audit
 - find a specific workflow
 
-Point to `README.md` for install/reset and `/project-init` for project-specific onboarding.
+Point to `README.md` for install/reset and `project-init` procedure for project-specific onboarding.
 
 ### Feature Discovery
 
@@ -106,23 +106,23 @@ find skills -maxdepth 2 -name SKILL.md | sort
 Use managed install paths:
 
 ```bash
-node scripts/install-plan.js --list-profiles
-node scripts/install-plan.js --profile minimal --target claude --json
-node scripts/install-apply.js --profile minimal --target claude --dry-run
+node $PLUGIN/library/scripts/install-plan.js --list-profiles
+node $PLUGIN/library/scripts/install-plan.js --profile minimal --target claude --json
+node $PLUGIN/library/scripts/install-apply.js --profile minimal --target claude --dry-run
 ```
 
 For specific skill installs:
 
 ```bash
-node scripts/install-plan.js --skills <skill-id> --target claude --json
-node scripts/install-apply.js --skills <skill-id> --target claude --dry-run
+node $PLUGIN/library/scripts/install-plan.js --skills <skill-id> --target claude --json
+node $PLUGIN/library/scripts/install-apply.js --skills <skill-id> --target claude --dry-run
 ```
 
 Warn users not to stack plugin installs and full manual/profile installs unless they intentionally want duplicate surfaces.
 
 ### Project Onboarding
 
-Use `/project-init` when the user wants ECC configured for a target repo. The expected sequence is:
+Use `project-init` procedure when the user wants ECC configured for a target repo. The expected sequence is:
 
 1. detect the stack from project files
 2. resolve a dry-run install plan
@@ -136,7 +136,7 @@ Ask for the target harness and install path first, then inspect:
 
 - plugin install metadata
 - `.claude/`, `.cursor/`, `.codex/`, `.gemini/`, `.opencode/`, `.codebuddy/`, `.joycode/`, or `.qwen/`
-- `hooks/hooks.json`
+- `$PLUGIN/library/hooks/hooks.json`
 - install-state files
 - relevant command/skill files
 
@@ -183,8 +183,12 @@ Needs approval before apply: <yes/no>
 
 ## Related Surfaces
 
-- `/project-init`: stack-aware onboarding plan for a target repo
-- `/harness-audit`: deterministic readiness scorecard
-- `/skill-health`: skill quality review
-- `/skill-create`: generate a new skill from local git history
-- `/security-scan`: inspect Claude/OpenCode configuration security
+- `project-init` procedure: stack-aware onboarding plan for a target repo
+- `harness-audit` procedure: deterministic readiness scorecard
+- `skill-health` procedure: skill quality review
+- `skill-create` procedure: generate a new skill from local git history
+- `security-scan` procedure: inspect Claude/OpenCode configuration security
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

@@ -5,7 +5,7 @@ description: Run the ECC formatter quality gate for a single file and report rem
 # Quality Gate Command
 
 Operator entry point for the formatter quality gate that normally runs as the
-`post:quality-gate` PostToolUse hook (`scripts/hooks/quality-gate.js`).
+`post:quality-gate` PostToolUse hook (`$PLUGIN/library/scripts/hooks/quality-gate.js`).
 
 ## How it actually works
 
@@ -32,7 +32,7 @@ script (set the env toggles first if you want fix or strict behavior):
 
 ```bash
 echo '{"tool_input":{"file_path":"src/example.ts"}}' \
-  | ECC_QUALITY_GATE_FIX=true node scripts/hooks/quality-gate.js
+  | ECC_QUALITY_GATE_FIX=true node $PLUGIN/library/scripts/hooks/quality-gate.js
 ```
 
 Then report formatter findings and concrete remediation steps.
@@ -40,7 +40,7 @@ Then report formatter findings and concrete remediation steps.
 ## Notes
 
 Hook wiring enters through the async PostToolUse dispatcher in
-`hooks/hooks.json`. Its internal registry preserves the `post:quality-gate`
+`$PLUGIN/library/hooks/hooks.json`. Its internal registry preserves the `post:quality-gate`
 ID and the `standard`/`strict` profiles.
 
 ## Arguments
@@ -50,3 +50,7 @@ $ARGUMENTS:
 - `[path]` optional file to check. The script itself takes no CLI
   arguments - when a path is given, substitute it as `tool_input.file_path`
   in the stdin JSON shown above before running the command
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

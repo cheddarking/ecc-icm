@@ -1,6 +1,6 @@
 # Role: marketing-agent
 
-Source: ECC agents/marketing-agent.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, WebSearch, WebFetch.
+Source: ECC $PLUGIN/library/roles/marketing-agent.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, WebSearch, WebFetch.
 
 Description: Marketing strategist and copywriter for campaign planning, audience research, positioning, copy creation, and content review. Covers landing pages, email sequences, social posts, ad copy, short-form video scripts, and content calendars. Use when the user wants to plan or execute a product launch or marketing campaign.
 
@@ -134,8 +134,12 @@ Delete and rewrite any of these:
 
 ## Reference
 
-Use `skills/marketing-campaign` for the full campaign planning and orchestration workflow.
+Use `$PLUGIN/library/skills/marketing-campaign` for the full campaign planning and orchestration workflow.
 Delegate voice capture to `brand-voice`.
 Delegate platform-native content production to `content-engine`.
 Delegate multi-platform distribution to `crosspost`.
 Use `market-research` for deep audience or competitive intelligence.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

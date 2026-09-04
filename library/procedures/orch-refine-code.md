@@ -34,6 +34,10 @@ Invoke the `orch-refine-code` skill with `$ARGUMENTS` as the request. The skill
 4. `code-reviewer`, then commit as `refactor:` (the diff must be behavior-neutral). → **GATE 2**.
 
 Use this only when behavior must **not** change. If behavior should change at
-all, use `/orch-change-feature` or `/orch-fix-defect`.
+all, use `orch-change-feature` procedure or `orch-fix-defect` procedure.
 
 If `$ARGUMENTS` is empty, ask the user what to refine.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

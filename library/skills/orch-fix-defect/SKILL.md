@@ -30,7 +30,7 @@ engine in [`orch-pipeline`](../orch-pipeline/SKILL.md).
 
 1. Run the `orch-pipeline` engine with the settings above.
 2. If the root cause is unclear, scope it with `code-explorer` before the red
-   test; escalate build breaks to `build-error-resolver` / `/build-fix`.
+   test; escalate build breaks to `build-error-resolver` / `build-fix` procedure.
 3. Stop at **Gate 1** (only if a plan was produced) and **Gate 2** (pre-commit).
 4. Add `security-reviewer` if the defect sits in a security-sensitive path.
 
@@ -41,3 +41,7 @@ orch-fix-defect: poller crashes on empty NWS response
 → write failing test reproducing the crash → fix to green
 → code-review → commit  [GATE 2: confirm]   (commit: fix:)
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

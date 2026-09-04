@@ -1,8 +1,8 @@
 # Role: conversation-analyzer
 
-Source: ECC agents/conversation-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep.
+Source: ECC $PLUGIN/library/roles/conversation-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep.
 
-Description: Use this agent when analyzing conversation transcripts to find behaviors worth preventing with hooks. Triggered by /hookify without arguments.
+Description: Use this agent when analyzing conversation transcripts to find behaviors worth preventing with hooks. Triggered by `hookify` procedure without arguments.
 
 ---
 ## What to Look For
@@ -46,3 +46,7 @@ suggested_rule:
 ```
 
 Prioritize high-frequency, high-severity behaviors first.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

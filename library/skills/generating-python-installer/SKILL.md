@@ -370,7 +370,7 @@ if ($testDirs.Count -gt 0) {
 }
 
 # 5. 删除文档和示例
-Write-Host "`n[5/7] 删除 docs/examples 文档目录..." -ForegroundColor Green
+Write-Host "`n[5/7] 删除 $PLUGIN/library/docs/examples 文档目录..." -ForegroundColor Green
 $docDirs = Get-ChildItem -Path $DistPath -Recurse -Directory | Where-Object { $_.Name -match '^(docs|examples|samples|demo)$' }
 $docSize = 0
 foreach ($dir in $docDirs) {

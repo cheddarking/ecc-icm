@@ -305,3 +305,7 @@ Cost of NOT Santa = (reputation damage) + (correction effort) + (trust erosion)
 ```
 
 For batch operations, the sampling pattern reduces cost to ~15-20% of full verification while catching >90% of systematic issues.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

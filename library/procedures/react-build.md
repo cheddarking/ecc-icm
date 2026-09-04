@@ -4,7 +4,7 @@ description: Fix React build failures (Vite, webpack, Next.js, CRA, Parcel, esbu
 
 # React Build and Fix
 
-This command invokes the **react-build-resolver** agent to incrementally fix React build errors with minimal changes.
+This command invokes the **react-build-resolver** role to incrementally fix React build errors with minimal changes.
 
 ## What This Command Does
 
@@ -16,7 +16,7 @@ This command invokes the **react-build-resolver** agent to incrementally fix Rea
 
 ## When to Use
 
-Use `/react-build` when:
+Use `react-build` procedure when:
 
 - `npm run build` (or pnpm/yarn/bun equivalent) fails
 - JSX/TSX compile errors after a TypeScript or React upgrade
@@ -27,7 +27,7 @@ Use `/react-build` when:
 
 ## Scope
 
-This command owns **React build/bundler/runtime hydration** failures. For pure TypeScript type errors with no React involvement, use `/build-fix` (generic) instead.
+This command owns **React build/bundler/runtime hydration** failures. For pure TypeScript type errors with no React involvement, use `build-fix` procedure (generic) instead.
 
 ## Diagnostic Commands Run
 
@@ -175,13 +175,17 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `/react-test` — run tests after the build is green
-- `/react-review` — review code quality after the build succeeds
-- `/build-fix` — generic build fixer (non-React)
+- `react-test` procedure — run tests after the build is green
+- `react-review` procedure — review code quality after the build succeeds
+- `build-fix` procedure — generic build fixer (non-React)
 - `verification-loop` skill — full verification loop
 
 ## Related
 
-- Agent: `agents/react-build-resolver.md`
-- Skills: `skills/react-patterns/`, `skills/frontend-patterns/`
-- Rules: `rules/react/coding-style.md`, `rules/react/patterns.md`
+- Agent: `$PLUGIN/library/roles/react-build-resolver.md`
+- Skills: `$PLUGIN/library/skills/react-patterns/`, `$PLUGIN/library/skills/frontend-patterns/`
+- Rules: `$PLUGIN/library/rules/react/coding-style.md`, `$PLUGIN/library/rules/react/patterns.md`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

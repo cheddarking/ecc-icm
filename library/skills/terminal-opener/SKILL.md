@@ -20,7 +20,7 @@ Pass launcher options before `--`, then pass exactly one executable followed by
 its argument array:
 
 ```bash
-node skills/terminal-opener/scripts/open-terminal.js \
+node $PLUGIN/library/skills/terminal-opener/scripts/open-terminal.js \
   --launch \
   --cwd /absolute/host/path \
   -- ssh -t example.test command-with-arguments

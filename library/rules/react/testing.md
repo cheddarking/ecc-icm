@@ -205,4 +205,4 @@ For those, use Playwright Component Testing or end-to-end Playwright/Cypress run
 
 ## Skill Reference
 
-See `skills/react-testing/SKILL.md` for end-to-end test examples, MSW patterns, and accessibility test scaffolding.
+See `$PLUGIN/library/skills/react-testing/SKILL.md` for end-to-end test examples, MSW patterns, and accessibility test scaffolding.

@@ -7,7 +7,7 @@ description: Break an epic into task children without creating task branches.
 Reconcile the task breakdown for one epic issue.
 
 ```bash
-node scripts/github-coordination.js decompose <issue-number> --repo <owner/repo>
+node $PLUGIN/library/scripts/github-coordination.js decompose <issue-number> --repo <owner/repo>
 ```
 
 What this does:
@@ -19,5 +19,9 @@ What this does:
 
 Compatibility aliases:
 
-- `/plan`
-- `/prp-plan`
+- `plan` procedure
+- `prp-plan` procedure
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

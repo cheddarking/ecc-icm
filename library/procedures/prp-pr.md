@@ -29,7 +29,7 @@ git log origin/<base>..HEAD --oneline
 | Check | Condition | Action if Failed |
 |---|---|---|
 | Not on base branch | Current branch ≠ base | Stop: "Switch to a feature branch first." |
-| Clean working directory | No uncommitted changes | Warn: "You have uncommitted changes. Commit or stash first. Use `/prp-commit` to commit." |
+| Clean working directory | No uncommitted changes | Warn: "You have uncommitted changes. Commit or stash first. Use `prp-commit` procedure to commit." |
 | Has commits ahead | `git log origin/<base>..HEAD` not empty | Stop: "No commits ahead of `<base>`. Nothing to PR." |
 | No existing PR | `gh pr list --head <branch> --json number` is empty | Stop: "PR already exists: #<number>. Use `gh pr view <number> --web` to open it." |
 
@@ -182,3 +182,7 @@ Next steps:
 - **Force push needed**: If remote has diverged and rebase was done, use `git push --force-with-lease` (never `--force`).
 - **Multiple PR templates**: If `.github/PULL_REQUEST_TEMPLATE/` has multiple files, list them and ask user to choose.
 - **Large PR (>20 files)**: Warn about PR size. Suggest splitting if changes are logically separable.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

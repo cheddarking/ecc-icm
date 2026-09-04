@@ -104,9 +104,13 @@ Next steps:
 
 | You say | What happens |
 |---|---|
-| `/prp-commit` | Stages all, auto-generates message |
-| `/prp-commit staged` | Commits only what's already staged |
-| `/prp-commit *.ts` | Stages all TypeScript files, commits |
-| `/prp-commit except tests` | Stages everything except test files |
-| `/prp-commit the database migration` | Finds DB migration files from status, stages them |
-| `/prp-commit only new files` | Stages untracked files only |
+| `prp-commit` procedure | Stages all, auto-generates message |
+| `prp-commit` procedure (`staged`) | Commits only what's already staged |
+| `prp-commit` procedure (`*.ts`) | Stages all TypeScript files, commits |
+| `prp-commit` procedure (`except tests`) | Stages everything except test files |
+| `prp-commit` procedure (`the database migration`) | Finds DB migration files from status, stages them |
+| `prp-commit` procedure (`only new files`) | Stages untracked files only |
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

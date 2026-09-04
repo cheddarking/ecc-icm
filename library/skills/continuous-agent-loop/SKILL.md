@@ -27,7 +27,7 @@ Start
 
 Recommended production stack:
 1. RFC decomposition (`ralphinho-rfc-pipeline`)
-2. quality gates (`plankton-code-quality` + `/quality-gate`)
+2. quality gates (`plankton-code-quality` + `quality-gate` procedure)
 3. eval loop (`eval-harness`)
 4. session persistence (`nanoclaw-repl`)
 
@@ -41,6 +41,10 @@ Recommended production stack:
 ## Recovery
 
 - freeze loop
-- run `/harness-audit`
+- run `harness-audit` procedure
 - reduce scope to failing unit
 - replay with explicit acceptance criteria
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

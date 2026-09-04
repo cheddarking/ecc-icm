@@ -37,9 +37,9 @@ Use these files as the canonical map:
 - `commands/` for maintained slash-command shims
 - `skills/*/SKILL.md` for reusable skill workflows
 - `agents/*.md` for delegated agent roles
-- `hooks/README.md` and `hooks/hooks.json` for hook behavior
+- `hooks/README.md` and `$PLUGIN/library/hooks/hooks.json` for hook behavior
 - `manifests/install-*.json` for selective install modules, components, and profiles
-- `scripts/ci/catalog.js --json` for live catalog counts when running inside ECC
+- `$PLUGIN/library/scripts/ci/catalog.js --json` for live catalog counts when running inside ECC
 
 ## Response Patterns
 
@@ -86,8 +86,12 @@ For a specific feature name:
 
 ## Related Commands
 
-- `/project-init` for stack-aware ECC onboarding of a target project
-- `/harness-audit` for deterministic repo readiness scoring
-- `/skill-health` for skill quality checks
-- `/skill-create` for extracting a new skill from local git history
-- `/security-scan` for Claude/OpenCode configuration security review
+- `project-init` procedure for stack-aware ECC onboarding of a target project
+- `harness-audit` procedure for deterministic repo readiness scoring
+- `skill-health` procedure for skill quality checks
+- `skill-create` procedure for extracting a new skill from local git history
+- `security-scan` procedure for Claude/OpenCode configuration security review
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

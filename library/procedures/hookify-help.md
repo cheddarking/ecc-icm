@@ -34,9 +34,9 @@ Supports multiple lines.
 
 ### Commands
 
-- `/hookify [description]` creates new rules and auto-analyzes the conversation when no description is given
-- `/hookify-list` lists configured rules
-- `/hookify-configure` toggles rules on or off
+- `hookify` procedure (`[description]`) creates new rules and auto-analyzes the conversation when no description is given
+- `hookify-list` procedure lists configured rules
+- `hookify-configure` procedure toggles rules on or off
 
 ### Pattern Tips
 
@@ -44,3 +44,7 @@ Supports multiple lines.
 - for `bash`, match against the full command string
 - for `file`, match against the file path
 - test patterns before deploying
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

@@ -176,5 +176,9 @@ Production builds should ship without source maps, or with sourcemaps uploaded t
 
 ## Agent Support
 
-- Use `security-reviewer` agent for comprehensive security audits across the codebase
-- Use `react-reviewer` agent for React-specific patterns and the above rules in active code review
+- Use `security-reviewer` role for comprehensive security audits across the codebase
+- Use `react-reviewer` role for React-specific patterns and the above rules in active code review
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

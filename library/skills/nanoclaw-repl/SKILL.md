@@ -7,7 +7,7 @@ metadata:
 
 # NanoClaw REPL
 
-Use this skill when running or extending `scripts/claw.js`.
+Use this skill when running or extending `$PLUGIN/library/scripts/claw.js`.
 
 ## Capabilities
 

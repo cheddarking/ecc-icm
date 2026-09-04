@@ -10,7 +10,7 @@ Run AgentShield against the current project or a target path, then turn the find
 
 ## Usage
 
-`/security-scan [path] [--format text|json|markdown|html] [--min-severity low|medium|high|critical] [--fix]`
+`security-scan` procedure (`[path] [--format text|json|markdown|html] [--min-severity low|medium|high|critical] [--fix]`)
 
 - `path` (optional): defaults to the current project. Use a `.claude/` path, a repo root, or a checked-in template directory.
 - `--format`: output format. Use `json` for CI, `markdown` for handoffs, and `html` for standalone review reports.
@@ -81,8 +81,8 @@ Use AgentShield in GitHub Actions for enforced gates:
 
 ## Links
 
-- Skill: `skills/security-scan/SKILL.md`
-- Agent: `agents/security-reviewer.md`
+- Skill: `$PLUGIN/library/skills/security-scan/SKILL.md`
+- Agent: `$PLUGIN/library/roles/security-reviewer.md`
 - Scanner: <https://github.com/affaan-m/agentshield>
 
 ## Arguments
@@ -90,3 +90,7 @@ Use AgentShield in GitHub Actions for enforced gates:
 $ARGUMENTS:
 - optional target path
 - optional AgentShield flags
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

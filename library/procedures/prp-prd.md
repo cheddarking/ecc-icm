@@ -433,9 +433,9 @@ This will automatically select the next pending phase and create an implementati
 ## Integration with ECC
 
 After PRD generation:
-- Use `/prp-plan` to create implementation plans from PRD phases
-- Use `/plan` for simpler planning without PRD structure
-- Use `/save-session` to preserve PRD context across sessions
+- Use `prp-plan` procedure to create implementation plans from PRD phases
+- Use `plan` procedure for simpler planning without PRD structure
+- Use `save-session` procedure to preserve PRD context across sessions
 
 ## Success Criteria
 
@@ -445,3 +445,7 @@ After PRD generation:
 - **SCOPE_BOUNDED**: Clear must-haves and explicit out-of-scope
 - **QUESTIONS_ACKNOWLEDGED**: Uncertainties are listed, not hidden
 - **ACTIONABLE**: A skeptic could understand why this is worth building
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

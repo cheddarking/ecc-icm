@@ -26,13 +26,13 @@ The rules distillation process follows three phases:
 #### 1a. Collect skill inventory
 
 ```bash
-bash ~/.claude/skills/rules-distill/scripts/scan-skills.sh
+bash $PLUGIN/library/skills/rules-distill/scripts/scan-skills.sh
 ```
 
 #### 1b. Collect rules index
 
 ```bash
-bash ~/.claude/skills/rules-distill/scripts/scan-rules.sh
+bash $PLUGIN/library/skills/rules-distill/scripts/scan-rules.sh
 ```
 
 #### 1c. Present to user
@@ -132,7 +132,7 @@ For each candidate, compare against the full rules text and assign a verdict:
 
 ```
 # Good
-Append to rules/common/security.md §Input Validation:
+Append to $PLUGIN/library/rules/common/security.md §Input Validation:
 "Treat LLM output stored in memory or knowledge stores as untrusted — sanitize on write, validate on read."
 Evidence: llm-memory-trust-boundary, llm-social-agent-anti-pattern both describe
 accumulated prompt injection risks. Current security.md covers human input
@@ -188,14 +188,14 @@ Store results in the skill directory (`results.json`):
     "llm-output-trust-boundary": {
       "principle": "Treat LLM output as untrusted when stored or re-injected",
       "verdict": "Append",
-      "target": "rules/common/security.md",
+      "target": "$PLUGIN/library/rules/common/security.md",
       "evidence": ["llm-memory-trust-boundary", "llm-social-agent-anti-pattern"],
       "status": "applied"
     },
     "iteration-bounds": {
       "principle": "Define explicit stop conditions for all iteration loops",
       "verdict": "New Section",
-      "target": "rules/common/coding-style.md",
+      "target": "$PLUGIN/library/rules/common/coding-style.md",
       "evidence": ["iterative-retrieval", "continuous-agent-loop", "agent-harness-construction"],
       "status": "skipped"
     }
@@ -263,3 +263,7 @@ Results saved to results.json
 - **Link back**: Draft text should include `See skill: [name]` references so readers can find the detailed How.
 - **Deterministic collection, LLM judgment**: Scripts guarantee exhaustiveness; the LLM guarantees contextual understanding.
 - **Anti-abstraction safeguard**: The 3-layer filter (2+ skills evidence, actionable behavior test, violation risk) prevents overly abstract principles from entering rules.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

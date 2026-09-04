@@ -4,7 +4,7 @@ description: Comprehensive Kotlin code review for idiomatic patterns, null safet
 
 # Kotlin Code Review
 
-This command invokes the **kotlin-reviewer** agent for comprehensive Kotlin-specific code review.
+This command invokes the **kotlin-reviewer** role for comprehensive Kotlin-specific code review.
 
 ## What This Command Does
 
@@ -17,7 +17,7 @@ This command invokes the **kotlin-reviewer** agent for comprehensive Kotlin-spec
 
 ## When to Use
 
-Use `/kotlin-review` when:
+Use `kotlin-review` procedure when:
 - After writing or modifying Kotlin code
 - Before committing Kotlin changes
 - Reviewing pull requests with Kotlin code
@@ -129,12 +129,16 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 
 ## Integration with Other Commands
 
-- Use `/kotlin-test` first to ensure tests pass
-- Use `/kotlin-build` if build errors occur
-- Use `/kotlin-review` before committing
-- Use `/code-review` for non-Kotlin-specific concerns
+- Use `kotlin-test` procedure first to ensure tests pass
+- Use `kotlin-build` procedure if build errors occur
+- Use `kotlin-review` procedure before committing
+- Use `code-review` procedure for non-Kotlin-specific concerns
 
 ## Related
 
-- Agent: `agents/kotlin-reviewer.md`
-- Skills: `skills/kotlin-patterns/`, `skills/kotlin-testing/`
+- Agent: `$PLUGIN/library/roles/kotlin-reviewer.md`
+- Skills: `$PLUGIN/library/skills/kotlin-patterns/`, `$PLUGIN/library/skills/kotlin-testing/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

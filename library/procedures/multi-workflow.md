@@ -112,7 +112,7 @@ TaskOutput({ task_id: "<task_id>", block: true, timeout: 600000 })
 Use external tmux/worktree orchestration when the work must be split across parallel workers that need isolated git state, independent terminals, or separate build/test execution. Use in-process subagents for lightweight analysis, planning, or review where the main session remains the only writer.
 
 ```bash
-node scripts/orchestrate-worktrees.js .claude/plan/workflow-e2e-test.json --execute
+node $PLUGIN/library/scripts/orchestrate-worktrees.js .claude/plan/workflow-e2e-test.json --execute
 ```
 
 ---
@@ -195,3 +195,7 @@ Wait for results with `TaskOutput`. Integrate review feedback, execute optimizat
 1. Phase sequence cannot be skipped (unless user explicitly instructs)
 2. External models have **zero filesystem write access**, all modifications by Claude
 3. **Force stop** when score < 7 or user does not approve
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

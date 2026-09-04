@@ -25,7 +25,7 @@ command -v ecc-memory-mcp
 ```
 
 A repository checkout may instead run the CLI as
-`node scripts/ecc.js memory ...`, but MCP configurations that name
+`node $PLUGIN/library/scripts/ecc.js memory ...`, but MCP configurations that name
 `ecc-memory-mcp` still require that binary on `PATH`.
 
 ## When To Use
@@ -145,7 +145,7 @@ Repair reported files manually. The doctor does not delete or rewrite memory.
 
 The stdio server is optional and is not enabled by ECC's default `.mcp.json`.
 After installing ECC, copy the `ecc-memory-vault` entry from
-`mcp-configs/mcp-servers.json` into each harness where tool access is useful.
+`$PLUGIN/library/mcp-configs/mcp-servers.json` into each harness where tool access is useful.
 Replace its placeholder with a lowercase server identity. The server command
 is:
 
@@ -168,3 +168,7 @@ It exposes only:
 
 The MCP surface deliberately has no review, promotion, overwrite, transcript
 import, or shell-execution tool.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

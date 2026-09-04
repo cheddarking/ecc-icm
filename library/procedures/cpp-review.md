@@ -4,7 +4,7 @@ description: Comprehensive C++ code review for memory safety, modern C++ idioms,
 
 # C++ Code Review
 
-This command invokes the **cpp-reviewer** agent for comprehensive C++-specific code review.
+This command invokes the **cpp-reviewer** role for comprehensive C++-specific code review.
 
 ## What This Command Does
 
@@ -17,7 +17,7 @@ This command invokes the **cpp-reviewer** agent for comprehensive C++-specific c
 
 ## When to Use
 
-Use `/cpp-review` when:
+Use `cpp-review` procedure when:
 - After writing or modifying C++ code
 - Before committing C++ changes
 - Reviewing pull requests with C++ code
@@ -121,12 +121,16 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 
 ## Integration with Other Commands
 
-- Use `/cpp-test` first to ensure tests pass
-- Use `/cpp-build` if build errors occur
-- Use `/cpp-review` before committing
-- Use `/code-review` for non-C++ specific concerns
+- Use `cpp-test` procedure first to ensure tests pass
+- Use `cpp-build` procedure if build errors occur
+- Use `cpp-review` procedure before committing
+- Use `code-review` procedure for non-C++ specific concerns
 
 ## Related
 
-- Agent: `agents/cpp-reviewer.md`
-- Skills: `skills/cpp-coding-standards/`, `skills/cpp-testing/`
+- Agent: `$PLUGIN/library/roles/cpp-reviewer.md`
+- Skills: `$PLUGIN/library/skills/cpp-coding-standards/`, `$PLUGIN/library/skills/cpp-testing/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -4,7 +4,7 @@ description: Review Flutter/Dart code for idiomatic patterns, widget best practi
 
 # Flutter Code Review
 
-This command invokes the **flutter-reviewer** agent to review Flutter/Dart code changes.
+This command invokes the **flutter-reviewer** role to review Flutter/Dart code changes.
 
 ## What This Command Does
 
@@ -16,15 +16,15 @@ This command invokes the **flutter-reviewer** agent to review Flutter/Dart code 
 
 ## Prerequisites
 
-Before running `/flutter-review`, ensure:
-1. **Build passes** — run `/flutter-build` first; a review on broken code is incomplete
-2. **Tests pass** — run `/flutter-test` to confirm no regressions
+Before running `flutter-review` procedure, ensure:
+1. **Build passes** — run `flutter-build` procedure first; a review on broken code is incomplete
+2. **Tests pass** — run `flutter-test` procedure to confirm no regressions
 3. **No merge conflicts** — resolve all conflicts so the diff reflects only intentional changes
 4. **`flutter analyze` is clean** — fix analyzer warnings before review
 
 ## When to Use
 
-Use `/flutter-review` when:
+Use `flutter-review` procedure when:
 - Before submitting a PR with Flutter/Dart changes (after build and tests pass)
 - After implementing a new feature to catch issues early
 - When reviewing someone else's Flutter code
@@ -50,7 +50,7 @@ Use `/flutter-review` when:
 ## Example Session
 
 ````text
-User: /flutter-review
+User: `flutter-review` procedure
 
 Agent:
 # Flutter Code Review
@@ -105,12 +105,16 @@ Verdict: BLOCK — HIGH issues must be fixed before merge.
 
 ## Related Commands
 
-- `/flutter-build` — Fix build errors first
-- `/flutter-test` — Run tests before reviewing
-- `/code-review` — General code review (language-agnostic)
+- `flutter-build` procedure — Fix build errors first
+- `flutter-test` procedure — Run tests before reviewing
+- `code-review` procedure — General code review (language-agnostic)
 
 ## Related
 
-- Agent: `agents/flutter-reviewer.md`
-- Skill: `skills/flutter-dart-code-review/`
-- Rules: `rules/dart/`
+- Agent: `$PLUGIN/library/roles/flutter-reviewer.md`
+- Skill: `$PLUGIN/library/skills/flutter-dart-code-review/`
+- Rules: `$PLUGIN/library/rules/dart/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -49,4 +49,8 @@ test('calls onSelect with the user id when pressed', () => {
 
 ## What to test first
 
-Use the `tdd-guide` agent proactively for new features: write a failing test that captures the behavior, then implement.
+Use the `tdd-guide` role proactively for new features: write a failing test that captures the behavior, then implement.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

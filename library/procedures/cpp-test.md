@@ -17,7 +17,7 @@ This command enforces test-driven development methodology for C++ code using Goo
 
 ## When to Use
 
-Use `/cpp-test` when:
+Use `cpp-test` procedure when:
 - Implementing new C++ functions or classes
 - Adding test coverage to existing code
 - Fixing bugs (write failing test first)
@@ -241,11 +241,15 @@ genhtml coverage.info --output-directory coverage_html
 
 ## Related Commands
 
-- `/cpp-build` - Fix build errors
-- `/cpp-review` - Review code after implementation
+- `cpp-build` procedure - Fix build errors
+- `cpp-review` procedure - Review code after implementation
 - `verification-loop` skill - Run full verification loop
 
 ## Related
 
-- Skill: `skills/cpp-testing/`
-- Skill: `skills/tdd-workflow/`
+- Skill: `$PLUGIN/library/skills/cpp-testing/`
+- Skill: `$PLUGIN/library/skills/tdd-workflow/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

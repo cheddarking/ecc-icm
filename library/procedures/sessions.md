@@ -8,7 +8,7 @@ Manage Claude Code session history - list, load, alias, and edit sessions stored
 
 ## Usage
 
-`/sessions [list|load|alias|info|help] [options]`
+`sessions` procedure (`[list|load|alias|info|help] [options]`)
 
 ## Actions
 
@@ -16,7 +16,7 @@ Manage Claude Code session history - list, load, alias, and edit sessions stored
 
 Display all sessions with metadata, filtering, and pagination.
 
-Use `/sessions info` when you need operator-surface context for a swarm: branch, worktree path, and session recency.
+Use `sessions` procedure (`info`) when you need operator-surface context for a swarm: branch, worktree path, and session recency.
 
 ```bash
 /sessions                              # List all sessions (default)
@@ -291,8 +291,8 @@ if (aliases.length === 0) {
 
 ## Operator Notes
 
-- Session files persist `Project`, `Branch`, and `Worktree` in the header so `/sessions info` can disambiguate parallel tmux/worktree runs.
-- For command-center style monitoring, combine `/sessions info`, `git diff --stat`, and the cost metrics emitted by `scripts/hooks/cost-tracker.js`.
+- Session files persist `Project`, `Branch`, and `Worktree` in the header so `sessions` procedure (`info`) can disambiguate parallel tmux/worktree runs.
+- For command-center style monitoring, combine `sessions` procedure (`info`), `git diff --stat`, and the cost metrics emitted by `$PLUGIN/library/scripts/hooks/cost-tracker.js`.
 
 ## Arguments
 
@@ -337,3 +337,7 @@ $ARGUMENTS:
 - Aliases are stored in `~/.claude/session-aliases.json`
 - Session IDs can be shortened (first 4-8 characters usually unique enough)
 - Use aliases for frequently referenced sessions
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

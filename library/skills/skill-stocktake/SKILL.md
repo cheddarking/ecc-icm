@@ -38,28 +38,28 @@ If the project has no `.claude/skills/` directory, only global skills and comman
 | Quick Scan | `results.json` exists (default) | 5–10 min |
 | Full Stocktake | `results.json` absent, or `/skill-stocktake full` | 20–30 min |
 
-**Results cache:** `~/.claude/skills/skill-stocktake/results.json`
+**Results cache:** `$PLUGIN/library/skills/skill-stocktake/results.json`
 
 ## Quick Scan Flow
 
 Re-evaluate only skills that have changed since the last run (5–10 min).
 
-1. Read `~/.claude/skills/skill-stocktake/results.json`
-2. Run: `bash ~/.claude/skills/skill-stocktake/scripts/quick-diff.sh \
-         ~/.claude/skills/skill-stocktake/results.json`
+1. Read `$PLUGIN/library/skills/skill-stocktake/results.json`
+2. Run: `bash $PLUGIN/library/skills/skill-stocktake/scripts/quick-diff.sh \
+         $PLUGIN/library/skills/skill-stocktake/results.json`
    (Project dir is auto-detected from `$PWD/.claude/skills`; pass it explicitly only if needed)
 3. If output is `[]`: report "No changes since last run." and stop
 4. Re-evaluate only those changed files using the same Phase 2 criteria
 5. Carry forward unchanged skills from previous results
 6. Output only the diff
-7. Run: `bash ~/.claude/skills/skill-stocktake/scripts/save-results.sh \
-         ~/.claude/skills/skill-stocktake/results.json <<< "$EVAL_RESULTS"`
+7. Run: `bash $PLUGIN/library/skills/skill-stocktake/scripts/save-results.sh \
+         $PLUGIN/library/skills/skill-stocktake/results.json <<< "$EVAL_RESULTS"`
 
 ## Full Stocktake Flow
 
 ### Phase 1 — Inventory
 
-Run: `bash ~/.claude/skills/skill-stocktake/scripts/scan.sh`
+Run: `bash $PLUGIN/library/skills/skill-stocktake/scripts/scan.sh`
 
 The script enumerates skill files, extracts frontmatter, and collects UTC mtimes.
 Project dir is auto-detected from `$PWD/.claude/skills`; pass it explicitly only if needed.
@@ -142,7 +142,7 @@ Evaluation is **holistic AI judgment** — not a numeric rubric. Guiding dimensi
   - Good: `"276 lines; Section 'Framework Comparison' (L80–140) duplicates ai-era-architecture-principles; delete it to reach ~150 lines."`
 - For **Keep** (mtime-only change in Quick Scan): restate the original verdict rationale, do not write "unchanged"
   - Bad: `"Unchanged"`
-  - Good: `"mtime updated but content unchanged. Unique Python reference explicitly imported by rules/python/; no overlap found."`
+  - Good: `"mtime updated but content unchanged. Unique Python reference explicitly imported by $PLUGIN/library/rules/python/; no overlap found."`
 
 ### Phase 3 — Summary Table
 
@@ -163,7 +163,7 @@ Evaluation is **holistic AI judgment** — not a numeric rubric. Guiding dimensi
 
 ## Results File Schema
 
-`~/.claude/skills/skill-stocktake/results.json`:
+`$PLUGIN/library/skills/skill-stocktake/results.json`:
 
 **`evaluated_at`**: Must be set to the actual UTC time of evaluation completion.
 Obtain via Bash: `date -u +%Y-%m-%dT%H:%M:%SZ`. Never use a date-only approximation like `T00:00:00Z`.
@@ -193,3 +193,7 @@ Obtain via Bash: `date -u +%Y-%m-%dT%H:%M:%SZ`. Never use a date-only approximat
 - Evaluation is blind: the same checklist applies to all skills regardless of origin (ECC, self-authored, auto-extracted)
 - Archive / delete operations always require explicit user confirmation
 - No verdict branching by skill origin
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

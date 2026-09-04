@@ -16,9 +16,9 @@ This command runs the Flutter test suite and reports results. When failures occu
 
 ## When to Use
 
-Use `/flutter-test` when:
+Use `flutter-test` procedure when:
 - After implementing a feature to verify nothing broke
-- After running `/flutter-build` to ensure tests pass
+- After running `flutter-build` procedure to ensure tests pass
 - To check test coverage on new code
 - When a specific test file is failing
 - Before submitting a PR
@@ -132,13 +132,17 @@ Test Status: PASS ✓
 
 ## Related Commands
 
-- `/flutter-build` — Fix build errors before running tests
-- `/flutter-review` — Review code after tests pass
+- `flutter-build` procedure — Fix build errors before running tests
+- `flutter-review` procedure — Review code after tests pass
 - `tdd-workflow` skill — Test-driven development workflow
 
 ## Related
 
-- Agent: `agents/flutter-reviewer.md`
-- Agent: `agents/dart-build-resolver.md`
-- Skill: `skills/flutter-dart-code-review/`
-- Rules: `rules/dart/testing.md`
+- Agent: `$PLUGIN/library/roles/flutter-reviewer.md`
+- Agent: `$PLUGIN/library/roles/dart-build-resolver.md`
+- Skill: `$PLUGIN/library/skills/flutter-dart-code-review/`
+- Rules: `$PLUGIN/library/rules/dart/testing.md`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

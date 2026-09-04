@@ -15,10 +15,14 @@ workspaces/
   security/              scope, scan, triage, remediate (GATE), report
   harness-ops/           audit, tune (GATE), apply, learn
   workspace-builder/     builds a new workspace for any domain (ported from ICM)
-library/                 ECC's 286 skills, 21 language rule sets, 68 roles, 94 procedures; unregistered
-scripts/icm/             new, run, status, verify, validate-workspace, context-budget, hooks
+library/                 a mirror of ECC at one commit, unregistered: skills, rules, roles (from agents),
+                         procedures (from commands), scripts, hooks, mcp-configs, contexts, docs (English),
+                         the Codex skill mirror, the writing guides; ECC-MAPPING.md says how each maps here
+scripts/icm/             new, run, status, verify, validate-workspace, context-budget, hooks, sync-library
 _core/                   ICM conventions and templates, plus the ECC-ICM adaptations
 ```
+
+The library is rebuilt from an ECC checkout with `scripts/icm/sync-library.sh <ecc-checkout>`. Skills, roles, procedures, rules and guides are then adapted by `scripts/icm/adapt-library.js`: `/command` mentions become procedures, `<name> agent` becomes a role, ECC paths point into `library/`, and each adapted file ends with a short "ECC-ICM notes" paragraph. Docs, the Codex mirror and ECC's root markdown stay pristine. `library/_meta/adaptation-report.json` lists every rewrite.
 
 Static context this plugin adds per turn: about 1,400 tokens (run `npm run budget`). The same measurement over ECC's `developer` profile is about 30,000.
 
@@ -70,7 +74,7 @@ npm run budget         # static context estimate for this plugin
 claude plugin validate .
 ```
 
-Regenerate the library indexes after syncing from ECC: `npm run library:roles -- <ecc-root> library/roles` then `npm run library:index`.
+Resync the whole library from an ECC checkout: `scripts/icm/sync-library.sh <ecc-root>` (mirror, convert roles, adapt references, regenerate indexes). Local edits inside `library/` are lost on sync by design.
 
 ## Provenance
 

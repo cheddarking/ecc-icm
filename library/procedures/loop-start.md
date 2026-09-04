@@ -8,7 +8,7 @@ Start a managed autonomous loop pattern with safety defaults.
 
 ## Usage
 
-`/loop-start [pattern] [--mode safe|fast]`
+`loop-start` procedure (`[pattern] [--mode safe|fast]`)
 
 - `pattern`: `sequential`, `continuous-pr`, `rfc-dag`, `infinite`
 - `--mode`:
@@ -34,3 +34,7 @@ Start a managed autonomous loop pattern with safety defaults.
 $ARGUMENTS:
 - `<pattern>` optional (`sequential|continuous-pr|rfc-dag|infinite`)
 - `--mode safe|fast` optional
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

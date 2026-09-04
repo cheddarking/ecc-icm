@@ -8,7 +8,7 @@ Create or verify a checkpoint in your workflow.
 
 ## Usage
 
-`/checkpoint [create|verify|list] [name]`
+`checkpoint` procedure (`[create|verify|list] [name]`)
 
 ## Create Checkpoint
 
@@ -76,3 +76,7 @@ $ARGUMENTS:
 - `verify <name>` - Verify against named checkpoint
 - `list` - Show all checkpoints
 - `clear` - Remove old checkpoints (keeps last 5)
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

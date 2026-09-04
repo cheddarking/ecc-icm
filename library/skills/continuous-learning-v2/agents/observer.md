@@ -121,7 +121,7 @@ Validate and sanitize all user input before processing.
 
 When creating instincts, determine scope based on these heuristics:
 
-> **Scope Decision Guide** – See the canonical table under the "Scope Decision Guide" heading in `skills/continuous-learning-v2/SKILL.md`.
+> **Scope Decision Guide** – See the canonical table under the "Scope Decision Guide" heading in `$PLUGIN/library/skills/continuous-learning-v2/SKILL.md`.
 
 **When in doubt, default to `scope: project`** — it's safer to be project-specific and promote later than to contaminate the global space.
 
@@ -145,7 +145,7 @@ An instinct should be promoted from project-scoped to global when:
 2. Average confidence across instances is **>= 0.8**
 3. The domain is in the global-friendly list (security, general-best-practices, workflow)
 
-Promotion is handled by the `instinct-cli.py promote` command or the `/evolve` analysis.
+Promotion is handled by the `instinct-cli.py promote` command or the `evolve` procedure analysis.
 
 ## Important Guidelines
 
@@ -187,3 +187,7 @@ When instincts are imported from Skill Creator (repo analysis), they have:
 - `scope: "project"` (since they come from a specific repo)
 
 These should be treated as team/project conventions with higher initial confidence (0.7+).
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

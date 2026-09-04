@@ -93,7 +93,7 @@ Triggers on: `rm -rf`, `git reset --hard`, `git push --force`, `drop table`, etc
 
 ### Option A: Use the ECC hook (zero install)
 
-The hook at `scripts/hooks/gateguard-fact-force.js` is included in this plugin. Enable it via hooks.json.
+The hook at `$PLUGIN/library/scripts/hooks/gateguard-fact-force.js` is included in this plugin. Enable it via hooks.json.
 
 If GateGuard blocks setup or repair work, start the session with
 `ECC_GATEGUARD=off`. For hook-level control, keep using
@@ -180,3 +180,7 @@ This adds `.gateguard.yml` for per-project configuration (custom messages, ignor
 
 - `safety-guard` — Runtime safety checks (complementary, not overlapping)
 - `code-reviewer` — Post-edit review (GateGuard is pre-edit investigation)
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

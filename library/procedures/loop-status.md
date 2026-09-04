@@ -20,7 +20,7 @@ tool calls that have no matching `tool_result`.
 
 ## Usage
 
-`/loop-status [--watch]`
+`loop-status` procedure (`[--watch]`)
 
 ## What to Report
 
@@ -62,7 +62,7 @@ consume the stream.
 ## Snapshot Files
 
 Use `--write-dir <dir>` when a separate process needs to inspect loop state
-without waiting for the current Claude session to dequeue `/loop-status`. The
+without waiting for the current Claude session to dequeue `loop-status` procedure. The
 CLI writes:
 
 - `index.json` with one row per inspected session.
@@ -75,3 +75,7 @@ timeout Claude Code runtime tool calls.
 
 $ARGUMENTS:
 - `--watch` optional
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

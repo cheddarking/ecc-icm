@@ -31,7 +31,7 @@ Ask a question mid-task and get an immediate, focused answer — then continue r
 
 Before answering anything, mentally note:
 - What is the active task? (what file, feature, or problem was being worked on)
-- What step was in progress at the moment `/aside` was invoked?
+- What step was in progress at the moment `aside` procedure was invoked?
 - What was about to happen next?
 
 Do NOT touch, edit, create, or delete any files during the aside.
@@ -63,7 +63,7 @@ After delivering the answer, immediately continue the active task from the exact
 
 ## Edge Cases
 
-**No question provided (`/aside` with nothing after it):**
+**No question provided (`aside` procedure with nothing after it):**
 Respond:
 ```
 ASIDE: no question provided
@@ -83,7 +83,7 @@ WARNING: Note: This answer suggests [issue] with the current approach. Want to a
 Wait for the user's decision before resuming.
 
 **Question is actually a task redirect (not a side question):**
-If the question implies changing what is being built (e.g., `/aside actually, let's use Redis instead`), clarify:
+If the question implies changing what is being built (e.g., `aside` procedure (`actually, let's use Redis instead`)), clarify:
 ```
 ASIDE: That sounds like a direction change, not just a side question.
 Do you want to:
@@ -95,7 +95,7 @@ Wait for the user's answer — do not make assumptions.
 **Question is about the currently open file or code:**
 Answer from the live context. If the file was read earlier in the session, reference it directly. If not, read it now (read-only) and answer with a file:line reference.
 
-**No active task (nothing in progress when `/aside` is invoked):**
+**No active task (nothing in progress when `aside` procedure is invoked):**
 Still use the standard wrapper so the response shape stays consistent:
 ```
 ASIDE: [restate the question briefly]
@@ -111,7 +111,7 @@ Give the essential answer concisely, then offer:
 That's the short version. Want a deeper explanation after we finish [current task]?
 ```
 
-**Multiple `/aside` questions in a row:**
+**Multiple `aside` procedure questions in a row:**
 Answer each one in sequence. After the last answer, resume the main task. Do not lose task state across a chain of asides.
 
 **Aside answer implies a code change is needed:**
@@ -162,3 +162,7 @@ WARNING: Note: This could affect the feature we're building. Want to address thi
 - Keep answers focused: the goal is to unblock the user quickly, not to deliver a lecture
 - If an aside sparks a larger discussion, finish the current task first unless the aside reveals a blocker
 - Asides are not saved to session files unless explicitly relevant to the task outcome
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

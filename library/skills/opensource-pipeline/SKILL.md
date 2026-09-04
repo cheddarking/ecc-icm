@@ -56,7 +56,7 @@ mkdir -p $HOME/opensource-staging/
 
 #### Step 3: Run Forker Agent
 
-Spawn the `opensource-forker` agent:
+Spawn the `opensource-forker` role:
 
 ```
 Agent(
@@ -84,7 +84,7 @@ Wait for completion. Read `{STAGING_PATH}/FORK_REPORT.md`.
 
 #### Step 4: Run Sanitizer Agent
 
-Spawn the `opensource-sanitizer` agent:
+Spawn the `opensource-sanitizer` role:
 
 ```
 Agent(
@@ -119,7 +119,7 @@ Wait for completion. Read `{STAGING_PATH}/SANITIZATION_REPORT.md`.
 
 #### Step 5: Run Packager Agent
 
-Spawn the `opensource-packager` agent:
+Spawn the `opensource-packager` role:
 
 ```
 Agent(
@@ -254,3 +254,7 @@ $HOME/opensource-staging/
 ## Related Skills
 
 See `security-review` for secret detection patterns used by the sanitizer.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

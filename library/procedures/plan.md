@@ -7,7 +7,7 @@ argument-hint: "[feature description | path/to/*.prd.md]"
 
 This command creates a comprehensive implementation plan before writing any code. It accepts either free-form requirements or a PRD markdown file.
 
-Run inline by default. Do not call the Task tool or any subagent by default. This keeps `/plan` usable from plugin installs that ship commands without agent files.
+Run inline by default. Do not call the Task tool or any subagent by default. This keeps `plan` procedure usable from plugin installs that ship commands without agent files.
 
 ## What This Command Does
 
@@ -18,7 +18,7 @@ Run inline by default. Do not call the Task tool or any subagent by default. Thi
 
 ## When to Use
 
-Use `/plan` when:
+Use `plan` procedure when:
 - Starting a new feature
 - Making significant architectural changes
 - Working on complex refactoring
@@ -119,7 +119,7 @@ After writing the artifact, report its path and WAIT for confirmation before wri
 ## Example Usage
 
 ```
-User: /plan I need to add real-time notifications when markets resolve
+User: `plan` procedure I need to add real-time notifications when markets resolve
 
 Assistant:
 # Implementation Plan: Real-Time Market Resolution Notifications
@@ -186,21 +186,25 @@ If you want changes, respond with:
 ## Integration with Other Commands
 
 After planning:
-- Use `/plan-canvas` to run the confirmation gate visually in the browser (annotate + approve)
+- Use `plan-canvas` procedure to run the confirmation gate visually in the browser (annotate + approve)
 - Use the `tdd-workflow` skill to implement with test-driven development
-- Use `/build-fix` if build errors occur
-- Use `/code-review` to review completed implementation
-- Use `/pr` or `/prp-pr` to open a pull request
+- Use `build-fix` procedure if build errors occur
+- Use `code-review` procedure to review completed implementation
+- Use `pr` procedure or `prp-pr` procedure to open a pull request
 
-> **Need requirements first?** Use `/plan-prd` for a lean PRD at `.claude/prds/{name}.prd.md`.
+> **Need requirements first?** Use `plan-prd` procedure for a lean PRD at `.claude/prds/{name}.prd.md`.
 >
-> **Need the legacy PRP flow?** Use `/prp-plan` for deep PRP planning with `.claude/PRPs/` artifacts. Use `/prp-implement` to execute those plans with rigorous validation loops.
+> **Need the legacy PRP flow?** Use `prp-plan` procedure for deep PRP planning with `.claude/PRPs/` artifacts. Use `prp-implement` procedure to execute those plans with rigorous validation loops.
 
 ## Optional Planner Agent
 
-ECC also provides a `planner` agent for manual installs that include agent files. Use it only when the local runtime already exposes that subagent and the user explicitly asks you to delegate planning.
+ECC also provides a `planner` role for manual installs that include agent files. Use it only when the local runtime already exposes that subagent and the user explicitly asks you to delegate planning.
 
-If the `planner` subagent is unavailable, continue planning inline instead of surfacing an "Agent type 'planner' not found" error.
+If the `planner` role is unavailable, continue planning inline instead of surfacing an "Agent type 'planner' not found" error.
 
 For manual installs, the source file lives at:
-`agents/planner.md`
+`$PLUGIN/library/roles/planner.md`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

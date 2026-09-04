@@ -379,7 +379,11 @@ Report to user:
 
 ## Next Steps
 
-- Run `/code-review` to review changes before committing
-- Run `/prp-commit` to commit with a descriptive message
-- Run `/prp-pr` to create a pull request
-- Run `/prp-plan <next-phase>` if the PRD has more phases
+- Run `code-review` procedure to review changes before committing
+- Run `prp-commit` procedure to commit with a descriptive message
+- Run `prp-pr` procedure to create a pull request
+- Run `prp-plan` procedure (`<next-phase>`) if the PRD has more phases
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

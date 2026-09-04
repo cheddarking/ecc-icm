@@ -23,7 +23,7 @@ skill for the full workflow and rules.
    `await <artifact> --reply "..."`, and repeat until the user approves or
    ends the session.
 
-An `approve` verdict counts as plan confirmation for `/plan`-style gates:
+An `approve` verdict counts as plan confirmation for `plan` procedure-style gates:
 stop polling, `end` the session, and begin implementation.
 
 ## Example
@@ -41,5 +41,9 @@ Assistant: Plan approved in the canvas — starting implementation.
 ## Related
 
 - `plan-canvas` skill — full workflow, feedback JSON shapes, rules
-- `/plan` — produces the plan artifacts this reviews
-- Source: `scripts/plan-canvas.js`, `scripts/lib/plan-canvas/`
+- `plan` procedure — produces the plan artifacts this reviews
+- Source: `$PLUGIN/library/scripts/plan-canvas.js`, `$PLUGIN/library/scripts/lib/plan-canvas/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

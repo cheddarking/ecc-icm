@@ -33,6 +33,10 @@ Invoke the `orch-change-feature` skill with `$ARGUMENTS` as the request. The ski
 4. `code-reviewer` (+ `security-reviewer` on a security trigger), then commit. → **GATE 2**.
 
 Use this only when the feature **works** but should behave differently — not for
-bugs (`/orch-fix-defect`) or net-new capability (`/orch-add-feature`).
+bugs (`orch-fix-defect` procedure) or net-new capability (`orch-add-feature` procedure).
 
 If `$ARGUMENTS` is empty, ask the user what behavior should change.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

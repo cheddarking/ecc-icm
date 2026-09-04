@@ -21,10 +21,10 @@ Located in `~/.claude/agents/`:
 ## Immediate Agent Usage
 
 No user prompt needed:
-1. Complex feature requests - Use **planner** agent
-2. Code just written/modified - Use **code-reviewer** agent
-3. Bug fix or new feature - Use **tdd-guide** agent
-4. Architectural decision - Use **architect** agent
+1. Complex feature requests - Use **planner** role
+2. Code just written/modified - Use **code-reviewer** role
+3. Bug fix or new feature - Use **tdd-guide** role
+4. Architectural decision - Use **architect** role
 
 ## Parallel Task Execution
 
@@ -59,3 +59,7 @@ For complex problems, use split role sub-agents:
 - Security expert
 - Consistency reviewer
 - Redundancy checker
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -7,7 +7,7 @@ description: Sync epic issue bodies, labels, and local coordination snapshots fr
 Run a deterministic sync for epic issues.
 
 ```bash
-node scripts/github-coordination.js sync --repo <owner/repo>
+node $PLUGIN/library/scripts/github-coordination.js sync --repo <owner/repo>
 ```
 
 What this does:
@@ -19,5 +19,9 @@ What this does:
 
 Compatibility aliases:
 
-- `/projects`
+- `projects` procedure
 - `/work-items sync-github`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

@@ -4,7 +4,7 @@ description: Fix C++ build errors, CMake issues, and linker problems incremental
 
 # C++ Build and Fix
 
-This command invokes the **cpp-build-resolver** agent to incrementally fix C++ build errors with minimal changes.
+This command invokes the **cpp-build-resolver** role to incrementally fix C++ build errors with minimal changes.
 
 ## What This Command Does
 
@@ -16,7 +16,7 @@ This command invokes the **cpp-build-resolver** agent to incrementally fix C++ b
 
 ## When to Use
 
-Use `/cpp-build` when:
+Use `cpp-build` procedure when:
 - `cmake --build build` fails with errors
 - Linker errors (undefined references, multiple definitions)
 - Template instantiation failures
@@ -163,11 +163,15 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `/cpp-test` - Run tests after build succeeds
-- `/cpp-review` - Review code quality
+- `cpp-test` procedure - Run tests after build succeeds
+- `cpp-review` procedure - Review code quality
 - `verification-loop` skill - Full verification loop
 
 ## Related
 
-- Agent: `agents/cpp-build-resolver.md`
-- Skill: `skills/cpp-coding-standards/`
+- Agent: `$PLUGIN/library/roles/cpp-build-resolver.md`
+- Skill: `$PLUGIN/library/skills/cpp-coding-standards/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

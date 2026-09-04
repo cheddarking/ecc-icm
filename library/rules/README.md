@@ -72,21 +72,21 @@ rules/
 mkdir -p ~/.claude/rules/ecc
 
 # Install common rules (required for all projects)
-cp -r rules/common ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/common ~/.claude/rules/ecc/
 
 # Install language-specific rules based on your project's tech stack
-cp -r rules/typescript ~/.claude/rules/ecc/
-cp -r rules/angular ~/.claude/rules/ecc/
-cp -r rules/vue ~/.claude/rules/ecc/
-cp -r rules/nuxt ~/.claude/rules/ecc/
-cp -r rules/python ~/.claude/rules/ecc/
-cp -r rules/golang ~/.claude/rules/ecc/
-cp -r rules/web ~/.claude/rules/ecc/
-cp -r rules/react-native ~/.claude/rules/ecc/
-cp -r rules/swift ~/.claude/rules/ecc/
-cp -r rules/php ~/.claude/rules/ecc/
-cp -r rules/ruby ~/.claude/rules/ecc/
-cp -r rules/arkts ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/typescript ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/angular ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/vue ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/nuxt ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/python ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/golang ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/web ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/react-native ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/swift ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/php ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/ruby ~/.claude/rules/ecc/
+cp -r $PLUGIN/library/rules/arkts ~/.claude/rules/ecc/
 
 # Attention ! ! ! Configure according to your actual project requirements; the configuration here is for reference only.
 ```
@@ -95,8 +95,8 @@ For project-local rules, use the same namespace under the project root:
 
 ```bash
 mkdir -p .claude/rules/ecc
-cp -r rules/common .claude/rules/ecc/
-cp -r rules/typescript .claude/rules/ecc/
+cp -r $PLUGIN/library/rules/common .claude/rules/ecc/
+cp -r $PLUGIN/library/rules/typescript .claude/rules/ecc/
 ```
 
 ## Rules vs Skills
@@ -110,7 +110,7 @@ Language-specific rule files reference relevant skills where appropriate. Rules 
 
 To add support for a new language (e.g., `rust/`):
 
-1. Create a `rules/rust/` directory
+1. Create a `$PLUGIN/library/rules/rust/` directory
 2. Add files that extend the common rules:
    - `coding-style.md` — formatting tools, idioms, error handling patterns
    - `testing.md` — test framework, coverage tools, test organization
@@ -129,8 +129,8 @@ For non-language domains like `web/`, follow the same layered pattern when there
 
 When language-specific rules and common rules conflict, **language-specific rules take precedence** (specific overrides general). This follows the standard layered configuration pattern (similar to CSS specificity or `.gitignore` precedence).
 
-- `rules/common/` defines universal defaults applicable to all projects.
-- `rules/golang/`, `rules/python/`, `rules/swift/`, `rules/php/`, `rules/typescript/`, `rules/react-native/`, etc. override those defaults where language idioms differ.
+- `$PLUGIN/library/rules/common/` defines universal defaults applicable to all projects.
+- `$PLUGIN/library/rules/golang/`, `$PLUGIN/library/rules/python/`, `$PLUGIN/library/rules/swift/`, `$PLUGIN/library/rules/php/`, `$PLUGIN/library/rules/typescript/`, `$PLUGIN/library/rules/react-native/`, etc. override those defaults where language idioms differ.
 
 ### Example
 
@@ -140,6 +140,10 @@ When language-specific rules and common rules conflict, **language-specific rule
 
 ### Common rules with override notes
 
-Rules in `rules/common/` that may be overridden by language-specific files are marked with:
+Rules in `$PLUGIN/library/rules/common/` that may be overridden by language-specific files are marked with:
 
 > **Language note**: This rule may be overridden by language-specific rules for languages where this pattern is not idiomatic.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

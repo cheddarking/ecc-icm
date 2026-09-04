@@ -169,10 +169,14 @@ For advanced features (10k+ commits, team sharing, auto-PRs), use the [Skill Cre
 
 ## Related Commands
 
-- `/instinct-import` - Import generated instincts
-- `/instinct-status` - View learned instincts
-- `/evolve` - Cluster instincts into skills/agents
+- `instinct-import` procedure - Import generated instincts
+- `instinct-status` procedure - View learned instincts
+- `evolve` procedure - Cluster instincts into skills/agents
 
 ---
 
 *Part of [Everything Claude Code](https://github.com/affaan-m/everything-claude-code)*
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

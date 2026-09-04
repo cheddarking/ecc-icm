@@ -29,7 +29,7 @@ engine in [`orch-pipeline`](../orch-pipeline/SKILL.md).
 ## How It Works
 
 1. Run the `orch-pipeline` engine with the settings above.
-2. For dead-code / duplication sweeps, delegate to the `refactor-cleaner` agent
+2. For dead-code / duplication sweeps, delegate to the `refactor-cleaner` role
    (it runs knip / depcheck / ts-prune and removes safely).
 3. Stop at **Gate 1** (restructure plan) and **Gate 2** (pre-commit).
 4. Commit as `refactor:` — the diff must be behavior-neutral.
@@ -42,3 +42,7 @@ orch-refine-code: extract the NWS HTTP client out of poller.py
 → move in small steps, tests green throughout → code-review
 → commit refactor:  [GATE 2: confirm]
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -40,4 +40,8 @@ Treat everything shipped in the app as readable by an attacker. A mobile binary 
 ## Dependencies
 
 - Run `expo-doctor` and `npm audit` regularly; keep the Expo SDK and native deps current.
-- Use `/security-scan` (AgentShield) on the agent configuration itself.
+- Use `security-scan` procedure (AgentShield) on the agent configuration itself.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

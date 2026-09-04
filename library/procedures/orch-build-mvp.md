@@ -28,9 +28,13 @@ Invoke the `orch-build-mvp` skill with `$ARGUMENTS` as the doc path. The skill
 **thin vertical slices** (one end-to-end path first). → **GATE 1** (approve slice plan).
 2. Scaffold the first end-to-end slice.
 3. Reuse the GAN harness: translate the SDD into `gan-harness/spec.md` +
-   `eval-rubric.md`, then drive `/gan-build "<brief>" --skip-planner`
+   `eval-rubric.md`, then drive `gan-build` procedure (`"<brief>" --skip-planner`)
    (generator → evaluator loop) until the score passes or plateaus.
 4. `code-reviewer` (+ `security-reviewer` on any security-trigger slice), then
    commit the scaffold and each slice as separate `feat:` commits. → **GATE 2**.
 
 If `$ARGUMENTS` is empty, ask the user for the path to the design/spec doc.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

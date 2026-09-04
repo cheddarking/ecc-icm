@@ -13,11 +13,11 @@ This command enforces test-driven development for React using React Testing Libr
 3. **Run Tests**: Verify they fail for the right reason
 4. **Implement Minimal Code**: Just enough to pass — GREEN
 5. **Refactor**: Improve while keeping tests green
-6. **Check Coverage**: Hit the targets in [rules/react/testing.md](../rules/react/testing.md)
+6. **Check Coverage**: Hit the targets in [$PLUGIN/library/rules/react/testing.md](../rules/react/testing.md)
 
 ## When to Use
 
-Use `/react-test` when:
+Use `react-test` procedure when:
 
 - Implementing a new React component or custom hook
 - Adding test coverage to an untested component
@@ -254,12 +254,16 @@ CI=true vitest run --coverage
 
 ## Related Commands
 
-- `/react-build` — fix build errors before running tests
-- `/react-review` — review after implementation
+- `react-build` procedure — fix build errors before running tests
+- `react-review` procedure — review after implementation
 - `verification-loop` skill — full verification loop
 
 ## Related
 
-- Skills: `skills/react-testing/`, `skills/tdd-workflow/`, `skills/accessibility/`, `skills/e2e-testing/`
-- Rules: `rules/react/testing.md`
+- Skills: `$PLUGIN/library/skills/react-testing/`, `$PLUGIN/library/skills/tdd-workflow/`, `$PLUGIN/library/skills/accessibility/`, `$PLUGIN/library/skills/e2e-testing/`
+- Rules: `$PLUGIN/library/rules/react/testing.md`
 - Agents: `react-reviewer` (reviews test quality), `tdd-guide` (enforces TDD process)
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

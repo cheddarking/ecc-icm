@@ -109,10 +109,10 @@ python3 -c "import re; print(re.search(r'your_pattern', 'test text'))"
 
 ## Commands
 
-- `/hookify [description]` - Create new rules (auto-analyzes conversation if no args)
-- `/hookify-list` - View all rules in table format
-- `/hookify-configure` - Toggle rules on/off interactively
-- `/hookify-help` - Full documentation
+- `hookify` procedure (`[description]`) - Create new rules (auto-analyzes conversation if no args)
+- `hookify-list` procedure - View all rules in table format
+- `hookify-configure` procedure - Toggle rules on/off interactively
+- `hookify-help` procedure - Full documentation
 
 ## Quick Reference
 
@@ -126,3 +126,7 @@ pattern: dangerous_command
 ---
 Warning message here
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

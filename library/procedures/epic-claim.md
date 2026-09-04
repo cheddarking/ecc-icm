@@ -9,7 +9,7 @@ Claim one epic issue as the source of truth for a unit of work.
 Use the coordination script:
 
 ```bash
-node scripts/github-coordination.js claim <issue-number> --repo <owner/repo> --actor <login>
+node $PLUGIN/library/scripts/github-coordination.js claim <issue-number> --repo <owner/repo> --actor <login>
 ```
 
 What this does:
@@ -21,6 +21,10 @@ What this does:
 
 Compatibility aliases:
 
-- `/orch-add-feature`
-- `/orch-change-feature`
-- `/prp-implement`
+- `orch-add-feature` procedure
+- `orch-change-feature` procedure
+- `prp-implement` procedure
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

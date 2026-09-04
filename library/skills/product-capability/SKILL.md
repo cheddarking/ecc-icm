@@ -25,7 +25,7 @@ If the repo has a durable product-context file such as `PRODUCT.md`, `docs/produ
 
 If no capability manifest exists yet, create one using the template at:
 
-- `docs/examples/product-capability-template.md`
+- `$PLUGIN/library/docs/examples/product-capability-template.md`
 
 The goal is not to create another planning stack. The goal is to make hidden capability constraints durable and reusable.
 

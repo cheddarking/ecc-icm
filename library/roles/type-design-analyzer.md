@@ -1,6 +1,6 @@
 # Role: type-design-analyzer
 
-Source: ECC agents/type-design-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob.
+Source: ECC $PLUGIN/library/roles/type-design-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob.
 
 Description: Analyze type design for encapsulation, invariant expression, usefulness, and enforcement.
 
@@ -35,3 +35,7 @@ For each type reviewed:
 - scores for the four dimensions
 - overall assessment
 - specific improvement suggestions
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

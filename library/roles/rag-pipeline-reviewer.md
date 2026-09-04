@@ -1,6 +1,6 @@
 # Role: rag-pipeline-reviewer
 
-Source: ECC agents/rag-pipeline-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/rag-pipeline-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Reviews RAG (Retrieval-Augmented Generation) pipelines for retrieval quality, chunking strategy, embedding choices, and evaluation coverage. Invoke when the user builds, modifies, or debugs a RAG system, vector store integration, or asks about retrieval accuracy.
 
@@ -46,3 +46,7 @@ Use these handoffs when the finding exceeds retrieval-specific review:
 Input: User has a ChromaDB + Ollama RAG pipeline, top-5 chunks sent straight to the LLM, no eval script.
 Action: Confirm no reranking step and no RAGAS check exist. Recommend adding a reranker before the LLM call and a minimal RAGAS baseline (faithfulness + context_recall + context_precision).
 Output: "No reranking found — top-5 chunks are forwarded unfiltered. No retrieval evaluation found. Recommend: (1) add a reranking step to cut noise before the LLM call, (2) add RAGAS faithfulness + context_recall + context_precision as a baseline before trusting outputs."
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

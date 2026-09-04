@@ -5,7 +5,7 @@ argument-hint: "[product/feature idea] (blank = start with questions)"
 
 # PRD Command
 
-Produces a **Product Requirements Document** — the requirements-phase artifact of the SDLC. Captures *what* must be true for success and *why*, and stops before *how*. Implementation decomposition is delegated to `/plan`.
+Produces a **Product Requirements Document** — the requirements-phase artifact of the SDLC. Captures *what* must be true for success and *why*, and stops before *how*. Implementation decomposition is delegated to `plan` procedure.
 
 **Input**: `$ARGUMENTS`
 
@@ -16,9 +16,9 @@ Produces a **Product Requirements Document** — the requirements-phase artifact
 | Frame the problem and users | Design the architecture |
 | Capture success criteria and scope | Pick files or write patterns |
 | List open questions and risks | Enumerate implementation tasks |
-| Write `.claude/prds/{name}.prd.md` | Produce an implementation plan — that's `/plan` |
+| Write `.claude/prds/{name}.prd.md` | Produce an implementation plan — that's `plan` procedure |
 
-If you find yourself writing implementation detail, stop and cut it. It belongs in `/plan`.
+If you find yourself writing implementation detail, stop and cut it. It belongs in `plan` procedure.
 
 **Anti-fluff rule**: When information is missing, write `TBD — needs validation via {method}`. Never invent plausible-sounding requirements.
 
@@ -147,9 +147,9 @@ Next step: /plan .claude/prds/{name}.prd.md
 
 ## Integration
 
-- `/plan <prd-path>` — consume the PRD and produce an implementation plan for the next pending milestone.
+- `plan` procedure (`<prd-path>`) — consume the PRD and produce an implementation plan for the next pending milestone.
 - `tdd-workflow` skill — implement the plan test-first.
-- `/pr` — open a PR that references the PRD and plan.
+- `pr` procedure — open a PR that references the PRD and plan.
 
 ## Success criteria
 
@@ -157,4 +157,8 @@ Next step: /plan .claude/prds/{name}.prd.md
 - **USER_CONCRETE**: primary user is a specific role, not "users".
 - **HYPOTHESIS_TESTABLE**: measurable outcome included.
 - **SCOPE_BOUNDED**: explicit MVP and explicit out-of-scope.
-- **NO_IMPLEMENTATION_DETAIL**: file paths, libraries, or task breakdowns are absent — if they appeared, move them to the `/plan` step.
+- **NO_IMPLEMENTATION_DETAIL**: file paths, libraries, or task breakdowns are absent — if they appeared, move them to the `plan` procedure step.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

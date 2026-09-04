@@ -118,10 +118,10 @@ For every candidate surface, record:
 Use this format:
 
 ```text
-skills/frontend-patterns | skill | DAILY | 84 .tsx files, next.config.ts present | core frontend stack
-skills/django-patterns   | skill | LIBRARY | no .py files, no pyproject.toml       | not active in this repo
-rules/typescript/*       | rules | DAILY | package.json + tsconfig.json            | active TS repo
-rules/python/*           | rules | LIBRARY | zero Python source files             | keep accessible only
+$PLUGIN/library/skills/frontend-patterns | skill | DAILY | 84 .tsx files, next.config.ts present | core frontend stack
+$PLUGIN/library/skills/django-patterns   | skill | LIBRARY | no .py files, no pyproject.toml       | not active in this repo
+$PLUGIN/library/rules/typescript/*       | rules | DAILY | package.json + tsconfig.json            | active TS repo
+$PLUGIN/library/rules/python/*           | rules | LIBRARY | zero Python source files             | keep accessible only
 ```
 
 ### 3. Decide DAILY vs LIBRARY
@@ -214,3 +214,7 @@ INSTALL PLAN
 VERIFICATION
 - checks run and remaining gaps
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook. Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

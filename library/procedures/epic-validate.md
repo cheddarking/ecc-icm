@@ -7,7 +7,7 @@ description: Validate epic readiness, dependencies, and coordination policy.
 Validate a single epic issue before publishing or review handoff.
 
 ```bash
-node scripts/github-coordination.js validate <issue-number> --repo <owner/repo>
+node $PLUGIN/library/scripts/github-coordination.js validate <issue-number> --repo <owner/repo>
 ```
 
 What this checks:
@@ -19,4 +19,8 @@ What this checks:
 
 Compatibility aliases:
 
-- `/quality-gate`
+- `quality-gate` procedure
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

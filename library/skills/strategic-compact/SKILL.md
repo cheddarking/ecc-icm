@@ -40,7 +40,7 @@ Tool count alone is a weak proxy for window pressure: a few large file reads or 
 
 ## Hook Setup
 
-**Installed as a plugin?** No setup is needed. The plugin's `hooks/hooks.json` already registers `suggest-compact.js` (hook id `pre:edit-write:suggest-compact`, active in the `standard` and `strict` hook profiles). Do not copy the block below into `~/.claude/settings.json` — `~/.claude/scripts/` does not exist on plugin installs, and duplicating a plugin hook causes double execution.
+**Installed as a plugin?** No setup is needed. The plugin's `$PLUGIN/library/hooks/hooks.json` already registers `suggest-compact.js` (hook id `pre:edit-write:suggest-compact`, active in the `standard` and `strict` hook profiles). Do not copy the block below into `~/.claude/settings.json` — `~/.claude/scripts/` does not exist on plugin installs, and duplicating a plugin hook causes double execution.
 
 **If installed manually** (`./install.sh`), add to your `~/.claude/settings.json`:
 
@@ -154,3 +154,7 @@ Common sources of duplicate context:
 - [The Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) — Token optimization section
 - Memory persistence hooks — For state that survives compaction
 - `continuous-learning` skill — Extracts patterns before session ends
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

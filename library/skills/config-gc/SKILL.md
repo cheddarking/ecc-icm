@@ -118,3 +118,7 @@ jq '.permissions.allow -= ["Bash(git push)"]' ~/.claude/settings.local.json.bak 
 - `configure-ecc` — after installing skills with it, run config-gc to reconcile overlaps with your pre-existing setup.
 - `continuous-learning` — produces the memory files this skill later audits.
 - `security-review` — pairs well with the permissions channel.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

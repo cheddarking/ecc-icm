@@ -1,6 +1,6 @@
 # Role: opensource-sanitizer
 
-Source: ECC agents/opensource-sanitizer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/opensource-sanitizer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Verify an open-source fork is fully sanitized before release. Scans for leaked secrets, PII, internal references, and dangerous files using 20+ regex patterns. Generates a PASS/FAIL/PASS-WITH-WARNINGS report. Second stage of the opensource-pipeline skill. Use PROACTIVELY before any public release.
 
@@ -182,3 +182,7 @@ Output: `SANITIZATION_REPORT.md` — PASS WITH WARNINGS (one hardcoded port in R
 - **Be paranoid** — false positives are acceptable, false negatives are not
 - A single CRITICAL finding in any category = overall FAIL
 - Warnings alone = PASS WITH WARNINGS (user decides)
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -33,6 +33,10 @@ Invoke the `orch-fix-defect` skill with `$ARGUMENTS` as the request. The skill
 4. Commit as a conventional `fix:` commit. → **GATE 2** (confirm before commit).
 
 Use this only when behavior is **broken/wrong** — not for intentional changes
-(`/orch-change-feature`) or new capability (`/orch-add-feature`).
+(`orch-change-feature` procedure) or new capability (`orch-add-feature` procedure).
 
 If `$ARGUMENTS` is empty, ask the user to describe the defect.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

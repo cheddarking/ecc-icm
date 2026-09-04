@@ -4,7 +4,7 @@ description: Fix Go build errors, go vet warnings, and linter issues incremental
 
 # Go Build and Fix
 
-This command invokes the **go-build-resolver** agent to incrementally fix Go build errors with minimal changes.
+This command invokes the **go-build-resolver** role to incrementally fix Go build errors with minimal changes.
 
 ## What This Command Does
 
@@ -16,7 +16,7 @@ This command invokes the **go-build-resolver** agent to incrementally fix Go bui
 
 ## When to Use
 
-Use `/go-build` when:
+Use `go-build` procedure when:
 - `go build ./...` fails with errors
 - `go vet ./...` reports issues
 - `golangci-lint run` shows warnings
@@ -173,11 +173,15 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `/go-test` - Run tests after build succeeds
-- `/go-review` - Review code quality
+- `go-test` procedure - Run tests after build succeeds
+- `go-review` procedure - Review code quality
 - `verification-loop` skill - Full verification loop
 
 ## Related
 
-- Agent: `agents/go-build-resolver.md`
-- Skill: `skills/golang-patterns/`
+- Agent: `$PLUGIN/library/roles/go-build-resolver.md`
+- Skill: `$PLUGIN/library/skills/golang-patterns/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

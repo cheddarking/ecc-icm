@@ -113,10 +113,10 @@ claude -p --allowedTools "Read,Write,Edit,Bash" "Implement the fixes from securi
 
 ```bash
 # Start the default session
-node scripts/claw.js
+node $PLUGIN/library/scripts/claw.js
 
 # Named session with skill context
-CLAW_SESSION=my-project CLAW_SKILLS=tdd-workflow,security-review node scripts/claw.js
+CLAW_SESSION=my-project CLAW_SKILLS=tdd-workflow,security-review node $PLUGIN/library/scripts/claw.js
 ```
 
 ### How It Works
@@ -608,4 +608,8 @@ These patterns compose well:
 | Infinite Agentic Loop | disler | credit: @disler |
 | Continuous Claude | AnandChowdhary | credit: @AnandChowdhary |
 | NanoClaw | ECC | `/claw` command in this repo |
-| Verification Loop | ECC | `skills/verification-loop/` in this repo |
+| Verification Loop | ECC | `$PLUGIN/library/skills/verification-loop/` in this repo |
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -17,3 +17,7 @@ Configure in `~/.claude/settings.json`:
 ## Warnings
 
 - Warn about `print()` statements in edited files (use `logging` module instead)
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

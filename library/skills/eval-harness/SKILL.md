@@ -268,4 +268,4 @@ Recommended thresholds:
 
 - `.claude/evals/<feature>.md` definition
 - `.claude/evals/<feature>.log` run history
-- `docs/releases/<version>/eval-summary.md` release snapshot
+- `$PLUGIN/library/docs/releases/<version>/eval-summary.md` release snapshot

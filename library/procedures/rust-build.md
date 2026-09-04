@@ -4,7 +4,7 @@ description: Fix Rust build errors, borrow checker issues, and dependency proble
 
 # Rust Build and Fix
 
-This command invokes the **rust-build-resolver** agent to incrementally fix Rust build errors with minimal changes.
+This command invokes the **rust-build-resolver** role to incrementally fix Rust build errors with minimal changes.
 
 ## What This Command Does
 
@@ -16,7 +16,7 @@ This command invokes the **rust-build-resolver** agent to incrementally fix Rust
 
 ## When to Use
 
-Use `/rust-build` when:
+Use `rust-build` procedure when:
 - `cargo build` or `cargo check` fails with errors
 - `cargo clippy` reports warnings
 - Borrow checker or lifetime errors block compilation
@@ -177,11 +177,15 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `/rust-test` - Run tests after build succeeds
-- `/rust-review` - Review code quality
+- `rust-test` procedure - Run tests after build succeeds
+- `rust-review` procedure - Review code quality
 - `verification-loop` skill - Full verification loop
 
 ## Related
 
-- Agent: `agents/rust-build-resolver.md`
-- Skill: `skills/rust-patterns/`
+- Agent: `$PLUGIN/library/roles/rust-build-resolver.md`
+- Skill: `$PLUGIN/library/skills/rust-patterns/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -106,7 +106,7 @@ from the prompt description alone and mark the estimate as uncertain.
 | TRIVIAL | Single file, < 50 lines | Direct execution |
 | LOW | Single component or module | Single command or skill |
 | MEDIUM | Multiple components, same domain | Command chain + /verify |
-| HIGH | Cross-domain, 5+ files | /plan first, then phased execution |
+| HIGH | Cross-domain, 5+ files | `plan` procedure first, then phased execution |
 | EPIC | Multi-session, multi-PR, architectural shift | Use blueprint skill for multi-session plan |
 
 ### Phase 3: ECC Component Matching
@@ -117,15 +117,15 @@ Map intent + scope + tech stack (from Phase 0) to specific ECC components.
 
 | Intent | Commands | Skills | Agents |
 |--------|----------|--------|--------|
-| New Feature | /plan, /tdd, /code-review, /verify | tdd-workflow, verification-loop | planner, tdd-guide, code-reviewer |
-| Bug Fix | /tdd, /build-fix, /verify | tdd-workflow | tdd-guide, build-error-resolver |
-| Refactor | /refactor-clean, /code-review, /verify | verification-loop | refactor-cleaner, code-reviewer |
-| Research | /plan | search-first, iterative-retrieval | — |
-| Testing | /tdd, /e2e, /test-coverage | tdd-workflow, e2e-testing | tdd-guide, e2e-runner |
-| Review | /code-review | security-review | code-reviewer, security-reviewer |
-| Documentation | /update-docs, /update-codemaps | — | doc-updater |
-| Infrastructure | /plan, /verify | docker-patterns, deployment-patterns, database-migrations | architect |
-| Design (MEDIUM-HIGH) | /plan | — | planner, architect |
+| New Feature | `plan` procedure, /tdd, `code-review` procedure, /verify | tdd-workflow, verification-loop | planner, tdd-guide, code-reviewer |
+| Bug Fix | /tdd, `build-fix` procedure, /verify | tdd-workflow | tdd-guide, build-error-resolver |
+| Refactor | `refactor-clean` procedure, `code-review` procedure, /verify | verification-loop | refactor-cleaner, code-reviewer |
+| Research | `plan` procedure | search-first, iterative-retrieval | — |
+| Testing | /tdd, /e2e, `test-coverage` procedure | tdd-workflow, e2e-testing | tdd-guide, e2e-runner |
+| Review | `code-review` procedure | security-review | code-reviewer, security-reviewer |
+| Documentation | `update-docs` procedure, `update-codemaps` procedure | — | doc-updater |
+| Infrastructure | `plan` procedure, /verify | docker-patterns, deployment-patterns, database-migrations | architect |
+| Design (MEDIUM-HIGH) | `plan` procedure | — | planner, architect |
 | Design (EPIC) | — | blueprint (invoke as skill) | planner, architect |
 
 #### By Tech Stack
@@ -173,7 +173,7 @@ Determine where this prompt sits in the development lifecycle:
 Research → Plan → Implement (TDD) → Review → Verify → Commit
 ```
 
-For MEDIUM+ tasks, always start with /plan. For EPIC tasks, use blueprint skill.
+For MEDIUM+ tasks, always start with `plan` procedure. For EPIC tasks, use blueprint skill.
 
 **Model recommendation** (include in output):
 
@@ -187,10 +187,10 @@ For MEDIUM+ tasks, always start with /plan. For EPIC tasks, use blueprint skill.
 **Multi-prompt splitting** (for HIGH/EPIC scope):
 
 For tasks that exceed a single session, split into sequential prompts:
-- Prompt 1: Research + Plan (use search-first skill, then /plan)
+- Prompt 1: Research + Plan (use search-first skill, then `plan` procedure)
 - Prompt 2-N: Implement one phase per prompt (each ends with /verify)
-- Final Prompt: Integration test + /code-review across all phases
-- Use /save-session and /resume-session to preserve context between sessions
+- Final Prompt: Integration test + `code-review` procedure across all phases
+- Use `save-session` procedure and `resume-session` procedure to preserve context between sessions
 
 ---
 
@@ -216,7 +216,7 @@ If Phase 0 auto-detected the answer, state it instead of asking.
 
 | Type | Component | Purpose |
 |------|-----------|---------|
-| Command | /plan | Plan architecture before coding |
+| Command | `plan` procedure | Plan architecture before coding |
 | Skill | tdd-workflow | TDD methodology guidance |
 | Agent | code-reviewer | Post-implementation review |
 | Model | Sonnet 5 | Recommended for this scope |
@@ -241,12 +241,12 @@ A compact version for experienced ECC users. Vary by intent type:
 
 | Intent | Quick Pattern |
 |--------|--------------|
-| New Feature | `/plan [feature]. /tdd to implement. /code-review. /verify.` |
+| New Feature | `plan` procedure (`[feature]. /tdd to implement. /code-review. /verify.`) |
 | Bug Fix | `/tdd — write failing test for [bug]. Fix to green. /verify.` |
-| Refactor | `/refactor-clean [scope]. /code-review. /verify.` |
+| Refactor | `refactor-clean` procedure (`[scope]. /code-review. /verify.`) |
 | Research | `Use search-first skill for [topic]. /plan based on findings.` |
 | Testing | `/tdd [module]. /e2e for critical flows. /test-coverage.` |
-| Review | `/code-review. Then use security-reviewer agent.` |
+| Review | `/code-review. Then use security-reviewer role.` |
 | Docs | `/update-docs. /update-codemaps.` |
 | EPIC | `Use blueprint skill for "[objective]". Execute phases with /verify gates.` |
 
@@ -396,3 +396,7 @@ Recommended: Opus 5 for blueprint planning, Sonnet 5 for phase execution.
 | `blueprint` | EPIC-scope optimized prompts (invoke as skill, not command) |
 | `strategic-compact` | Long session context management |
 | `cost-aware-llm-pipeline` | Token optimization recommendations |
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook. Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

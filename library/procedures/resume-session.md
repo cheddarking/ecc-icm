@@ -5,7 +5,7 @@ description: Load the most recent session file from ~/.claude/session-data/ and 
 # Resume Session Command
 
 Load the last saved session state and orient fully before doing any work.
-This command is the counterpart to `/save-session`.
+This command is the counterpart to `save-session` procedure.
 
 ## When to Use
 
@@ -35,7 +35,7 @@ If no argument provided:
 4. If the folder does not exist or has no eligible matching files, tell the user:
    ```
    No session files found in ~/.claude/session-data/
-   Run /save-session at the end of a session to create one.
+   Run `save-session` procedure at the end of a session to create one.
    ```
    Then stop.
 
@@ -132,7 +132,7 @@ Read it and follow the same briefing process — the format is the same regardle
 **Session file is empty or malformed:**
 For implicit or date-based discovery, reject it and continue ranking the remaining candidates. If no
 eligible candidate remains, report: "Session files were found but appear empty or unreadable. You may
-need to create a new one with /save-session." For an explicit path, report that the requested file is
+need to create a new one with `save-session` procedure." For an explicit path, report that the requested file is
 empty or unreadable without loading a substitute.
 
 ---
@@ -178,4 +178,8 @@ Ready to continue. What would you like to do?
 - Never modify the session file when loading it — it's a read-only historical record
 - The briefing format is fixed — do not skip sections even if they are empty
 - "What Not To Retry" must always be shown, even if it just says "None" — it's too important to miss
-- After resuming, the user may want to run `/save-session` again at the end of the new session to create a new dated file
+- After resuming, the user may want to run `save-session` procedure again at the end of the new session to create a new dated file
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

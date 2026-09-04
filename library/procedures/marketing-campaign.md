@@ -120,10 +120,14 @@ This command invokes:
 
 ## Related Commands
 
-- `/plan` — Strategic planning before a campaign
-- `/plan-prd` — Product requirements document before briefing a campaign
-- `/code-review` — Review code behind a landing page implementation
+- `plan` procedure — Strategic planning before a campaign
+- `plan-prd` procedure — Product requirements document before briefing a campaign
+- `code-review` procedure — Review code behind a landing page implementation
 
 ---
 
 *Part of [Everything Claude Code](https://github.com/affaan-m/everything-claude-code)*
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

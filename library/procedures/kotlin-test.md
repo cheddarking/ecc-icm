@@ -17,7 +17,7 @@ This command enforces test-driven development methodology for Kotlin code using 
 
 ## When to Use
 
-Use `/kotlin-test` when:
+Use `kotlin-test` procedure when:
 - Implementing new Kotlin functions or classes
 - Adding test coverage to existing Kotlin code
 - Fixing bugs (write failing test first)
@@ -302,11 +302,15 @@ open build/reports/kover/html/index.html
 
 ## Related Commands
 
-- `/kotlin-build` - Fix build errors
-- `/kotlin-review` - Review code after implementation
+- `kotlin-build` procedure - Fix build errors
+- `kotlin-review` procedure - Review code after implementation
 - `verification-loop` skill - Run full verification loop
 
 ## Related
 
-- Skill: `skills/kotlin-testing/`
-- Skill: `skills/tdd-workflow/`
+- Skill: `$PLUGIN/library/skills/kotlin-testing/`
+- Skill: `$PLUGIN/library/skills/tdd-workflow/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

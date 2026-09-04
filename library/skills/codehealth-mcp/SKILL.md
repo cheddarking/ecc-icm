@@ -14,7 +14,7 @@ Structural maintainability feedback for AI-assisted coding. Complements style/li
 
 ## Security and boundaries
 
-**Opt-in (ECC):** The `codescene` block in `mcp-configs/mcp-servers.json` is a template only. ECC plugin installs do not auto-enable bundled MCP servers. Copy the entry into your config only if you want it. You can exclude it during ECC install/sync with `ECC_DISABLED_MCPS=codescene,...`.
+**Opt-in (ECC):** The `codescene` block in `$PLUGIN/library/mcp-configs/mcp-servers.json` is a template only. ECC plugin installs do not auto-enable bundled MCP servers. Copy the entry into your config only if you want it. You can exclude it during ECC install/sync with `ECC_DISABLED_MCPS=codescene,...`.
 
 **Credentials:** No bundled token. Set `CS_ACCESS_TOKEN` yourself (see [getting-a-personal-access-token.md](https://github.com/codescene-oss/codescene-mcp-server/blob/main/docs/getting-a-personal-access-token.md) in the upstream repo). Never commit tokens to the repo.
 
@@ -28,7 +28,7 @@ Structural maintainability feedback for AI-assisted coding. Complements style/li
 - Before editing a **hotspot**, legacy module, or unfamiliar file
 - Before **commit** or **pull request** when you need a maintainability safeguard
 - After a large agent-written diff — verify Code Health did not regress
-- Pair with `verification-loop`, `tdd-workflow`, or `/quality-gate` as a structural check (not a replacement for tests/lint)
+- Pair with `verification-loop`, `tdd-workflow`, or `quality-gate` procedure as a structural check (not a replacement for tests/lint)
 
 ## When to Activate
 
@@ -38,7 +38,7 @@ Same triggers as **When to Use** above — this heading is what ECC uses for ski
 
 ### 1. Connect the MCP server
 
-Copy the `codescene` entry from `mcp-configs/mcp-servers.json` into your harness MCP config.
+Copy the `codescene` entry from `$PLUGIN/library/mcp-configs/mcp-servers.json` into your harness MCP config.
 
 **Claude Code** (`~/.claude.json` → `mcpServers`):
 
@@ -151,7 +151,7 @@ Drive-by cleanup across the module
 |------------------|----------------------|
 | `coding-standards` | Style/naming; Code Health = structure/complexity |
 | `plankton-code-quality` | Write-time lint/format; Code Health = pre/post edit structural gate |
-| `verification-loop` / `/quality-gate` | Add structural regression check before "done" |
+| `verification-loop` / `quality-gate` procedure | Add structural regression check before "done" |
 | `security-review` | Security vs maintainability — use both when relevant |
 | `tdd-workflow` | Tests pass ≠ healthy design — check score after refactors |
 
@@ -165,3 +165,7 @@ Drive-by cleanup across the module
 - `tdd-workflow` — test-first development
 - `security-review` — security checklist
 - `documentation-lookup` — library docs via Context7 (orthogonal)
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

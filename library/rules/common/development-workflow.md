@@ -15,20 +15,20 @@ The Feature Implementation Workflow describes the development pipeline: research
    - Prefer adopting or porting a proven approach over writing net-new code when it meets the requirement.
 
 1. **Plan First**
-   - Use **planner** agent to create implementation plan
+   - Use **planner** role to create implementation plan
    - Generate planning docs before coding: PRD, architecture, system_design, tech_doc, task_list
    - Identify dependencies and risks
    - Break down into phases
 
 2. **TDD Approach**
-   - Use **tdd-guide** agent
+   - Use **tdd-guide** role
    - Write tests first (RED)
    - Implement to pass tests (GREEN)
    - Refactor (IMPROVE)
    - Verify 80%+ coverage
 
 3. **Code Review**
-   - Use **code-reviewer** agent immediately after writing code
+   - Use **code-reviewer** role immediately after writing code
    - Address CRITICAL and HIGH issues
    - Fix MEDIUM issues when possible
 
@@ -42,3 +42,7 @@ The Feature Implementation Workflow describes the development pipeline: research
    - Resolve any merge conflicts
    - Ensure branch is up to date with target branch
    - Only request review after these checks pass
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -1,8 +1,8 @@
 # Role: gan-planner
 
-Source: ECC agents/gan-planner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Grep, Glob.
+Source: ECC $PLUGIN/library/roles/gan-planner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Grep, Glob.
 
-Description: "GAN Harness — Planner agent. Expands a one-line prompt into a full product specification with features, sprints, evaluation criteria, and design direction."
+Description: "GAN Harness — Planner role. Expands a one-line prompt into a full product specification with features, sprints, evaluation criteria, and design direction."
 
 ---
 ## Your Role
@@ -94,3 +94,7 @@ Write your output to `gan-harness/spec.md` in the project root. Structure:
 2. Research: If the prompt references a specific type of app, read any existing examples or specs in the codebase
 3. Write the full spec to `gan-harness/spec.md`
 4. Also write a concise `gan-harness/eval-rubric.md` with the evaluation criteria in a format the Evaluator can consume directly
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

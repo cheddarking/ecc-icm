@@ -30,7 +30,7 @@ engine in [`orch-pipeline`](../orch-pipeline/SKILL.md).
 2. **Reuse the existing GAN harness** instead of hand-rolling an iterate loop:
    - Translate the SDD into `gan-harness/spec.md` + `gan-harness/eval-rubric.md`
      (this stands in for what `gan-planner` would generate — you already have the spec).
-   - Drive the build with `/gan-build "<one-line brief>" --skip-planner`
+   - Drive the build with `gan-build` procedure (`"<one-line brief>" --skip-planner`)
      (defaults: `--max-iterations 15`, `--pass-threshold 7.0`,
      `--eval-mode playwright`; use `--eval-mode code-only` for non-UI slices).
    - That command runs the `gan-generator` → `gan-evaluator` loop and writes
@@ -47,3 +47,7 @@ orch-build-mvp: civicpulse/docs/SDD-v0.6.md
 → /gan-build --skip-planner (generator → evaluator loop) scores vs spec → review
 → commit feat:  [GATE 2: confirm] → next slice
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

@@ -43,7 +43,7 @@ node "$ECC_ROOT/scripts/skills-health.js" --dashboard --json
 
 1. Run the skills-health.js script with --dashboard flag
 2. Display the output to the user
-3. If any skills are declining, highlight them and suggest running /evolve
+3. If any skills are declining, highlight them and suggest running `evolve` procedure
 4. If there are pending amendments, suggest reviewing them
 
 ## Panels
@@ -52,3 +52,7 @@ node "$ECC_ROOT/scripts/skills-health.js" --dashboard --json
 - **Failure Patterns** — Clustered failure reasons with horizontal bar chart
 - **Pending Amendments** — Amendment proposals awaiting review
 - **Version History** — Timeline of version snapshots per skill
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

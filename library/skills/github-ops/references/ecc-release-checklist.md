@@ -96,14 +96,14 @@ Expected:
 
 - Branch from exact current `main`.
 - Update release metadata to the new patch version.
-- Add reviewed release notes under `docs/releases/<version>/release-notes.md`.
-- Add a patch runbook under `docs/releases/<version>/launch-runbook.md`.
+- Add reviewed release notes under `$PLUGIN/library/docs/releases/<version>/release-notes.md`.
+- Add a patch runbook under `$PLUGIN/library/docs/releases/<version>/launch-runbook.md`.
 - Open and merge that prep PR.
 - Wait for fresh `main` CI and CodeQL on the merged prep commit.
 
 Important:
 
-- Do **not** use `scripts/release.sh` as-is for `ECC-031`.
+- Do **not** use `$PLUGIN/library/scripts/release.sh` as-is for `ECC-031`.
 - That script still commits, tags, and pushes in one shot, which bypasses the
   required `merge -> exact main CI green -> signed tag push` boundary.
 - PAT-backed GitHub access is not enough. The release operator also needs a
@@ -209,3 +209,7 @@ path remains installable:
 - Keep `v2.2.0` documented as the historical unsigned exception.
 - Mark `ECC-031` resolved only after the signed patch release is public and
   every required gate above is backed by evidence.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Install and configuration steps above describe ECC itself. In ecc-icm nothing is installed beyond the plugin; per-project setup is the `setup` trigger, which writes `.claude/icm.json`.

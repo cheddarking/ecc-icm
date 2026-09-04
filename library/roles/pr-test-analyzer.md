@@ -1,6 +1,6 @@
 # Role: pr-test-analyzer
 
-Source: ECC agents/pr-test-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC $PLUGIN/library/roles/pr-test-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Review pull request test coverage quality and completeness, with emphasis on behavioral coverage and real bug prevention.
 
@@ -39,3 +39,7 @@ Rate gaps by impact:
 2. critical gaps
 3. improvement suggestions
 4. positive observations
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -4,7 +4,7 @@ description: Fix Kotlin/Gradle build errors, compiler warnings, and dependency i
 
 # Kotlin Build and Fix
 
-This command invokes the **kotlin-build-resolver** agent to incrementally fix Kotlin build errors with minimal changes.
+This command invokes the **kotlin-build-resolver** role to incrementally fix Kotlin build errors with minimal changes.
 
 ## What This Command Does
 
@@ -16,7 +16,7 @@ This command invokes the **kotlin-build-resolver** agent to incrementally fix Ko
 
 ## When to Use
 
-Use `/kotlin-build` when:
+Use `kotlin-build` procedure when:
 - `./gradlew build` fails with errors
 - Kotlin compiler reports errors
 - `./gradlew detekt` reports violations
@@ -164,11 +164,15 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `/kotlin-test` - Run tests after build succeeds
-- `/kotlin-review` - Review code quality
+- `kotlin-test` procedure - Run tests after build succeeds
+- `kotlin-review` procedure - Review code quality
 - `verification-loop` skill - Full verification loop
 
 ## Related
 
-- Agent: `agents/kotlin-build-resolver.md`
-- Skill: `skills/kotlin-patterns/`
+- Agent: `$PLUGIN/library/roles/kotlin-build-resolver.md`
+- Skill: `$PLUGIN/library/skills/kotlin-patterns/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -1,6 +1,6 @@
 # Role: network-troubleshooter
 
-Source: ECC agents/network-troubleshooter.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Bash, Grep.
+Source: ECC $PLUGIN/library/roles/network-troubleshooter.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Bash, Grep.
 
 Description: Diagnoses network connectivity, routing, DNS, interface, and policy symptoms with a read-only OSI-layer workflow and evidence-backed root cause summary.
 
@@ -114,3 +114,7 @@ Residual risk:
   management-plane restrictions.
 - If a live command changes state, label it clearly as a remediation step, not a
   diagnostic command.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

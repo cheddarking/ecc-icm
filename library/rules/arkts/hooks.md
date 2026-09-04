@@ -133,3 +133,7 @@ After each implementation cycle, verify:
 - [ ] All dependencies listed in `oh-package.json5`
 - [ ] Resource strings added to all i18n directories
 - [ ] Dark theme colors provided for new color resources
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

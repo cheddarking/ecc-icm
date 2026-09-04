@@ -1,0 +1,1089 @@
+{
+  "generated": "2026-09-04T12:52:57.947Z",
+  "filesScanned": 692,
+  "filesChanged": 248,
+  "rules": {
+    "rel-hooks-json": 15,
+    "rel-skills": 67,
+    "rel-tree": 142,
+    "notes": 225,
+    "slash-cmd": 285,
+    "agent-role": 47,
+    "rel-agents": 89,
+    "plugin-root": 5,
+    "home-skills": 24,
+    "home-rules": 1
+  },
+  "files": {
+    "hooks/README.md": {
+      "rel-hooks-json": 1,
+      "rel-skills": 1,
+      "rel-tree": 2,
+      "notes": 1
+    },
+    "hooks/memory-persistence/README.md": {
+      "rel-tree": 7,
+      "rel-hooks-json": 2,
+      "notes": 1
+    },
+    "procedures/aside.md": {
+      "slash-cmd": 5,
+      "notes": 1
+    },
+    "procedures/checkpoint.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/cpp-build.md": {
+      "agent-role": 1,
+      "slash-cmd": 3,
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/cpp-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 5,
+      "rel-skills": 2,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/cpp-test.md": {
+      "slash-cmd": 3,
+      "rel-skills": 2,
+      "notes": 1
+    },
+    "procedures/ecc-guide.md": {
+      "rel-tree": 1,
+      "rel-hooks-json": 1,
+      "slash-cmd": 5,
+      "notes": 1
+    },
+    "procedures/epic-claim.md": {
+      "rel-tree": 1,
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "procedures/epic-decompose.md": {
+      "rel-tree": 1,
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/epic-publish.md": {
+      "rel-tree": 1,
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/epic-review.md": {
+      "rel-tree": 1,
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/epic-sync.md": {
+      "rel-tree": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/epic-unblock.md": {
+      "rel-tree": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/epic-validate.md": {
+      "rel-tree": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/evolve.md": {
+      "plugin-root": 1,
+      "home-skills": 1
+    },
+    "procedures/fastapi-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/flutter-build.md": {
+      "agent-role": 1,
+      "slash-cmd": 3,
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/flutter-review.md": {
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "rel-tree": 1,
+      "agent-role": 1,
+      "slash-cmd": 8,
+      "notes": 1
+    },
+    "procedures/flutter-test.md": {
+      "slash-cmd": 4,
+      "rel-skills": 1,
+      "rel-agents": 2,
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "procedures/gan-build.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "procedures/go-build.md": {
+      "agent-role": 1,
+      "slash-cmd": 3,
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/go-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 5,
+      "rel-skills": 2,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/go-test.md": {
+      "slash-cmd": 3,
+      "rel-skills": 2,
+      "notes": 1
+    },
+    "procedures/harness-audit.md": {
+      "slash-cmd": 1,
+      "rel-tree": 1,
+      "rel-hooks-json": 2,
+      "notes": 1
+    },
+    "procedures/hookify-help.md": {
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "procedures/hookify-list.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/hookify.md": {
+      "slash-cmd": 3,
+      "agent-role": 1,
+      "notes": 1
+    },
+    "procedures/instinct-import.md": {
+      "plugin-root": 1,
+      "home-skills": 1
+    },
+    "procedures/instinct-status.md": {
+      "home-skills": 1,
+      "rel-hooks-json": 1,
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/jira.md": {
+      "rel-tree": 2,
+      "rel-skills": 1,
+      "slash-cmd": 4,
+      "notes": 1
+    },
+    "procedures/kotlin-build.md": {
+      "agent-role": 1,
+      "slash-cmd": 3,
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/kotlin-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 5,
+      "rel-skills": 2,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/kotlin-test.md": {
+      "slash-cmd": 3,
+      "rel-skills": 2,
+      "notes": 1
+    },
+    "procedures/learn-eval.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/learn.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/loop-start.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/loop-status.md": {
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/marketing-campaign.md": {
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "procedures/model-route.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/multi-workflow.md": {
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "procedures/orch-build-mvp.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/orch-change-feature.md": {
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/orch-fix-defect.md": {
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/orch-refine-code.md": {
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/plan-canvas.md": {
+      "slash-cmd": 2,
+      "rel-tree": 2,
+      "notes": 1
+    },
+    "procedures/plan-prd.md": {
+      "slash-cmd": 6,
+      "notes": 1
+    },
+    "procedures/plan.md": {
+      "slash-cmd": 11,
+      "rel-agents": 1,
+      "agent-role": 2,
+      "notes": 1
+    },
+    "procedures/pr.md": {
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "procedures/project-init.md": {
+      "rel-tree": 6,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/projects.md": {
+      "plugin-root": 1,
+      "home-skills": 1
+    },
+    "procedures/promote.md": {
+      "plugin-root": 1,
+      "home-skills": 1
+    },
+    "procedures/prp-commit.md": {
+      "slash-cmd": 6,
+      "notes": 1
+    },
+    "procedures/prp-implement.md": {
+      "slash-cmd": 4,
+      "notes": 1
+    },
+    "procedures/prp-plan.md": {
+      "slash-cmd": 4,
+      "notes": 1
+    },
+    "procedures/prp-pr.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/prp-prd.md": {
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "procedures/prune.md": {
+      "plugin-root": 1,
+      "home-skills": 1
+    },
+    "procedures/python-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 1,
+      "rel-skills": 2,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/quality-gate.md": {
+      "rel-tree": 2,
+      "rel-hooks-json": 1,
+      "notes": 1
+    },
+    "procedures/react-build.md": {
+      "agent-role": 1,
+      "slash-cmd": 5,
+      "rel-skills": 2,
+      "rel-agents": 1,
+      "rel-tree": 2,
+      "notes": 1
+    },
+    "procedures/react-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 7,
+      "rel-skills": 3,
+      "rel-agents": 2,
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "procedures/react-test.md": {
+      "rel-tree": 2,
+      "slash-cmd": 3,
+      "rel-skills": 4,
+      "notes": 1
+    },
+    "procedures/resume-session.md": {
+      "slash-cmd": 4,
+      "notes": 1
+    },
+    "procedures/review-pr.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/rust-build.md": {
+      "agent-role": 1,
+      "slash-cmd": 3,
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/rust-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 5,
+      "rel-skills": 2,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/rust-test.md": {
+      "slash-cmd": 3,
+      "rel-skills": 2,
+      "notes": 1
+    },
+    "procedures/santa-loop.md": {
+      "notes": 1
+    },
+    "procedures/save-session.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/security-scan.md": {
+      "slash-cmd": 1,
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "procedures/sessions.md": {
+      "slash-cmd": 4,
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "procedures/setup-pm.md": {
+      "rel-tree": 5
+    },
+    "procedures/skill-create.md": {
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "procedures/skill-health.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "procedures/vue-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 5,
+      "rel-skills": 1,
+      "rel-agents": 2,
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "roles/a11y-architect.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/agent-evaluator.md": {
+      "rel-skills": 1,
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/architect.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/build-error-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/chief-of-staff.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/code-architect.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/code-explorer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/code-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/code-simplifier.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/comment-analyzer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/conversation-analyzer.md": {
+      "rel-agents": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "roles/cpp-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/cpp-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/csharp-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/dart-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/database-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/django-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/django-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/doc-updater.md": {
+      "rel-agents": 1,
+      "slash-cmd": 2,
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "roles/docs-lookup.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/e2e-runner.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/fastapi-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/flutter-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/fsharp-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/gan-evaluator.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/gan-generator.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/gan-planner.md": {
+      "rel-agents": 1,
+      "agent-role": 1,
+      "notes": 1
+    },
+    "roles/go-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/go-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/harmonyos-app-resolver.md": {
+      "rel-agents": 1,
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "roles/harness-optimizer.md": {
+      "rel-skills": 2,
+      "rel-agents": 1,
+      "rel-tree": 4,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "roles/healthcare-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/homelab-architect.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/java-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/java-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/kotlin-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/kotlin-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/loop-operator.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/marketing-agent.md": {
+      "rel-agents": 1,
+      "rel-skills": 1,
+      "notes": 1
+    },
+    "roles/mle-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/network-architect.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/network-config-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/network-troubleshooter.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/opensource-forker.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/opensource-packager.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/opensource-sanitizer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/performance-optimizer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/php-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/planner.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/pr-test-analyzer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/python-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/pytorch-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/rag-pipeline-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/react-build-resolver.md": {
+      "rel-agents": 1,
+      "rel-skills": 2,
+      "rel-tree": 2,
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "roles/react-reviewer.md": {
+      "rel-agents": 1,
+      "rel-skills": 3,
+      "rel-tree": 5,
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "roles/refactor-cleaner.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/rust-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/rust-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/security-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/seo-specialist.md": {
+      "rel-agents": 1,
+      "rel-skills": 1,
+      "notes": 1
+    },
+    "roles/silent-failure-hunter.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/spec-miner.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/swift-build-resolver.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/swift-reviewer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/tdd-guide.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/type-design-analyzer.md": {
+      "rel-agents": 1,
+      "notes": 1
+    },
+    "roles/typescript-reviewer.md": {
+      "rel-agents": 2,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "roles/vue-reviewer.md": {
+      "rel-agents": 1,
+      "rel-skills": 1,
+      "rel-tree": 5,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "rules/README.md": {
+      "rel-tree": 24,
+      "notes": 1
+    },
+    "rules/angular/hooks.md": {
+      "notes": 1
+    },
+    "rules/arkts/hooks.md": {
+      "notes": 1
+    },
+    "rules/common/agents.md": {
+      "agent-role": 4,
+      "notes": 1
+    },
+    "rules/common/code-review.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "rules/common/development-workflow.md": {
+      "agent-role": 3,
+      "notes": 1
+    },
+    "rules/common/hooks.md": {
+      "notes": 1
+    },
+    "rules/common/performance.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "rules/common/security.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "rules/common/testing.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "rules/csharp/hooks.md": {
+      "notes": 1
+    },
+    "rules/dart/hooks.md": {
+      "notes": 1
+    },
+    "rules/fsharp/hooks.md": {
+      "notes": 1
+    },
+    "rules/golang/hooks.md": {
+      "notes": 1
+    },
+    "rules/java/hooks.md": {
+      "notes": 1
+    },
+    "rules/kotlin/hooks.md": {
+      "notes": 1
+    },
+    "rules/nuxt/hooks.md": {
+      "notes": 1
+    },
+    "rules/perl/hooks.md": {
+      "notes": 1
+    },
+    "rules/php/hooks.md": {
+      "notes": 1
+    },
+    "rules/python/hooks.md": {
+      "notes": 1
+    },
+    "rules/react-native/coding-style.md": {
+      "rel-tree": 1
+    },
+    "rules/react-native/hooks.md": {
+      "notes": 1
+    },
+    "rules/react-native/security.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "rules/react-native/testing.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "rules/react/patterns.md": {
+      "rel-skills": 3,
+      "rel-tree": 1
+    },
+    "rules/react/security.md": {
+      "agent-role": 2,
+      "notes": 1
+    },
+    "rules/react/testing.md": {
+      "rel-skills": 1
+    },
+    "rules/ruby/hooks.md": {
+      "notes": 1
+    },
+    "rules/rust/hooks.md": {
+      "notes": 1
+    },
+    "rules/swift/hooks.md": {
+      "notes": 1
+    },
+    "rules/typescript/hooks.md": {
+      "notes": 1
+    },
+    "rules/vue/hooks.md": {
+      "notes": 1
+    },
+    "rules/web/hooks.md": {
+      "notes": 1
+    },
+    "skills/agent-payment-x402/SKILL.md": {
+      "notes": 1
+    },
+    "skills/agent-self-evaluation/references/hook-integration.md": {
+      "rel-hooks-json": 2,
+      "rel-tree": 1,
+      "rel-skills": 2,
+      "notes": 1
+    },
+    "skills/agent-sort/SKILL.md": {
+      "rel-skills": 2,
+      "rel-tree": 2,
+      "notes": 1
+    },
+    "skills/api-connector-builder/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/architecture-decision-records/SKILL.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "skills/autonomous-loops/SKILL.md": {
+      "rel-tree": 2,
+      "rel-skills": 1,
+      "notes": 1
+    },
+    "skills/blueprint/SKILL.md": {
+      "rel-skills": 1,
+      "home-skills": 1,
+      "notes": 1
+    },
+    "skills/canary-watch/SKILL.md": {
+      "notes": 1
+    },
+    "skills/ck/SKILL.md": {
+      "home-skills": 3,
+      "notes": 1
+    },
+    "skills/codehealth-mcp/SKILL.md": {
+      "rel-tree": 2,
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "skills/coding-standards/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/config-gc/SKILL.md": {
+      "notes": 1
+    },
+    "skills/configure-ecc/SKILL.md": {
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "skills/context-budget/SKILL.md": {
+      "notes": 1
+    },
+    "skills/continuous-agent-loop/SKILL.md": {
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "skills/continuous-learning-v2/SKILL.md": {
+      "rel-skills": 1,
+      "rel-hooks-json": 2,
+      "home-skills": 2,
+      "slash-cmd": 7,
+      "notes": 1
+    },
+    "skills/continuous-learning-v2/agents/observer.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/continuous-learning/SKILL.md": {
+      "home-skills": 1,
+      "rel-tree": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/cost-tracking/SKILL.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/council/SKILL.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/dart-flutter-patterns/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/deep-research/SKILL.md": {
+      "notes": 1
+    },
+    "skills/delivery-gate/SKILL.md": {
+      "notes": 1
+    },
+    "skills/dev-team/SKILL.md": {
+      "agent-role": 2,
+      "slash-cmd": 6,
+      "notes": 1
+    },
+    "skills/dmux-workflows/SKILL.md": {
+      "rel-tree": 3,
+      "notes": 1
+    },
+    "skills/docker-patterns/SKILL.md": {
+      "notes": 1
+    },
+    "skills/ecc-guide/SKILL.md": {
+      "rel-tree": 9,
+      "rel-hooks-json": 2,
+      "slash-cmd": 7,
+      "notes": 1
+    },
+    "skills/ecc-recipes/SKILL.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/eval-harness/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/gateguard/SKILL.md": {
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "skills/generating-python-installer/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/github-ops/references/ecc-release-checklist.md": {
+      "rel-tree": 3,
+      "notes": 1
+    },
+    "skills/hermes-imports/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/hookify-rules/SKILL.md": {
+      "slash-cmd": 4,
+      "notes": 1
+    },
+    "skills/inherit-legacy-style/SKILL.md": {
+      "notes": 1
+    },
+    "skills/iterative-retrieval/SKILL.md": {
+      "notes": 1
+    },
+    "skills/loop-design-check/SKILL.md": {
+      "notes": 1
+    },
+    "skills/mcp-server-patterns/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/nanoclaw-repl/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/opensource-pipeline/SKILL.md": {
+      "agent-role": 3,
+      "notes": 1
+    },
+    "skills/orch-add-feature/SKILL.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/orch-build-mvp/SKILL.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/orch-fix-defect/SKILL.md": {
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/orch-pipeline/SKILL.md": {
+      "rel-tree": 4,
+      "slash-cmd": 10,
+      "agent-role": 3,
+      "notes": 1
+    },
+    "skills/orch-refine-code/SKILL.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "skills/plan-canvas/SKILL.md": {
+      "slash-cmd": 5,
+      "notes": 1
+    },
+    "skills/plan-orchestrate/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/plankton-code-quality/SKILL.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "skills/postgres-patterns/SKILL.md": {
+      "agent-role": 1,
+      "notes": 1
+    },
+    "skills/product-capability/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/prompt-optimizer/SKILL.md": {
+      "slash-cmd": 21,
+      "agent-role": 1,
+      "notes": 1
+    },
+    "skills/react-native-patterns/SKILL.md": {
+      "rel-tree": 1
+    },
+    "skills/react-patterns/SKILL.md": {
+      "rel-tree": 2,
+      "rel-skills": 2,
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "skills/react-performance/SKILL.md": {
+      "rel-tree": 1,
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "skills/react-testing/SKILL.md": {
+      "rel-skills": 1,
+      "rel-tree": 1,
+      "slash-cmd": 2,
+      "notes": 1
+    },
+    "skills/rules-distill/SKILL.md": {
+      "home-skills": 2,
+      "rel-tree": 3,
+      "notes": 1
+    },
+    "skills/safety-guard/SKILL.md": {
+      "notes": 1
+    },
+    "skills/santa-method/SKILL.md": {
+      "notes": 1
+    },
+    "skills/search-first/SKILL.md": {
+      "notes": 1
+    },
+    "skills/security-scan/SKILL.md": {
+      "notes": 1
+    },
+    "skills/skill-comply/SKILL.md": {
+      "rel-tree": 1,
+      "home-skills": 1,
+      "home-rules": 1
+    },
+    "skills/skill-stocktake/SKILL.md": {
+      "home-skills": 8,
+      "rel-tree": 1,
+      "notes": 1
+    },
+    "skills/strategic-compact/SKILL.md": {
+      "rel-hooks-json": 1,
+      "notes": 1
+    },
+    "skills/tdd-workflow/SKILL.md": {
+      "rel-tree": 2,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "skills/team-builder/SKILL.md": {
+      "notes": 1
+    },
+    "skills/terminal-opener/SKILL.md": {
+      "rel-skills": 1
+    },
+    "skills/unified-memory/SKILL.md": {
+      "rel-tree": 2,
+      "notes": 1
+    },
+    "skills/verification-loop/SKILL.md": {
+      "notes": 1
+    },
+    "skills/videodb/SKILL.md": {
+      "rel-skills": 1
+    },
+    "the-longform-guide.md": {
+      "rel-skills": 1,
+      "notes": 1
+    },
+    "the-shortform-guide.md": {
+      "slash-cmd": 3,
+      "notes": 1
+    }
+  }
+}

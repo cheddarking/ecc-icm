@@ -4,7 +4,7 @@ description: Review a FastAPI application for architecture, async correctness, d
 
 # FastAPI Review
 
-Invoke the `fastapi-reviewer` agent for a focused FastAPI review.
+Invoke the `fastapi-reviewer` role for a focused FastAPI review.
 
 ## Usage
 
@@ -35,5 +35,9 @@ Fix: Concrete change to make.
 
 - Agent: `fastapi-reviewer`
 - Skill: `fastapi-patterns`
-- Command: `/python-review`
+- Command: `python-review` procedure
 - Skill: `security-scan`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

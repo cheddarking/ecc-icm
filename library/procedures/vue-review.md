@@ -4,7 +4,7 @@ description: Comprehensive Vue.js code review for Composition API correctness, r
 
 # Vue Code Review
 
-This command invokes the **vue-reviewer** agent for Vue-specific code review. For pull requests touching `.vue` files or Vue-containing `.ts`/`.js` files, both `vue-reviewer` and `typescript-reviewer` should run — each owns a distinct lane.
+This command invokes the **vue-reviewer** role for Vue-specific code review. For pull requests touching `.vue` files or Vue-containing `.ts`/`.js` files, both `vue-reviewer` and `typescript-reviewer` should run — each owns a distinct lane.
 
 ## What This Command Does
 
@@ -16,7 +16,7 @@ This command invokes the **vue-reviewer** agent for Vue-specific code review. Fo
 
 ## When to Use
 
-Use `/vue-review` when:
+Use `vue-review` procedure when:
 
 - A PR or commit touches `.vue` files
 - After writing or modifying Vue components, composables, or Pinia stores
@@ -26,7 +26,7 @@ Use `/vue-review` when:
 - Auditing Vue Router guards and navigation
 - Reviewing Nuxt server routes or SSR-specific code
 
-For pure `.ts`/`.js` changes with no Vue imports, use `/code-review` (general) or invoke `typescript-reviewer` directly.
+For pure `.ts`/`.js` changes with no Vue imports, use `code-review` procedure (general) or invoke `typescript-reviewer` directly.
 
 ## Scope vs `/code-review` and TypeScript Review
 
@@ -35,7 +35,7 @@ For pure `.ts`/`.js` changes with no Vue imports, use `/code-review` (general) o
 | `vue-reviewer` (this command) | Reactivity, composables, template security, a11y, Vue performance, Pinia/Router |
 | `typescript-reviewer` | Generic TS/JS — `any` abuse, async correctness, Node security |
 | `security-reviewer` | Project-wide security audit |
-| `/code-review` | Generic uncommitted-changes or PR review |
+| `code-review` procedure | Generic uncommitted-changes or PR review |
 
 On a `.vue` / Vue-related PR, invoke both `vue-reviewer` and `typescript-reviewer`. Findings from each are non-overlapping by design.
 
@@ -163,12 +163,16 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 
 - Run your project's build command first if the build is broken
 - Run tests to ensure component tests pass
-- Run `/vue-review` before merging Vue code
-- Use `/code-review` for non-Vue-specific concerns on the same PR
+- Run `vue-review` procedure before merging Vue code
+- Use `code-review` procedure for non-Vue-specific concerns on the same PR
 
 ## Related
 
-- Agent: `agents/vue-reviewer.md`
-- Companion agent: `agents/typescript-reviewer.md` (run alongside for Vue-related TS/JS)
-- Skills: `skills/vue-patterns/`
-- Rules: `rules/vue/`
+- Agent: `$PLUGIN/library/roles/vue-reviewer.md`
+- Companion agent: `$PLUGIN/library/roles/typescript-reviewer.md` (run alongside for Vue-related TS/JS)
+- Skills: `$PLUGIN/library/skills/vue-patterns/`
+- Rules: `$PLUGIN/library/rules/vue/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

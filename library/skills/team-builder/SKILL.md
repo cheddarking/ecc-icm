@@ -167,3 +167,7 @@ Both agents agree on: [...]
 Tension: Security recommends CSP that blocks inline styles, SEO needs inline schema markup. Resolution: [...]
 Next steps: [...]
 ```
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

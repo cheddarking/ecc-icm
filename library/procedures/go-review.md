@@ -4,7 +4,7 @@ description: Comprehensive Go code review for idiomatic patterns, concurrency sa
 
 # Go Code Review
 
-This command invokes the **go-reviewer** agent for comprehensive Go-specific code review.
+This command invokes the **go-reviewer** role for comprehensive Go-specific code review.
 
 ## What This Command Does
 
@@ -17,7 +17,7 @@ This command invokes the **go-reviewer** agent for comprehensive Go-specific cod
 
 ## When to Use
 
-Use `/go-review` when:
+Use `go-review` procedure when:
 - After writing or modifying Go code
 - Before committing Go changes
 - Reviewing pull requests with Go code
@@ -137,12 +137,16 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 
 ## Integration with Other Commands
 
-- Use `/go-test` first to ensure tests pass
-- Use `/go-build` if build errors occur
-- Use `/go-review` before committing
-- Use `/code-review` for non-Go specific concerns
+- Use `go-test` procedure first to ensure tests pass
+- Use `go-build` procedure if build errors occur
+- Use `go-review` procedure before committing
+- Use `code-review` procedure for non-Go specific concerns
 
 ## Related
 
-- Agent: `agents/go-reviewer.md`
-- Skills: `skills/golang-patterns/`, `skills/golang-testing/`
+- Agent: `$PLUGIN/library/roles/go-reviewer.md`
+- Skills: `$PLUGIN/library/skills/golang-patterns/`, `$PLUGIN/library/skills/golang-testing/`
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

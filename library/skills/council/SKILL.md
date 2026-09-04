@@ -158,7 +158,7 @@ Do **not** write ad-hoc notes to `~/.claude/notes` or other shadow paths from th
 
 If the council materially changes the recommendation:
 - use `knowledge-ops` to store the lesson in the right durable location
-- or use `/save-session` if the outcome belongs in session memory
+- or use `save-session` procedure if the outcome belongs in session memory
 - or update the relevant GitHub / Linear issue directly if the decision changes active execution truth
 
 Only persist a decision when it changes something real.
@@ -202,3 +202,7 @@ Likely council shape:
 - Critic focuses on support burden, expectation debt, and rollout confusion
 
 The value is not unanimity. The value is making the disagreement legible before choosing.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

@@ -71,7 +71,7 @@ Categorize changed files: source, tests, docs, config, migrations.
 
 ### Planning Artifacts
 
-Check for related artifacts produced by `/plan-prd`, `/plan`, or the legacy PRP workflow:
+Check for related artifacts produced by `plan-prd` procedure, `plan` procedure, or the legacy PRP workflow:
 - `.claude/prds/` — PRDs this PR implements a milestone of
 - `.claude/plans/` — Plans executed by this PR
 - `.claude/PRPs/prds/` — legacy PRP PRDs
@@ -182,3 +182,7 @@ Next steps:
 - **Force push needed**: If remote has diverged and rebase was done, use `git push --force-with-lease` (never `--force`).
 - **Multiple PR templates**: If `.github/PULL_REQUEST_TEMPLATE/` has multiple files, list them and ask user to choose.
 - **Large PR (>20 files)**: Warn about PR size. Suggest splitting if changes are logically separable.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

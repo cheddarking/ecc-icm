@@ -112,7 +112,7 @@ src/integrations/
 - [ ] pagination/retry behavior follows repo norms
 - [ ] registry/discovery wiring is complete
 - [ ] tests mirror the host repo's style
-- [ ] docs/examples are updated if expected by the repo
+- [ ] $PLUGIN/library/docs/examples are updated if expected by the repo
 
 ## Related Skills
 

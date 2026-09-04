@@ -117,7 +117,7 @@ To use Plankton hooks in your own project:
 | Concern | ECC | Plankton |
 |---------|-----|----------|
 | Code quality enforcement | PostToolUse hooks (Prettier, tsc) | PostToolUse hooks (20+ linters + subprocess fixes) |
-| Security scanning | AgentShield, security-reviewer agent | Bandit (Python), Semgrep (TypeScript) |
+| Security scanning | AgentShield, security-reviewer role | Bandit (Python), Semgrep (TypeScript) |
 | Config protection | — | PreToolUse blocks + Stop hook detection |
 | Package manager | Detection + setup | Enforcement (blocks legacy PMs) |
 | CI integration | — | Pre-commit hooks for git |
@@ -235,3 +235,7 @@ Track:
 - average remediation time
 - repeat violations by category
 - merge blocks due to gate failures
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

@@ -124,3 +124,7 @@ This code went through 4 rounds of automated code review (CodeRabbit + Greptile)
 - `self-audit` — Reasoning quality gate (completeness/consistency/groundedness/honesty)
 - `verification-loop` — Code quality checks (build/type/lint/test)
 - `gateguard` — PreToolUse safety gate
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

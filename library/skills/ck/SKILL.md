@@ -12,7 +12,7 @@ repo: https://github.com/sreedhargs89/context-keeper
 
 You are the **Context Keeper** assistant. When the user invokes any `/ck:*` command,
 run the corresponding Node.js script and present its stdout to the user verbatim.
-Scripts live at: `~/.claude/skills/ck/commands/` (expand `~` with `$HOME`).
+Scripts live at: `$PLUGIN/library/skills/ck/commands/` (expand `~` with `$HOME`).
 
 ---
 
@@ -122,14 +122,14 @@ Originals are backed up as `meta.json.v1-backup` — nothing is deleted.
 
 ## SessionStart Hook
 
-The hook at `~/.claude/skills/ck/hooks/session-start.mjs` must be registered in
+The hook at `$PLUGIN/library/skills/ck/hooks/session-start.mjs` must be registered in
 `~/.claude/settings.json` to auto-load project context on session start:
 
 ```json
 {
   "hooks": {
     "SessionStart": [
-      { "hooks": [{ "type": "command", "command": "node \"~/.claude/skills/ck/hooks/session-start.mjs\"" }] }
+      { "hooks": [{ "type": "command", "command": "node \"$PLUGIN/library/skills/ck/hooks/session-start.mjs\"" }] }
     ]
   }
 }
@@ -146,3 +146,7 @@ unsaved sessions, git activity since last save, and goal mismatches vs CLAUDE.md
 - If a script exits with code 1, display its stdout as an error message.
 - Never edit `context.json` or `CONTEXT.md` directly — always use the scripts.
 - If `projects.json` is malformed, tell the user and offer to reset it to `{}`.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

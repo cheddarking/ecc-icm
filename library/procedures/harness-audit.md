@@ -8,7 +8,7 @@ Run a deterministic repository harness audit and return a prioritized scorecard.
 
 ## Usage
 
-`/harness-audit [scope] [--format text|json] [--root path]`
+`harness-audit` procedure (`[scope] [--format text|json] [--root path]`)
 
 - `scope` (optional): `repo` (default), `hooks`, `skills`, `commands`, `agents`
 - `--format`: output style (`text` default, `json` for automation)
@@ -19,7 +19,7 @@ Run a deterministic repository harness audit and return a prioritized scorecard.
 Always run:
 
 ```bash
-node scripts/harness-audit.js <scope> --format <text|json> [--root <path>]
+node $PLUGIN/library/scripts/harness-audit.js <scope> --format <text|json> [--root <path>]
 ```
 
 This script is the source of truth for scoring and checks. Do not invent additional dimensions or ad-hoc points.
@@ -73,7 +73,7 @@ Harness Audit (repo, repo): 71/80
 
 Top 3 Actions:
 1) [GitHub Integration] Add at least one workflow under .github/workflows/. (.github/workflows/)
-2) [Security Guardrails] Add prompt/tool preflight security guards in hooks/hooks.json. (hooks/hooks.json)
+2) [Security Guardrails] Add prompt/tool preflight security guards in $PLUGIN/library/hooks/hooks.json. ($PLUGIN/library/hooks/hooks.json)
 3) [Eval Coverage] Increase automated test coverage across scripts/hooks/lib. (tests/)
 ```
 
@@ -82,3 +82,7 @@ Top 3 Actions:
 $ARGUMENTS:
 - `repo|hooks|skills|commands|agents` (optional scope)
 - `--format text|json` (optional output format)
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

@@ -1,8 +1,8 @@
 # Role: doc-updater
 
-Source: ECC agents/doc-updater.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC $PLUGIN/library/roles/doc-updater.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
-Description: Documentation and codemap specialist. Use PROACTIVELY for updating codemaps and documentation. Generates docs/CODEMAPS/*, updates READMEs and guides. Backs the /update-codemaps and /update-docs commands.
+Description: Documentation and codemap specialist. Use PROACTIVELY for updating codemaps and documentation. Generates docs/CODEMAPS/*, updates READMEs and guides. Backs the `update-codemaps` procedure and `update-docs` procedure commands.
 
 ---
 ## Core Responsibilities
@@ -16,7 +16,7 @@ Description: Documentation and codemap specialist. Use PROACTIVELY for updating 
 ## Analysis Commands
 
 ```bash
-npx tsx scripts/codemaps/generate.ts    # Generate codemaps
+npx tsx $PLUGIN/library/scripts/codemaps/generate.ts    # Generate codemaps
 npx madge --image graph.svg src/        # Dependency graph
 npx jsdoc2md src/**/*.ts                # Extract JSDoc
 ```
@@ -101,3 +101,7 @@ Links to other codemaps
 ---
 
 **Remember**: Documentation that doesn't match reality is worse than no documentation. Always generate from the source of truth.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

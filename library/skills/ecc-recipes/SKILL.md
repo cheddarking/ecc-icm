@@ -106,7 +106,7 @@ workflow for a matched recipe.
 4. **Stop condition** — always explicit (max-runs, completion-signal,
    review-passes, or single-shot). For autonomous loops, warn about subscription
    burn and recommend a backstop bound.
-5. **Where to read** — the `commands/<name>.md` path plus `/ecc-guide <name>`.
+5. **Where to read** — the `commands/<name>.md` path plus `ecc-guide` procedure (`<name>`).
 
 ## Output Template (match mode)
 
@@ -148,3 +148,7 @@ pass review N consecutive times (add a max-iteration backstop to bound burn).
 - Not per-command deep docs — that's `ecc-guide`.
 - Not prompt rewriting — that's `prompt-optimizer`.
 - Never hardcode command counts or member lists — always live-read.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

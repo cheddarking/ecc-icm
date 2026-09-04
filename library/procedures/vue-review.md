@@ -171,7 +171,7 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 - Agent: `$PLUGIN/library/roles/vue-reviewer.md`
 - Companion agent: `$PLUGIN/library/roles/typescript-reviewer.md` (run alongside for Vue-related TS/JS)
 - Skills: `$PLUGIN/library/skills/vue-patterns/`
-- Rules: `$PLUGIN/library/rules/vue/`
+- Rules: `rules/vue/`
 
 ---
 <!-- ecc-icm-notes -->

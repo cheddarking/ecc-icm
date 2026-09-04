@@ -96,8 +96,8 @@ Expected:
 
 - Branch from exact current `main`.
 - Update release metadata to the new patch version.
-- Add reviewed release notes under `$PLUGIN/library/docs/releases/<version>/release-notes.md`.
-- Add a patch runbook under `$PLUGIN/library/docs/releases/<version>/launch-runbook.md`.
+- Add reviewed release notes under `docs/releases/<version>/release-notes.md`.
+- Add a patch runbook under `docs/releases/<version>/launch-runbook.md`.
 - Open and merge that prep PR.
 - Wait for fresh `main` CI and CodeQL on the merged prep commit.
 

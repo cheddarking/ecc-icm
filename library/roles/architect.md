@@ -1,6 +1,6 @@
 # Role: architect
 
-Source: ECC $PLUGIN/library/roles/architect.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob.
+Source: ECC `agents` folder, file `architect.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob.
 
 Description: Software architecture specialist for system design, scalability, and technical decision-making. Use PROACTIVELY when planning new features, refactoring large systems, or making architectural decisions.
 

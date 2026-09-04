@@ -1,6 +1,6 @@
 # Role: gan-generator
 
-Source: ECC $PLUGIN/library/roles/gan-generator.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC `agents` folder, file `gan-generator.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: "GAN Harness — Generator agent. Implements features according to the spec, reads evaluator feedback, and iterates until quality threshold is met."
 

@@ -1,6 +1,6 @@
 # Role: refactor-cleaner
 
-Source: ECC $PLUGIN/library/roles/refactor-cleaner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC `agents` folder, file `refactor-cleaner.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: Dead code cleanup and consolidation specialist. Use PROACTIVELY for removing unused code, duplicates, and refactoring. Runs analysis tools (knip, depcheck, ts-prune) to identify dead code and safely removes it.
 

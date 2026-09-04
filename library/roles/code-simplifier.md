@@ -1,6 +1,6 @@
 # Role: code-simplifier
 
-Source: ECC $PLUGIN/library/roles/code-simplifier.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC `agents` folder, file `code-simplifier.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: Simplifies and refines code for clarity, consistency, and maintainability while preserving behavior. Focus on recently modified code unless instructed otherwise.
 

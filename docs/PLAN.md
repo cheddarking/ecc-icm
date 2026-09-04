@@ -25,13 +25,13 @@ Measured with `scripts/icm/context-budget.js` over the ECC checkout: 286 skill d
 
 | Layer | Where | Tokens |
 |---|---|---|
-| 0 | `CLAUDE.md`, injected by the SessionStart hook with the plugin root substituted | about 950 including the project's run status |
+| 0 | `CLAUDE.md`, injected by the SessionStart hook with the plugin root substituted | about 975 including the project's run status |
 | 1 | `workspaces/<name>/CONTEXT.md` | read on entry |
 | 2 | `workspaces/<name>/stages/0N-<stage>/CONTEXT.md`, 30 contracts, each under 80 lines | 200 to 600 each |
 | 3 | `workspaces/<name>/references/`, `shared/`, and `library/` (unregistered) | loaded by section |
 | 4 | `$PROJECT/.claude/runs/<slug>/0N-<stage>/<artifact>.md` | per run |
 
-Static context this plugin adds: 1,007 tokens (one registered skill description plus the Layer 0 injection). Against ECC's 32,706 that is a 97% reduction of the harness's own overhead. Other plugins, MCP servers and the user's CLAUDE.md files are outside this number.
+Static context this plugin adds: 1,034 tokens (one registered skill description plus the Layer 0 injection). Against ECC's 32,706 that is a 97% reduction of the harness's own overhead. Other plugins, MCP servers and the user's CLAUDE.md files are outside this number.
 
 Delegation is a harness property: `scripts/icm/agent-gate.js` denies the Agent tool while a run is active unless the current stage contract says `Delegate: yes`. Two stages say yes with conditions: engineering 02-research on large repositories, research 02-gather at deep depth. Everything else is one agent.
 
@@ -43,7 +43,7 @@ The edit-source loop from the paper's section 6.3 is mechanical: `verify.js` kee
 
 | Criterion | Target | Status |
 |---|---|---|
-| Static harness tokens per turn | under 3,000 | 1,007 measured; test asserts under 3,000 |
+| Static harness tokens per turn | under 3,000 | 1,034 measured; test asserts under 3,000 |
 | Agent tool uses on a standard task | 0 by default | enforced by `agent-gate.js`; measured per run in `_cost.jsonl`; not yet exercised on a real task |
 | Total tokens on the three benchmark tasks | at least 50% lower than ECC | not measured; protocol in `benchmarks/` |
 | Stage outputs present and editable | all | mechanism tested end to end on a temporary project |

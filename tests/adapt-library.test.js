@@ -3,20 +3,29 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const path = require('path');
-const { adaptText, MARKER } = require(path.join(__dirname, '..', 'scripts', 'icm', 'adapt-library.js'));
+const { adaptText, splitFences, MARKER } = require(path.join(__dirname, '..', 'scripts', 'icm', 'adapt-library.js'));
 
+const files = new Set([
+  'rules/common/security.md',
+  'scripts/hooks/cost-tracker.js',
+  'scripts/harness-audit.js',
+  'mcp-configs/mcp-servers.json',
+  'docs/token-optimization.md',
+  'the-security-guide.md',
+  'skills/tdd-workflow/SKILL.md',
+  'skills/tdd-workflow/scripts/run.sh',
+  'skills/deep-research/SKILL.md',
+  'legacy-command-shims/commands/tdd.md'
+]);
+const dirs = new Set(['rules', 'rules/common', 'rules/rust', 'scripts', 'scripts/hooks', 'scripts/lib/plan-canvas', 'docs', 'docs/examples', 'docs/testing', 'skills/tdd-workflow', 'skills/deep-research', 'legacy-command-shims/commands']);
+const norm = rel => rel.replace(/\/+$/, '');
 const ctx = {
   skills: new Set(['tdd-workflow', 'deep-research']),
-  roles: new Set(['planner', 'code-reviewer', 'architect']),
+  roles: new Set(['planner', 'code-reviewer', 'architect', 'security-reviewer']),
   procedures: new Set(['plan', 'plan-canvas', 'code-review', 'pr']),
-  exists: rel => new Set([
-    'rules/common/security.md',
-    'scripts/hooks/cost-tracker.js',
-    'scripts/harness-audit.js',
-    'mcp-configs/mcp-servers.json',
-    'docs/token-optimization.md',
-    'the-security-guide.md'
-  ]).has(rel)
+  shims: new Set(['tdd', 'verify']),
+  exists: rel => files.has(norm(rel)) || dirs.has(norm(rel)),
+  isFile: rel => files.has(norm(rel))
 };
 
 test('paths that exist in the library are rewritten, others are left alone', () => {
@@ -41,6 +50,32 @@ test('paths that exist in the library are rewritten, others are left alone', () 
   assert.equal((text.match(/\$PLUGIN\/library\/skills\/tdd-workflow/g) || []).length, 2);
 });
 
+test('skill paths with a tail are rewritten only when the tail exists', () => {
+  const src = [
+    'Cache at ~/.claude/skills/tdd-workflow/results.json is written at runtime.',
+    'Run skills/tdd-workflow/scripts/run.sh, then read skills/tdd-workflow/SKILL.md.',
+    'Broken: skills/tdd-workflow/missing.md.'
+  ].join('\n');
+  const { text } = adaptText(src, ctx);
+  assert.ok(text.includes('Cache at ~/.claude/skills/tdd-workflow/results.json'));
+  assert.ok(text.includes('Run $PLUGIN/library/skills/tdd-workflow/scripts/run.sh, then read $PLUGIN/library/skills/tdd-workflow/SKILL.md.'));
+  assert.ok(text.includes('Broken: skills/tdd-workflow/missing.md.'));
+});
+
+test('project-relative doc and rule paths that only match a directory or a placeholder stay', () => {
+  const src = [
+    'Write the report to docs/testing/<plan-or-task-name>.tdd.md in the project.',
+    'Ensure docs/examples are updated if the repo expects it. Create a `rules/rust/` directory.',
+    'Also `@docs/...` is accepted. But scripts/lib/plan-canvas/ is a real folder.'
+  ].join('\n');
+  const { text } = adaptText(src, ctx);
+  assert.ok(text.includes('docs/testing/<plan-or-task-name>.tdd.md in the project'));
+  assert.ok(text.includes('Ensure docs/examples are updated'));
+  assert.ok(text.includes('Create a `rules/rust/` directory'));
+  assert.ok(text.includes('`@docs/...` is accepted'));
+  assert.ok(text.includes('$PLUGIN/library/scripts/lib/plan-canvas/ is a real folder'));
+});
+
 test('slash commands become procedures outside code fences and headings', () => {
   const src = [
     '# Use /plan first',
@@ -50,7 +85,8 @@ test('slash commands become procedures outside code fences and headings', () => 
     '```',
     'User: /plan add notifications',
     '```',
-    'Inline code that mentions `run /plan now` is left alone.'
+    'Inline code that mentions `run /plan now` is left alone.',
+    'Legacy: run /tdd before /verify.'
   ].join('\n');
   const { text, fired } = adaptText(src, ctx);
   assert.ok(text.includes('# Use /plan first'));
@@ -59,12 +95,51 @@ test('slash commands become procedures outside code fences and headings', () => 
   assert.ok(text.includes('`plan-canvas` procedure is separate from `plan` procedure.'));
   assert.ok(text.includes('User: /plan add notifications'));
   assert.ok(text.includes('`run /plan now` is left alone'));
-  assert.ok(fired.has('slash-cmd'));
+  assert.ok(text.includes('Legacy: run `tdd` procedure before `verify` procedure.'));
+  assert.ok(fired.has('slash-cmd') && fired.has('legacy-shim'));
   assert.ok(text.includes(MARKER));
   assert.ok(text.includes('Procedures named above are files'));
+  assert.ok(text.includes('legacy-command-shims/commands/'));
 });
 
-test('agent mentions become roles and the delegation note is added once', () => {
+test('fences of any length or indent are left alone by the prose rules', () => {
+  const src = [
+    'Intro /plan here.',
+    '````text',
+    'User: /plan inside a four-backtick fence',
+    '```',
+    'nested three backticks are content',
+    '```',
+    '````',
+    'Back in prose /pr.',
+    '   ```bash',
+    '   /code-review inside an indented fence',
+    '   ```',
+    '~~~',
+    'tilde fence /plan',
+    '~~~',
+    'Last /plan.'
+  ].join('\n');
+  const { text } = adaptText(src, ctx);
+  assert.ok(text.includes('Intro `plan` procedure here.'));
+  assert.ok(text.includes('User: /plan inside a four-backtick fence'));
+  assert.ok(text.includes('Back in prose `pr` procedure.'));
+  assert.ok(text.includes('   /code-review inside an indented fence'));
+  assert.ok(text.includes('tilde fence /plan'));
+  assert.ok(text.includes('Last `plan` procedure.'));
+  const segs = splitFences(src);
+  // The indented fence and the tilde fence are adjacent, so no prose sits between them.
+  assert.deepEqual(segs.map(s => s.fenced), [false, true, false, true, true, false]);
+});
+
+test('example prompts and roles inside code spans are not rewritten', () => {
+  const src = 'Try `/plan [feature]. /tdd to implement. /code-review.` and `security-reviewer agent.` as a prompt.\n';
+  const { text } = adaptText(src, ctx);
+  assert.ok(text.includes('`/plan [feature]. /tdd to implement. /code-review.`'));
+  assert.ok(text.includes('`security-reviewer agent.`'));
+});
+
+test('agent mentions become roles, including across an inline code span, once', () => {
   const src = 'Use the **planner** agent, then the `code-reviewer` agent. The Architect agent decides. Spawn subagents for research.\n';
   const first = adaptText(src, ctx);
   assert.ok(first.text.includes('Use the **planner** role, then the `code-reviewer` role. The Architect role decides.'));

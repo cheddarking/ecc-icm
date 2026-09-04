@@ -1,6 +1,6 @@
 # Role: a11y-architect
 
-Source: ECC $PLUGIN/library/roles/a11y-architect.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Grep, Glob.
+Source: ECC `agents` folder, file `a11y-architect.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Edit, Grep, Glob.
 
 Description: Accessibility Architect specializing in WCAG 2.2 compliance for Web and Native platforms. Use PROACTIVELY when designing UI components, establishing design systems, or auditing code for inclusive user experiences.
 

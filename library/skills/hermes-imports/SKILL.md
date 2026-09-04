@@ -59,7 +59,7 @@ Read my local workspace files and finalize launch copy.
 ECC-safe version:
 
 ```text
-Use the public release pack under $PLUGIN/library/docs/releases/<version>/.
+Use the public release pack under docs/releases/<version>/.
 Return one X thread, one LinkedIn post, one recording checklist, and the missing assets list.
 ```
 

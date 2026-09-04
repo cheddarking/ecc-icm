@@ -1,6 +1,6 @@
 # Role: python-reviewer
 
-Source: ECC $PLUGIN/library/roles/python-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC `agents` folder, file `python-reviewer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert Python code reviewer specializing in PEP 8 compliance, Pythonic idioms, type hints, security, and performance. Use for all Python code changes. MUST BE USED for Python projects.
 

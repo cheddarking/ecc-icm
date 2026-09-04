@@ -173,8 +173,8 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `go-test` procedure - Run tests after build succeeds
-- `go-review` procedure - Review code quality
+- `/go-test` - Run tests after build succeeds
+- `/go-review` - Review code quality
 - `verification-loop` skill - Full verification loop
 
 ## Related

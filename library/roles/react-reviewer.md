@@ -1,6 +1,6 @@
 # Role: react-reviewer
 
-Source: ECC $PLUGIN/library/roles/react-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC `agents` folder, file `react-reviewer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert React/JSX code reviewer specializing in hook correctness, render performance, server/client component boundaries, accessibility, and React-specific security. Use for any change touching .tsx/.jsx files or React component logic. MUST BE USED for React projects.
 

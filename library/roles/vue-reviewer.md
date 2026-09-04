@@ -1,6 +1,6 @@
 # Role: vue-reviewer
 
-Source: ECC $PLUGIN/library/roles/vue-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC `agents` folder, file `vue-reviewer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert Vue.js code reviewer specializing in Composition API correctness, reactivity pitfalls, component architecture, template security, and Vue-specific performance. Use for any change touching .vue, .ts/.js files with Vue imports, or Vue ecosystem code (Pinia, Vue Router, Nuxt). MUST BE USED for Vue projects.
 

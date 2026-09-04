@@ -1,6 +1,6 @@
 # Role: php-reviewer
 
-Source: ECC $PLUGIN/library/roles/php-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC `agents` folder, file `php-reviewer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert PHP code reviewer specializing in PSR-12 compliance, PHP type system, Eloquent ORM patterns, security, and performance. Use for all PHP code changes. MUST BE USED for PHP projects.
 

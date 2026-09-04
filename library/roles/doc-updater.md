@@ -1,6 +1,6 @@
 # Role: doc-updater
 
-Source: ECC $PLUGIN/library/roles/doc-updater.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC `agents` folder, file `doc-updater.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: Documentation and codemap specialist. Use PROACTIVELY for updating codemaps and documentation. Generates docs/CODEMAPS/*, updates READMEs and guides. Backs the `update-codemaps` procedure and `update-docs` procedure commands.
 

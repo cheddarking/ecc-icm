@@ -1,6 +1,6 @@
 # Role: seo-specialist
 
-Source: ECC $PLUGIN/library/roles/seo-specialist.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, WebSearch, WebFetch.
+Source: ECC `agents` folder, file `seo-specialist.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, WebSearch, WebFetch.
 
 Description: SEO specialist for technical SEO audits, on-page optimization, structured data, Core Web Vitals, and content/keyword mapping. Use for site audits, meta tag reviews, schema markup, sitemap and robots issues, and SEO remediation plans.
 

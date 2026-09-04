@@ -1,6 +1,6 @@
 # Role: code-explorer
 
-Source: ECC $PLUGIN/library/roles/code-explorer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob.
+Source: ECC `agents` folder, file `code-explorer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob.
 
 Description: Deeply analyzes existing codebase features by tracing execution paths, mapping architecture layers, and documenting dependencies to inform new development.
 

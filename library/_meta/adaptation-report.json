@@ -1,18 +1,19 @@
 {
-  "generated": "2026-09-04T12:52:57.947Z",
-  "filesScanned": 692,
-  "filesChanged": 248,
+  "generated": "2026-09-04T13:36:02.121Z",
+  "filesScanned": 706,
+  "filesChanged": 255,
   "rules": {
     "rel-hooks-json": 15,
-    "rel-skills": 67,
-    "rel-tree": 142,
-    "notes": 225,
-    "slash-cmd": 285,
-    "agent-role": 47,
-    "rel-agents": 89,
+    "rel-skills": 80,
+    "rel-tree": 104,
+    "notes": 239,
+    "slash-cmd": 310,
+    "agent-role": 46,
+    "rel-agents": 21,
     "plugin-root": 5,
-    "home-skills": 24,
-    "home-rules": 1
+    "home-skills": 19,
+    "home-rules": 1,
+    "rel-commands": 1
   },
   "files": {
     "hooks/README.md": {
@@ -26,24 +27,89 @@
       "rel-hooks-json": 2,
       "notes": 1
     },
+    "legacy-command-shims/README.md": {
+      "slash-cmd": 3,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/agent-sort.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/claw.md": {
+      "rel-skills": 1,
+      "rel-tree": 2,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/context-budget.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/devfleet.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/docs.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/e2e.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/eval.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/orchestrate.md": {
+      "rel-skills": 2,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/prompt-optimize.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/rules-distill.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/tdd.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
+    "legacy-command-shims/commands/verify.md": {
+      "rel-skills": 1,
+      "slash-cmd": 1,
+      "notes": 1
+    },
     "procedures/aside.md": {
       "slash-cmd": 5,
       "notes": 1
     },
     "procedures/checkpoint.md": {
-      "slash-cmd": 1,
+      "slash-cmd": 2,
       "notes": 1
     },
     "procedures/cpp-build.md": {
       "agent-role": 1,
-      "slash-cmd": 3,
+      "slash-cmd": 1,
       "rel-skills": 1,
       "rel-agents": 1,
       "notes": 1
     },
     "procedures/cpp-review.md": {
       "agent-role": 1,
-      "slash-cmd": 5,
+      "slash-cmd": 1,
       "rel-skills": 2,
       "rel-agents": 1,
       "notes": 1
@@ -111,11 +177,10 @@
       "notes": 1
     },
     "procedures/flutter-review.md": {
+      "agent-role": 1,
+      "slash-cmd": 7,
       "rel-skills": 1,
       "rel-agents": 1,
-      "rel-tree": 1,
-      "agent-role": 1,
-      "slash-cmd": 8,
       "notes": 1
     },
     "procedures/flutter-test.md": {
@@ -131,14 +196,14 @@
     },
     "procedures/go-build.md": {
       "agent-role": 1,
-      "slash-cmd": 3,
+      "slash-cmd": 1,
       "rel-skills": 1,
       "rel-agents": 1,
       "notes": 1
     },
     "procedures/go-review.md": {
       "agent-role": 1,
-      "slash-cmd": 5,
+      "slash-cmd": 1,
       "rel-skills": 2,
       "rel-agents": 1,
       "notes": 1
@@ -246,6 +311,9 @@
       "slash-cmd": 2,
       "notes": 1
     },
+    "procedures/orch-review.md": {
+      "rel-tree": 2
+    },
     "procedures/plan-canvas.md": {
       "slash-cmd": 2,
       "rel-tree": 2,
@@ -266,7 +334,7 @@
       "notes": 1
     },
     "procedures/project-init.md": {
-      "rel-tree": 6,
+      "rel-tree": 9,
       "slash-cmd": 1,
       "notes": 1
     },
@@ -283,10 +351,6 @@
       "notes": 1
     },
     "procedures/prp-implement.md": {
-      "slash-cmd": 4,
-      "notes": 1
-    },
-    "procedures/prp-plan.md": {
       "slash-cmd": 4,
       "notes": 1
     },
@@ -327,7 +391,6 @@
       "slash-cmd": 7,
       "rel-skills": 3,
       "rel-agents": 2,
-      "rel-tree": 1,
       "notes": 1
     },
     "procedures/react-test.md": {
@@ -337,7 +400,7 @@
       "notes": 1
     },
     "procedures/resume-session.md": {
-      "slash-cmd": 4,
+      "slash-cmd": 3,
       "notes": 1
     },
     "procedures/review-pr.md": {
@@ -397,304 +460,234 @@
       "slash-cmd": 5,
       "rel-skills": 1,
       "rel-agents": 2,
-      "rel-tree": 1,
       "notes": 1
     },
     "roles/a11y-architect.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/agent-evaluator.md": {
       "rel-skills": 1,
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/architect.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/build-error-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/chief-of-staff.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/code-architect.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/code-explorer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/code-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/code-simplifier.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/comment-analyzer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/conversation-analyzer.md": {
-      "rel-agents": 1,
       "slash-cmd": 1,
       "notes": 1
     },
     "roles/cpp-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/cpp-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/csharp-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/dart-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/database-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/django-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/django-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/doc-updater.md": {
-      "rel-agents": 1,
       "slash-cmd": 2,
       "rel-tree": 1,
       "notes": 1
     },
     "roles/docs-lookup.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/e2e-runner.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/fastapi-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/flutter-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/fsharp-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/gan-evaluator.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/gan-generator.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/gan-planner.md": {
-      "rel-agents": 1,
       "agent-role": 1,
       "notes": 1
     },
     "roles/go-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/go-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/harmonyos-app-resolver.md": {
-      "rel-agents": 1,
-      "rel-tree": 1,
       "notes": 1
     },
     "roles/harness-optimizer.md": {
       "rel-skills": 2,
-      "rel-agents": 1,
       "rel-tree": 4,
       "slash-cmd": 1,
       "notes": 1
     },
     "roles/healthcare-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/homelab-architect.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/java-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/java-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/kotlin-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/kotlin-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/loop-operator.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/marketing-agent.md": {
-      "rel-agents": 1,
       "rel-skills": 1,
       "notes": 1
     },
     "roles/mle-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/network-architect.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/network-config-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/network-troubleshooter.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/opensource-forker.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/opensource-packager.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/opensource-sanitizer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/performance-optimizer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/php-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/planner.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/pr-test-analyzer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/python-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/pytorch-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/rag-pipeline-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/react-build-resolver.md": {
-      "rel-agents": 1,
       "rel-skills": 2,
       "rel-tree": 2,
       "slash-cmd": 2,
       "notes": 1
     },
     "roles/react-reviewer.md": {
-      "rel-agents": 1,
       "rel-skills": 3,
       "rel-tree": 5,
       "slash-cmd": 3,
       "notes": 1
     },
     "roles/refactor-cleaner.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/rust-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/rust-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/security-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/seo-specialist.md": {
-      "rel-agents": 1,
       "rel-skills": 1,
       "notes": 1
     },
     "roles/silent-failure-hunter.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/spec-miner.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/swift-build-resolver.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/swift-reviewer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/tdd-guide.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/type-design-analyzer.md": {
-      "rel-agents": 1,
       "notes": 1
     },
     "roles/typescript-reviewer.md": {
-      "rel-agents": 2,
+      "rel-agents": 1,
       "slash-cmd": 1,
       "notes": 1
     },
     "roles/vue-reviewer.md": {
-      "rel-agents": 1,
       "rel-skills": 1,
       "rel-tree": 5,
       "slash-cmd": 1,
       "notes": 1
     },
     "rules/README.md": {
-      "rel-tree": 24,
       "notes": 1
     },
     "rules/angular/hooks.md": {
@@ -760,9 +753,6 @@
     "rules/python/hooks.md": {
       "notes": 1
     },
-    "rules/react-native/coding-style.md": {
-      "rel-tree": 1
-    },
     "rules/react-native/hooks.md": {
       "notes": 1
     },
@@ -775,8 +765,7 @@
       "notes": 1
     },
     "rules/react/patterns.md": {
-      "rel-skills": 3,
-      "rel-tree": 1
+      "rel-skills": 3
     },
     "rules/react/security.md": {
       "agent-role": 2,
@@ -814,11 +803,7 @@
     },
     "skills/agent-sort/SKILL.md": {
       "rel-skills": 2,
-      "rel-tree": 2,
       "notes": 1
-    },
-    "skills/api-connector-builder/SKILL.md": {
-      "rel-tree": 1
     },
     "skills/architecture-decision-records/SKILL.md": {
       "agent-role": 1,
@@ -826,6 +811,7 @@
     },
     "skills/autonomous-loops/SKILL.md": {
       "rel-tree": 2,
+      "slash-cmd": 3,
       "rel-skills": 1,
       "notes": 1
     },
@@ -857,6 +843,7 @@
       "notes": 1
     },
     "skills/context-budget/SKILL.md": {
+      "slash-cmd": 1,
       "notes": 1
     },
     "skills/continuous-agent-loop/SKILL.md": {
@@ -889,9 +876,6 @@
       "slash-cmd": 1,
       "notes": 1
     },
-    "skills/dart-flutter-patterns/SKILL.md": {
-      "rel-tree": 1
-    },
     "skills/deep-research/SKILL.md": {
       "notes": 1
     },
@@ -920,22 +904,13 @@
       "slash-cmd": 1,
       "notes": 1
     },
-    "skills/eval-harness/SKILL.md": {
-      "rel-tree": 1
-    },
     "skills/gateguard/SKILL.md": {
       "rel-tree": 1,
       "notes": 1
     },
-    "skills/generating-python-installer/SKILL.md": {
-      "rel-tree": 1
-    },
     "skills/github-ops/references/ecc-release-checklist.md": {
-      "rel-tree": 3,
+      "rel-tree": 1,
       "notes": 1
-    },
-    "skills/hermes-imports/SKILL.md": {
-      "rel-tree": 1
     },
     "skills/hookify-rules/SKILL.md": {
       "slash-cmd": 4,
@@ -983,11 +958,12 @@
       "notes": 1
     },
     "skills/plan-canvas/SKILL.md": {
-      "slash-cmd": 5,
+      "slash-cmd": 6,
       "notes": 1
     },
     "skills/plan-orchestrate/SKILL.md": {
-      "rel-tree": 1
+      "slash-cmd": 8,
+      "notes": 1
     },
     "skills/plankton-code-quality/SKILL.md": {
       "agent-role": 1,
@@ -1001,21 +977,16 @@
       "rel-tree": 1
     },
     "skills/prompt-optimizer/SKILL.md": {
-      "slash-cmd": 21,
-      "agent-role": 1,
+      "slash-cmd": 30,
       "notes": 1
     },
-    "skills/react-native-patterns/SKILL.md": {
-      "rel-tree": 1
-    },
     "skills/react-patterns/SKILL.md": {
-      "rel-tree": 2,
+      "rel-tree": 1,
       "rel-skills": 2,
       "slash-cmd": 3,
       "notes": 1
     },
     "skills/react-performance/SKILL.md": {
-      "rel-tree": 1,
       "slash-cmd": 3,
       "notes": 1
     },
@@ -1043,13 +1014,11 @@
       "notes": 1
     },
     "skills/skill-comply/SKILL.md": {
-      "rel-tree": 1,
       "home-skills": 1,
       "home-rules": 1
     },
     "skills/skill-stocktake/SKILL.md": {
-      "home-skills": 8,
-      "rel-tree": 1,
+      "home-skills": 3,
       "notes": 1
     },
     "skills/strategic-compact/SKILL.md": {
@@ -1057,8 +1026,8 @@
       "notes": 1
     },
     "skills/tdd-workflow/SKILL.md": {
-      "rel-tree": 2,
       "slash-cmd": 1,
+      "rel-tree": 1,
       "notes": 1
     },
     "skills/team-builder/SKILL.md": {
@@ -1082,6 +1051,12 @@
       "notes": 1
     },
     "the-shortform-guide.md": {
+      "slash-cmd": 5,
+      "notes": 1
+    },
+    "workflows/README.md": {
+      "rel-tree": 1,
+      "rel-commands": 1,
       "slash-cmd": 3,
       "notes": 1
     }

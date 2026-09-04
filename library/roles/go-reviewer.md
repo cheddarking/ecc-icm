@@ -1,6 +1,6 @@
 # Role: go-reviewer
 
-Source: ECC $PLUGIN/library/roles/go-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
+Source: ECC `agents` folder, file `go-reviewer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash.
 
 Description: Expert Go code reviewer specializing in idiomatic Go, concurrency patterns, error handling, and performance. Use for all Go code changes. MUST BE USED for Go projects.
 

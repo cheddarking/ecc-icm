@@ -1,6 +1,6 @@
 # Role: conversation-analyzer
 
-Source: ECC $PLUGIN/library/roles/conversation-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep.
+Source: ECC `agents` folder, file `conversation-analyzer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep.
 
 Description: Use this agent when analyzing conversation transcripts to find behaviors worth preventing with hooks. Triggered by `hookify` procedure without arguments.
 

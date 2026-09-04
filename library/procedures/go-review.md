@@ -137,10 +137,10 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 
 ## Integration with Other Commands
 
-- Use `go-test` procedure first to ensure tests pass
-- Use `go-build` procedure if build errors occur
-- Use `go-review` procedure before committing
-- Use `code-review` procedure for non-Go specific concerns
+- Use `/go-test` first to ensure tests pass
+- Use `/go-build` if build errors occur
+- Use `/go-review` before committing
+- Use `/code-review` for non-Go specific concerns
 
 ## Related
 

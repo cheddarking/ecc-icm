@@ -161,7 +161,7 @@ mirror at `ECC_PLAN_CANVAS_MERMAID_URL` for air-gapped use.
 
 ## Examples
 
-**Plan approval flow** — `/plan` writes
+**Plan approval flow** — `plan` procedure writes
 `.claude/plans/notifications.plan.md` and must WAIT for confirmation:
 
 ```bash

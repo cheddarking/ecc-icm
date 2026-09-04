@@ -15,7 +15,7 @@ Analyze token overhead across every loaded component in a Claude Code session an
 - You've recently added many skills, agents, or MCP servers
 - You want to know how much context headroom you actually have
 - Planning to add more components and need to know if there's room
-- Running `/context-budget` command (this skill backs it)
+- Running `context-budget` procedure command (this skill backs it)
 
 ## How It Works
 
@@ -137,4 +137,4 @@ Skill: Current overhead 33% → adding 5 servers (~50 tools) would add ~25,000 t
 
 ---
 <!-- ecc-icm-notes -->
-ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Legacy shims (tdd, verify, e2e, eval, orchestrate, claw and the rest) live under `$PLUGIN/library/legacy-command-shims/commands/`. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

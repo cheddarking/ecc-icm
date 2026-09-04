@@ -1,6 +1,6 @@
 # Role: loop-operator
 
-Source: ECC $PLUGIN/library/roles/loop-operator.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash, Edit.
+Source: ECC `agents` folder, file `loop-operator.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash, Edit.
 
 Description: Operate autonomous agent loops, monitor progress, and intervene safely when loops stall.
 

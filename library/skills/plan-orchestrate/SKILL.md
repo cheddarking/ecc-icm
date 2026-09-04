@@ -7,16 +7,16 @@ metadata:
 
 # Plan Orchestrate
 
-Bridge a plan document to `/orchestrate custom` by emitting one ready-to-paste invocation per step. The skill is generative only — it never executes `/orchestrate`. The user pastes each line when ready.
+Bridge a plan document to `orchestrate` procedure (`custom`) by emitting one ready-to-paste invocation per step. The skill is generative only — it never executes `orchestrate` procedure. The user pastes each line when ready.
 
 ## When to Activate
 
-- User has a multi-step plan document (PRD, RFC, implementation plan) and wants to drive it through `/orchestrate`.
+- User has a multi-step plan document (PRD, RFC, implementation plan) and wants to drive it through `orchestrate` procedure.
 - User says "orchestrate this plan", "give me orchestrate prompts for each step", "compose chains for this plan".
 - A step-by-step plan exists but the user does not want to manually pick agents per step.
 
 Skip when:
-- The work is one ad-hoc step → call `/orchestrate custom` directly.
+- The work is one ad-hoc step → call `orchestrate` procedure (`custom`) directly.
 - The plan is unreadable or empty. Lack of explicit numbering alone is not a skip condition — see the "No clear steps" edge case below.
 
 ## Inputs
@@ -25,7 +25,7 @@ Skip when:
 <plan-doc-path> [--lang=python|typescript|go|rust|cpp|java|kotlin|flutter|auto] [--scope=all|step:<n>|range:<a>-<b>] [--dry-run]
 ```
 
-- `<plan-doc-path>` — required; relative or absolute path (`@$PLUGIN/library/docs/...` accepted).
+- `<plan-doc-path>` — required; relative or absolute path (`@docs/...` accepted).
 - `--lang` — reviewer language variant; defaults to `auto` (detected from project).
 - `--scope` — limits emitted steps; defaults to `all`.
 - `--dry-run` — print decomposition + chain rationale only; do not emit final prompts.
@@ -52,7 +52,7 @@ Let `<claude-home>` denote the Claude Code home directory: `~/.claude` on macOS/
 | Form | Detection | `{ORCH_CMD}` | Agent name format |
 |---|---|---|---|
 | Plugin install (2.0.0+) | `<claude-home>/plugins/marketplaces/ecc/` exists | `/ecc:orchestrate` | `ecc:<name>` |
-| Legacy bare install | Above absent; agent files under `<claude-home>/agents/` | `/orchestrate` | `<name>` |
+| Legacy bare install | Above absent; agent files under `<claude-home>/agents/` | `orchestrate` procedure | `<name>` |
 
 Why this matters: under the plugin install, agents register as `ecc:tdd-guide`. Bare names force fuzzy matching, which fails intermittently under parallel calls. Under legacy, the prefixed forms are not registered and fail outright.
 
@@ -79,7 +79,7 @@ Build error resolvers:
 Code reviewers:
 - `python-reviewer` / `typescript-reviewer` / `go-reviewer` / `rust-reviewer` / `cpp-reviewer` / `java-reviewer` / `kotlin-reviewer` / `flutter-reviewer`
 
-A misspelled agent name fails `/orchestrate`. Cross-check against this list before emitting.
+A misspelled agent name fails `orchestrate` procedure. Cross-check against this list before emitting.
 
 ## How It Works
 
@@ -161,7 +161,7 @@ Emit Markdown using **the form determined by `ECC_MODE`**. The output uses one f
 
 Concrete rendering rules:
 
-- `{ORCH_CMD}` = `/ecc:orchestrate` under `plugin`, `/orchestrate` under `legacy`.
+- `{ORCH_CMD}` = `/ecc:orchestrate` under `plugin`, `orchestrate` procedure under `legacy`.
 - `{AGENT(name)}` = `ecc:<name>` under `plugin`, `<name>` under `legacy`.
 - The overview-table "Chain" column uses the same `{AGENT(name)}` rendering.
 - Per-step bash blocks contain only the runnable command. **No `# plugin form` or `# legacy form` comments** — the form is implicit and uniform across the whole output.
@@ -258,6 +258,10 @@ The two examples above illustrate **the two possible outputs** for two different
 
 ## Notes
 
-- Generative only. Never invoke `/orchestrate` from inside this skill.
+- Generative only. Never invoke `orchestrate` procedure from inside this skill.
 - Match the language of the plan document for task descriptions (agent names always remain English).
 - Do not insert "Co-Authored-By" lines or emoji in the output unless the user explicitly asks.
+
+---
+<!-- ecc-icm-notes -->
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Legacy shims (tdd, verify, e2e, eval, orchestrate, claw and the rest) live under `$PLUGIN/library/legacy-command-shims/commands/`.

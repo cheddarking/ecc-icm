@@ -112,14 +112,14 @@ When called with a `.prd.md` file, write the plan to `.claude/plans/{kebab-case-
 After writing the artifact, report its path and WAIT for confirmation before writing code.
 
 > **Visual review:** instead of asking for a typed confirmation, you can open the
-> artifact in the browser Plan Canvas (`/plan-canvas`, or the `plan-canvas` skill):
+> artifact in the browser Plan Canvas (`plan-canvas` procedure, or the `plan-canvas` skill):
 > the user annotates the plan in place and clicks **Approve plan** or **Request
 > changes**, which arrives as your confirmation signal.
 
 ## Example Usage
 
 ```
-User: `plan` procedure I need to add real-time notifications when markets resolve
+User: /plan I need to add real-time notifications when markets resolve
 
 Assistant:
 # Implementation Plan: Real-Time Market Resolution Notifications

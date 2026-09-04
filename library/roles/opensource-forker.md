@@ -1,6 +1,6 @@
 # Role: opensource-forker
 
-Source: ECC $PLUGIN/library/roles/opensource-forker.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
+Source: ECC `agents` folder, file `opensource-forker.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Write, Edit, Bash, Grep, Glob.
 
 Description: Fork any project for open-sourcing. Copies files, strips secrets and credentials (20+ patterns), replaces internal references with placeholders, generates .env.example, and cleans git history. First stage of the opensource-pipeline skill.
 

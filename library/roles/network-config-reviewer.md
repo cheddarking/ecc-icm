@@ -1,6 +1,6 @@
 # Role: network-config-reviewer
 
-Source: ECC $PLUGIN/library/roles/network-config-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
+Source: ECC `agents` folder, file `network-config-reviewer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
 
 Description: Reviews router and switch configurations for security, correctness, stale references, risky change-window commands, and missing operational guardrails.
 

@@ -451,7 +451,7 @@ If this plan was generated from a PRD phase:
 - **Risks**: [top risk or "none identified"]
 - **Confidence Score**: [1-10] — likelihood of single-pass implementation
 
-> Next step: Run `prp-implement` procedure (`.claude/PRPs/plans/{name}.plan.md`) to execute this plan.
+> Next step: Run `/prp-implement .claude/PRPs/plans/{name}.plan.md` to execute this plan.
 ```
 
 ---
@@ -496,11 +496,7 @@ A developer unfamiliar with this codebase should be able to implement the featur
 
 ## Next Steps
 
-- Run `prp-implement` procedure (`<plan-path>`) to execute this plan
-- Run `plan` procedure for quick conversational planning without artifacts
-- Run `prp-prd` procedure to create a PRD first if scope is unclear
+- Run `/prp-implement <plan-path>` to execute this plan
+- Run `/plan` for quick conversational planning without artifacts
+- Run `/prp-prd` to create a PRD first if scope is unclear
 ````
-
----
-<!-- ecc-icm-notes -->
-ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.

@@ -1,6 +1,6 @@
 # Role: docs-lookup
 
-Source: ECC $PLUGIN/library/roles/docs-lookup.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep, mcp__context7__resolve-library-id, mcp__context7__query-docs.
+Source: ECC `agents` folder, file `docs-lookup.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep, mcp__context7__resolve-library-id, mcp__context7__query-docs.
 
 Description: When the user asks how to use a library, framework, or API or needs up-to-date code examples, use Context7 MCP to fetch current documentation and return answers with examples. Invoke for docs/API/setup questions.
 

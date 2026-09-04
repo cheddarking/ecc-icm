@@ -121,10 +121,10 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 
 ## Integration with Other Commands
 
-- Use `cpp-test` procedure first to ensure tests pass
-- Use `cpp-build` procedure if build errors occur
-- Use `cpp-review` procedure before committing
-- Use `code-review` procedure for non-C++ specific concerns
+- Use `/cpp-test` first to ensure tests pass
+- Use `/cpp-build` if build errors occur
+- Use `/cpp-review` before committing
+- Use `/code-review` for non-C++ specific concerns
 
 ## Related
 

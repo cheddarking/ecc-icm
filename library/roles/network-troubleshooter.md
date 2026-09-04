@@ -1,6 +1,6 @@
 # Role: network-troubleshooter
 
-Source: ECC $PLUGIN/library/roles/network-troubleshooter.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Bash, Grep.
+Source: ECC `agents` folder, file `network-troubleshooter.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Bash, Grep.
 
 Description: Diagnoses network connectivity, routing, DNS, interface, and policy symptoms with a read-only OSI-layer workflow and evidence-backed root cause summary.
 

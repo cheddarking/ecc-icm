@@ -163,8 +163,8 @@ The agent will stop and report if:
 
 ## Related Commands
 
-- `cpp-test` procedure - Run tests after build succeeds
-- `cpp-review` procedure - Review code quality
+- `/cpp-test` - Run tests after build succeeds
+- `/cpp-review` - Review code quality
 - `verification-loop` skill - Full verification loop
 
 ## Related

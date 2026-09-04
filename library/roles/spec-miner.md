@@ -1,6 +1,6 @@
 # Role: spec-miner
 
-Source: ECC $PLUGIN/library/roles/spec-miner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob, Bash, Write.
+Source: ECC `agents` folder, file `spec-miner.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob, Bash, Write.
 
 Description: Extracts behavioral specs from existing codebases for OpenSpec. Produces flat Requirement and Invariant blocks with structured metadata (entities, enforced, id, test anchors). Outputs openspec/specs/<capability>/spec.md. Fully self-bootstrapping — no dependency on codebase-onboarding. Use when onboarding a brownfield project to spec-driven development.
 

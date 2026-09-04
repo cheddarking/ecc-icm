@@ -1,6 +1,6 @@
 # Role: homelab-architect
 
-Source: ECC $PLUGIN/library/roles/homelab-architect.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
+Source: ECC `agents` folder, file `homelab-architect.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
 
 Description: Designs home and small-lab network plans from hardware inventory, goals, and operator experience level, with safe staged changes and rollback guidance.
 

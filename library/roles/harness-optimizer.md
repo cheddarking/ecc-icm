@@ -1,6 +1,6 @@
 # Role: harness-optimizer
 
-Source: ECC $PLUGIN/library/roles/harness-optimizer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash, Edit.
+Source: ECC `agents` folder, file `harness-optimizer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, Bash, Edit.
 
 Description: Improve local agent-harness configuration reliability and cost using eval-driven grading (pass@k/pass^k) derived from the eval-harness skill.
 

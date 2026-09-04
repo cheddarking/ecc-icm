@@ -14,7 +14,7 @@ Here's my complete setup after 10 months of daily use: skills, hooks, subagents,
 
 Skills are the primary workflow surface. They act like scoped workflow bundles: reusable prompts, structure, supporting files, and codemaps when you need a particular execution pattern.
 
-After a long session of coding with Opus 4.5, you want to clean out dead code and loose .md files? Run `refactor-clean` procedure. Need testing? `/tdd`, `/e2e`, `test-coverage` procedure. Those slash entries are convenient, but the real durable unit is the underlying skill. Skills can also include codemaps - a way for Claude to quickly navigate your codebase without burning context on exploration.
+After a long session of coding with Opus 4.5, you want to clean out dead code and loose .md files? Run `refactor-clean` procedure. Need testing? `tdd` procedure, `e2e` procedure, `test-coverage` procedure. Those slash entries are convenient, but the real durable unit is the underlying skill. Skills can also include codemaps - a way for Claude to quickly navigate your codebase without burning context on exploration.
 
 ![Terminal showing chained commands](./assets/images/shortform/02-chaining-commands.jpeg)
 *Chaining commands together*
@@ -432,4 +432,4 @@ affoon:~ ctx:65% Opus 4.5 19:52
 
 ---
 <!-- ecc-icm-notes -->
-ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Legacy shims (tdd, verify, e2e, eval, orchestrate, claw and the rest) live under `$PLUGIN/library/legacy-command-shims/commands/`. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook. ECC's hooks are not installed by ecc-icm. Their scripts ship under `$PLUGIN/library/scripts/hooks/` with `$PLUGIN/library/hooks/hooks.json` for opt-in use; they expect ECC's layout and npm dependencies (`$PLUGIN/library/package.json`). ecc-icm's own hooks are the five in its README.

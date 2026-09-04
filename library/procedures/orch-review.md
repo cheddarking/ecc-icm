@@ -5,7 +5,7 @@ argument-hint: [pr-number | pr-url | blank for local uncommitted changes]
 
 # /orch-review
 
-Surface for `workflows/orch-review.workflow.js` — the native Workflow port of
+Surface for `$PLUGIN/library/workflows/orch-review.workflow.js` — the native Workflow port of
 orch-pipeline Phase 5 (Review). This command computes a diff, hands it to the
 workflow, and presents the result. The workflow owns the fan-out (one reviewer
 per dimension, dedup, adversarial verify); this command owns input and output.
@@ -64,7 +64,7 @@ a missing or empty diff, so always pass a non-empty `diff`.
 
 ```jsonc
 Workflow({
-  scriptPath: "workflows/orch-review.workflow.js",
+  scriptPath: "$PLUGIN/library/workflows/orch-review.workflow.js",
   args: {
     diff: "<unified diff text from Phase 1>",   // required
     language: "typescript",                      // optional

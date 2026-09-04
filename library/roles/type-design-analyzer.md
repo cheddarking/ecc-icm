@@ -1,6 +1,6 @@
 # Role: type-design-analyzer
 
-Source: ECC $PLUGIN/library/roles/type-design-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob.
+Source: ECC `agents` folder, file `type-design-analyzer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob.
 
 Description: Analyze type design for encapsulation, invariant expression, usefulness, and enforcement.
 

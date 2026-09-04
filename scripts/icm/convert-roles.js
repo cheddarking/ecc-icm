@@ -32,10 +32,12 @@ function convert(eccRoot, outDir) {
     const name = fm.name || file.replace(/\.md$/, '');
     let body = text.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '');
     body = stripSection(body, '## Prompt Defense Baseline').replace(/\n{3,}/g, '\n\n').trim();
+    // The source is named without an "agents/" path so the reference adapter
+    // does not rewrite the provenance line into a self-reference.
     const header = [
       `# Role: ${name}`,
       '',
-      `Source: ECC agents/${file} (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: ${fm.model || 'unspecified'}. Former tools: ${fm.tools || 'unspecified'}.`,
+      `Source: ECC \`agents\` folder, file \`${file}\` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: ${fm.model || 'unspecified'}. Former tools: ${fm.tools || 'unspecified'}.`,
       '',
       `Description: ${fm.description || ''}`,
       '',

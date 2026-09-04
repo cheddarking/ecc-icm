@@ -12,8 +12,8 @@ Measured 2026-09-04. Tokens are chars divided by four unless a row says otherwis
 | Registered agent descriptions | 68 agents, 3,870 | 0 |
 | Registered command descriptions | 94 commands, 2,781 | 0 |
 | rules/common, always on when installed | 10 files, 4,438 | 0 (library, loaded by section) |
-| SessionStart injection | up to 8,000 chars of instincts and prior session | 948 (Layer 0 plus run status) |
-| Total | 32,706 | 1,007 |
+| SessionStart injection | up to 8,000 chars of instincts and prior session | 975 (Layer 0 plus run status) |
+| Total | 32,706 | 1,034 |
 
 Reduction: 97% of the harness's own static overhead. The ECC figure excludes its CLAUDE.md and AGENTS.md, which only load when working inside the ECC checkout.
 
@@ -21,6 +21,7 @@ Reduction: 97% of the harness's own static overhead. The ECC figure excludes its
 
 | Measure | ECC | ecc-icm |
 |---|---:|---:|
+| Hook entries in hooks.json | 23 over 7 events | 5 over 3 events |
 | Hook scripts shipped | 53 | 5 |
 | Sub-invocations per tool call, standard profile | 15 for an Edit, about 13 for a Bash call | 1 |
 | Sub-invocations per tool call, minimal profile | about 7 | 1 |

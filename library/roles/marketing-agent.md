@@ -1,6 +1,6 @@
 # Role: marketing-agent
 
-Source: ECC $PLUGIN/library/roles/marketing-agent.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, WebSearch, WebFetch.
+Source: ECC `agents` folder, file `marketing-agent.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep, Glob, WebSearch, WebFetch.
 
 Description: Marketing strategist and copywriter for campaign planning, audience research, positioning, copy creation, and content review. Covers landing pages, email sequences, social posts, ad copy, short-form video scripts, and content calendars. Use when the user wants to plan or execute a product launch or marketing campaign.
 

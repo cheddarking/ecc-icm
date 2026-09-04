@@ -98,3 +98,22 @@ The 94 ECC slash commands, kept as procedures. In ICM they are not registered co
 | `$PLUGIN/library/procedures/update-codemaps.md` | procedure only | Scan project structure and generate token-lean architecture codemaps. |
 | `$PLUGIN/library/procedures/update-docs.md` | procedure only | Sync documentation from source-of-truth files such as scripts, schemas, routes, and exports. |
 | `$PLUGIN/library/procedures/vue-review.md` | engineering 05-review | Comprehensive Vue.js code review for Composition API correctness, reactivity, composable patterns, template security, accessibility, and Vue-specific performance. Invokes the vue-r |
+
+## Legacy shims
+
+ECC kept 12 older commands as thin shims that point at skills. Library text that names them still resolves here.
+
+| Shim | Maps to | What it does |
+|---|---|---|
+| `$PLUGIN/library/legacy-command-shims/commands/agent-sort.md` | procedure only | Legacy slash-entry shim for the agent-sort skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/claw.md` | procedure only | Legacy slash-entry shim for the nanoclaw-repl skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/context-budget.md` | harness-ops 01-audit | Legacy slash-entry shim for the context-budget skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/devfleet.md` | procedure only | Legacy slash-entry shim for the claude-devfleet skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/docs.md` | procedure only | Legacy slash-entry shim for the documentation-lookup skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/e2e.md` | engineering 04-implement | Legacy slash-entry shim for the e2e-testing skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/eval.md` | procedure only | Legacy slash-entry shim for the eval-harness skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/orchestrate.md` | an engineering run from 01-intake | Legacy slash-entry shim for dmux-workflows and autonomous-agent-harness. Prefer the skills directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/prompt-optimize.md` | procedure only | Legacy slash-entry shim for the prompt-optimizer skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/rules-distill.md` | harness-ops 02-tune | Legacy slash-entry shim for the rules-distill skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/tdd.md` | engineering 04-implement | Legacy slash-entry shim for the tdd-workflow skill. Prefer the skill directly. |
+| `$PLUGIN/library/legacy-command-shims/commands/verify.md` | verify.js at the current stage | Legacy slash-entry shim for the verification-loop skill. Prefer the skill directly. |

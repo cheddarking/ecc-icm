@@ -167,7 +167,7 @@ Recommendation: FAIL: Block merge until CRITICAL issue is fixed
 - Agent: `$PLUGIN/library/roles/react-reviewer.md`
 - Companion agent: `$PLUGIN/library/roles/typescript-reviewer.md` (run alongside for TSX/JSX PRs)
 - Skills: `$PLUGIN/library/skills/react-patterns/`, `$PLUGIN/library/skills/react-testing/`, `$PLUGIN/library/skills/accessibility/`
-- Rules: `$PLUGIN/library/rules/react/`
+- Rules: `rules/react/`
 
 ---
 <!-- ecc-icm-notes -->

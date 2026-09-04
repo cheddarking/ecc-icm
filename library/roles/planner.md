@@ -1,6 +1,6 @@
 # Role: planner
 
-Source: ECC $PLUGIN/library/roles/planner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob.
+Source: ECC `agents` folder, file `planner.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob.
 
 Description: Expert planning specialist for complex features and refactoring. Use PROACTIVELY when users request feature implementation, architectural changes, or complex refactoring. Automatically activated for planning tasks.
 

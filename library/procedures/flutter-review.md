@@ -50,7 +50,7 @@ Use `flutter-review` procedure when:
 ## Example Session
 
 ````text
-User: `flutter-review` procedure
+User: /flutter-review
 
 Agent:
 # Flutter Code Review
@@ -113,7 +113,7 @@ Verdict: BLOCK — HIGH issues must be fixed before merge.
 
 - Agent: `$PLUGIN/library/roles/flutter-reviewer.md`
 - Skill: `$PLUGIN/library/skills/flutter-dart-code-review/`
-- Rules: `$PLUGIN/library/rules/dart/`
+- Rules: `rules/dart/`
 
 ---
 <!-- ecc-icm-notes -->

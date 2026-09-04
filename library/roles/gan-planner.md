@@ -1,6 +1,6 @@
 # Role: gan-planner
 
-Source: ECC $PLUGIN/library/roles/gan-planner.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Grep, Glob.
+Source: ECC `agents` folder, file `gan-planner.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Write, Grep, Glob.
 
 Description: "GAN Harness — Planner role. Expands a one-line prompt into a full product specification with features, sprints, evaluation criteria, and design direction."
 

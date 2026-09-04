@@ -14,7 +14,7 @@ Create or verify a checkpoint in your workflow.
 
 When creating a checkpoint:
 
-1. Run `/verify quick` to ensure current state is clean
+1. Run `verify` procedure (`quick`) to ensure current state is clean
 2. Create a git stash or commit with checkpoint name
 3. Log checkpoint to `.claude/checkpoints.log`:
 
@@ -79,4 +79,4 @@ $ARGUMENTS:
 
 ---
 <!-- ecc-icm-notes -->
-ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to.
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Legacy shims (tdd, verify, e2e, eval, orchestrate, claw and the rest) live under `$PLUGIN/library/legacy-command-shims/commands/`.

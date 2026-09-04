@@ -32,7 +32,8 @@ function readDesc(file) {
 function build(root) {
   const lib = path.join(root, 'library');
   adaptCtx = buildContext(root);
-  const manifest = JSON.parse(fs.readFileSync(path.join(lib, '_meta', 'ecc-install-modules.json'), 'utf8'));
+  const manifestPath = [path.join(lib, 'manifests', 'install-modules.json'), path.join(lib, '_meta', 'ecc-install-modules.json')].find(p => fs.existsSync(p));
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   const modules = (manifest.modules || manifest).filter(m => m.kind === 'skills');
   const skillsDir = path.join(lib, 'skills');
   const allSkills = fs.readdirSync(skillsDir, { withFileTypes: true })
@@ -86,8 +87,22 @@ function build(root) {
     const hit = STAGE_MAP.find(([re]) => re.test(name));
     return hit ? hit[1] : 'procedure only';
   };
+  const SHIM_MAP = [
+    [/^tdd$/, 'engineering 04-implement'],
+    [/^e2e$/, 'engineering 04-implement'],
+    [/^verify$/, 'verify.js at the current stage'],
+    [/^orchestrate$/, 'an engineering run from 01-intake'],
+    [/^context-budget$/, 'harness-ops 01-audit'],
+    [/^rules-distill$/, 'harness-ops 02-tune']
+  ];
+  const shimFor = name => {
+    const hit = SHIM_MAP.find(([re]) => re.test(name));
+    return hit ? hit[1] : 'procedure only';
+  };
   const procDir = path.join(lib, 'procedures');
   const procs = fs.readdirSync(procDir).filter(f => f.endsWith('.md') && f !== 'INDEX.md').sort();
+  const shimDir = path.join(lib, 'legacy-command-shims', 'commands');
+  const shims = fs.existsSync(shimDir) ? fs.readdirSync(shimDir).filter(f => f.endsWith('.md')).sort() : [];
   fs.writeFileSync(path.join(procDir, 'INDEX.md'), [
     '# Procedures index',
     '',
@@ -96,8 +111,42 @@ function build(root) {
     '| Procedure | Maps to | What it does |',
     '|---|---|---|',
     ...procs.map(f => `| \`$PLUGIN/library/procedures/${f}\` | ${stageFor(f.slice(0, -3))} | ${readDesc(path.join(procDir, f)).slice(0, 180)} |`),
-    ''
+    '',
+    ...(shims.length ? [
+      '## Legacy shims',
+      '',
+      `ECC kept ${shims.length} older commands as thin shims that point at skills. Library text that names them still resolves here.`,
+      '',
+      '| Shim | Maps to | What it does |',
+      '|---|---|---|',
+      ...shims.map(f => `| \`$PLUGIN/library/legacy-command-shims/commands/${f}\` | ${shimFor(f.slice(0, -3))} | ${readDesc(path.join(shimDir, f)).slice(0, 180)} |`),
+      ''
+    ] : [])
   ].join('\n'));
+
+  // Roles index, regenerated here so the descriptions carry the same
+  // command-to-procedure and agent-to-role rewrite as every other index.
+  const rolesDir = path.join(lib, 'roles');
+  const roleFiles = fs.existsSync(rolesDir) ? fs.readdirSync(rolesDir).filter(f => f.endsWith('.md') && f !== 'INDEX.md').sort() : [];
+  const roleRows = roleFiles.map(f => {
+    const text = fs.readFileSync(path.join(rolesDir, f), 'utf8');
+    const model = (text.match(/Former sub-agent model hint: ([\w-]+)/) || [])[1] || '';
+    const desc = adaptInline((text.match(/^Description: (.*)$/m) || [])[1] || '', adaptCtx).replace(/\|/g, '/');
+    const lines = text.split('\n').length;
+    return `| \`${f}\` | ${model} | ${lines} | ${desc.slice(0, 160)} |`;
+  });
+  if (roleFiles.length) {
+    fs.writeFileSync(path.join(rolesDir, 'INDEX.md'), [
+      '# Roles index',
+      '',
+      `Converted from the ${roleFiles.length} ECC agent definitions. A role is reference material (Layer 3) that the single agent loads when a stage contract names it; nothing here is a sub-agent. Load one file and the section the contract points at, never the whole folder.`,
+      '',
+      '| Role | Former model | Lines | Description |',
+      '|---|---|---:|---|',
+      ...roleRows,
+      ''
+    ].join('\n'));
+  }
 
   // Rules
   const rulesDir = path.join(lib, 'rules');
@@ -136,19 +185,24 @@ function build(root) {
     '| A former slash command as a step-by-step procedure | `$PLUGIN/library/procedures/INDEX.md` |',
     ...domains.map(d => `| ${d.description.replace(/\|/g, '/').slice(0, 110)} | \`$PLUGIN/library/skills/INDEX-${d.id}.md\` (${d.names.length} skills) |`),
     "| ECC's hook scripts, CLI scripts and helper libraries (opt-in, not wired) | `$PLUGIN/library/scripts/`, `$PLUGIN/library/hooks/hooks.json` |",
+    '| Manifests, schemas, config and the lockfile the mirrored scripts read | `$PLUGIN/library/manifests/`, `schemas/`, `config/`, `package-lock.json` |',
+    "| ECC's legacy command shims (tdd, verify, e2e, eval, orchestrate, claw, ...) | `$PLUGIN/library/legacy-command-shims/commands/` |",
     '| MCP server catalog used by research skills | `$PLUGIN/library/mcp-configs/mcp-servers.json` |',
     "| ECC's prompt contexts (dev, review, research) | `$PLUGIN/library/contexts/` |",
-    "| ECC's documentation, English only, unmodified | `$PLUGIN/library/docs/` |",
+    "| ECC's sample projects and harness examples, unmodified | `$PLUGIN/library/examples/` |",
+    "| ECC's native Claude Code workflow scripts | `$PLUGIN/library/workflows/` |",
+    "| ECC's documentation minus the 13 translated copies, unmodified | `$PLUGIN/library/docs/` |",
     '| Writing guides for long-form, short-form and security content | `$PLUGIN/library/the-longform-guide.md`, `the-shortform-guide.md`, `the-security-guide.md` |',
     '| Codex mirror of 39 skills, unmodified | `$PLUGIN/library/.agents/skills/` |',
     '| How every ECC surface maps here, and which doctrine ICM supersedes | `$PLUGIN/library/ECC-MAPPING.md` |',
     '',
     '## Rules of use',
     '',
+    '- `$PLUGIN` in any file is a documentation token for the plugin root printed at session start. Substitute it before running a command.',
     '- One-way: the library never points back at a workspace.',
     '- Load a section, not a folder. Every index row is one file.',
     '- Skills here are library files, not registered skills. Do not invoke them with the Skill tool; read the SKILL.md.',
-    '- Skills, roles, procedures, rules and guides were adapted by `scripts/icm/adapt-library.js`: `/command` mentions became procedures, agent mentions became roles, ECC paths point into this folder. Each adapted file ends with an "ECC-ICM notes" paragraph. Counts: `$PLUGIN/library/_meta/adaptation-report.json`.',
+    '- Skills, roles, procedures, legacy shims, rules, hook markdown and the guides were adapted by `scripts/icm/adapt-library.js`: `/command` mentions became procedures, agent mentions became roles, ECC paths point into this folder. Each adapted file ends with an "ECC-ICM notes" paragraph. Per-file rule counts: `$PLUGIN/library/_meta/adaptation-report.json`.',
     ''
   ].join('\n'));
   return { domains: domains.length, skills: allSkills.length, procedures: procs.length, languages: langs.length };

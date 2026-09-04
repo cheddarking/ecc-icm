@@ -1,6 +1,6 @@
 # Role: healthcare-reviewer
 
-Source: ECC $PLUGIN/library/roles/healthcare-reviewer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob.
+Source: ECC `agents` folder, file `healthcare-reviewer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: opus. Former tools: Read, Grep, Glob.
 
 Description: Reviews healthcare application code for clinical safety, CDSS accuracy, PHI compliance, and medical data integrity. Specialized for EMR/EHR, clinical decision support, and health information systems.
 

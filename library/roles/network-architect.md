@@ -1,6 +1,6 @@
 # Role: network-architect
 
-Source: ECC $PLUGIN/library/roles/network-architect.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
+Source: ECC `agents` folder, file `network-architect.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: sonnet. Former tools: Read, Grep.
 
 Description: Designs enterprise or multi-site network architecture from requirements, using existing network skills for focused routing, validation, automation, and troubleshooting detail.
 

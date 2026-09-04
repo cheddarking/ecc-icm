@@ -120,8 +120,8 @@ Use this format:
 ```text
 $PLUGIN/library/skills/frontend-patterns | skill | DAILY | 84 .tsx files, next.config.ts present | core frontend stack
 $PLUGIN/library/skills/django-patterns   | skill | LIBRARY | no .py files, no pyproject.toml       | not active in this repo
-$PLUGIN/library/rules/typescript/*       | rules | DAILY | package.json + tsconfig.json            | active TS repo
-$PLUGIN/library/rules/python/*           | rules | LIBRARY | zero Python source files             | keep accessible only
+rules/typescript/*       | rules | DAILY | package.json + tsconfig.json            | active TS repo
+rules/python/*           | rules | LIBRARY | zero Python source files             | keep accessible only
 ```
 
 ### 3. Decide DAILY vs LIBRARY

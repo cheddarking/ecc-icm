@@ -1,6 +1,6 @@
 # Role: comment-analyzer
 
-Source: ECC $PLUGIN/library/roles/comment-analyzer.md (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep, Glob.
+Source: ECC `agents` folder, file `comment-analyzer.md` (MIT, Affaan Mustafa). Converted to an ICM role reference: the single agent loads this when a stage contract names it. Former sub-agent model hint: haiku. Former tools: Read, Grep, Glob.
 
 Description: Analyze code comments for accuracy, completeness, maintainability, and comment rot risk.
 

@@ -41,7 +41,7 @@ $PLUGIN/
 | `status` | `node $PLUGIN/scripts/icm/status.js` |
 | `verify` | `node $PLUGIN/scripts/icm/verify.js <slug> <stage>`, then read `$RUN/<stage>/verify.md` |
 
-`$PROJECT` is the repository you are in. `$RUN` is `$PROJECT/.claude/runs/<slug>`. Stage N writes `$RUN/0N-name/<artifact>.md`; stage N+1 reads it. If the human edited it, use the edited version.
+`$PLUGIN` is the plugin root shown above; substitute it in any path or command you run. `$PROJECT` is the repository you are in. `$RUN` is `$PROJECT/.claude/runs/<slug>`. Stage N writes `$RUN/0N-name/<artifact>.md`; stage N+1 reads it. If the human edited it, use the edited version.
 
 ## What to Load
 

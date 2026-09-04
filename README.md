@@ -16,7 +16,8 @@ workspaces/
   harness-ops/           audit, tune (GATE), apply, learn
   workspace-builder/     builds a new workspace for any domain (ported from ICM)
 library/                 a mirror of ECC at one commit, unregistered: skills, rules, roles (from agents),
-                         procedures (from commands), scripts, hooks, mcp-configs, contexts, docs (English),
+                         procedures (from commands), legacy shims, scripts, hooks, mcp-configs, contexts,
+                         manifests, schemas, config, examples, workflows, docs minus the translated copies,
                          the Codex skill mirror, the writing guides; ECC-MAPPING.md says how each maps here
 scripts/icm/             new, run, status, verify, validate-workspace, context-budget, the five hooks,
                          sync-library, adapt-library, convert-roles, build-library-index
@@ -25,9 +26,9 @@ docs/                    PLAN.md (decisions, phases, status) and baseline.md (me
 benchmarks/              protocol and prompts for the dynamic comparison, not yet run
 ```
 
-The library is rebuilt from an ECC checkout with `scripts/icm/sync-library.sh <ecc-checkout>`. Skills, roles, procedures, rules and guides are then adapted by `scripts/icm/adapt-library.js`: `/command` mentions become procedures, `<name> agent` becomes a role, ECC paths point into `library/`, and each adapted file ends with a short "ECC-ICM notes" paragraph. Docs, the Codex mirror and ECC's root markdown stay pristine. `library/_meta/adaptation-report.json` lists every rewrite.
+The library is rebuilt from an ECC checkout with `scripts/icm/sync-library.sh <ecc-checkout>`. Skills, roles, procedures, legacy shims, rules, the hook markdown and the guides are then adapted by `scripts/icm/adapt-library.js`: `/command` mentions become procedures, `<name> agent` becomes a role, ECC paths point into `library/`, and each adapted file ends with a short "ECC-ICM notes" paragraph. Docs, examples, the Codex mirror, ECC's scripts and root markdown stay byte-identical. `library/_meta/adaptation-report.json` holds the per-file rule counts. `$PLUGIN` in library text is a documentation token for the plugin root; substitute it before running a command.
 
-Static context this plugin adds per turn: 1,007 tokens as measured by `npm run budget` (one skill description plus the Layer 0 injection). The same measurement over the ECC checkout is 32,706. Details and the hook comparison are in `docs/baseline.md`.
+Static context this plugin adds per turn: 1,034 tokens as measured by `npm run budget` (one skill description plus the Layer 0 injection). The same measurement over the ECC checkout is 32,706. Details and the hook comparison are in `docs/baseline.md`.
 
 ## Install
 

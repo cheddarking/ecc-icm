@@ -33,9 +33,9 @@ Read the current project root and detect stack signals from:
 - language manifests: `pyproject.toml`, `requirements.txt`, `go.mod`, `Cargo.toml`, `pom.xml`, `build.gradle`, `build.gradle.kts`
 - framework files: `next.config.*`, `vite.config.*`, `tailwind.config.*`, `Dockerfile`, `docker-compose.yml`
 - ECC config: `ecc-install.json`
-- optional stack map: `config/project-stack-mappings.json` in the ECC repo
+- optional stack map: `$PLUGIN/library/config/project-stack-mappings.json` in the ECC repo
 
-When the ECC checkout is available, use `config/project-stack-mappings.json` as the stack-to-rules/skills reference. If the file is unavailable, fall back to the installed ECC manifests and explicit user choices.
+When the ECC checkout is available, use `$PLUGIN/library/config/project-stack-mappings.json` as the stack-to-rules/skills reference. If the file is unavailable, fall back to the installed ECC manifests and explicit user choices.
 
 ## Planning Flow
 
@@ -80,7 +80,7 @@ Never replace an existing `CLAUDE.md` without showing a diff and receiving appro
 
 ## Related
 
-- `config/project-stack-mappings.json` for stack-to-surface hints
+- `$PLUGIN/library/config/project-stack-mappings.json` for stack-to-surface hints
 - `$PLUGIN/library/scripts/install-plan.js` for deterministic plan resolution
 - `$PLUGIN/library/scripts/install-apply.js` for dry-run and apply operations
 - `ecc-guide` procedure for interactive feature discovery before installing

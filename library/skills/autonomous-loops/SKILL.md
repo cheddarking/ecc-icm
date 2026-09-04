@@ -136,7 +136,7 @@ CLAW_SESSION=my-project CLAW_SKILLS=tdd-workflow,security-review node $PLUGIN/li
 | Context accumulation | Grows per turn | Fresh each step |
 | CI/CD integration | Poor | Excellent |
 
-See the `/claw` command documentation for full details.
+See the `claw` procedure command documentation for full details.
 
 ---
 
@@ -569,7 +569,7 @@ These patterns compose well:
 
 2. **Continuous Claude + De-Sloppify** — Add `--review-prompt` with a de-sloppify directive to each iteration.
 
-3. **Any loop + Verification** — Use ECC's `/verify` command or `verification-loop` skill as a gate before commits.
+3. **Any loop + Verification** — Use ECC's `verify` procedure command or `verification-loop` skill as a gate before commits.
 
 4. **Ralphinho's tiered approach in simpler loops** — Even in a sequential pipeline, you can route simple tasks to Haiku and complex tasks to Opus:
    ```bash
@@ -607,9 +607,9 @@ These patterns compose well:
 | Ralphinho | enitrat | credit: @enitrat |
 | Infinite Agentic Loop | disler | credit: @disler |
 | Continuous Claude | AnandChowdhary | credit: @AnandChowdhary |
-| NanoClaw | ECC | `/claw` command in this repo |
+| NanoClaw | ECC | `claw` procedure command in this repo |
 | Verification Loop | ECC | `$PLUGIN/library/skills/verification-loop/` in this repo |
 
 ---
 <!-- ecc-icm-notes -->
-ECC-ICM notes: Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.
+ECC-ICM notes: Procedures named above are files, not slash commands: `$PLUGIN/library/procedures/<name>.md`; `$PLUGIN/library/procedures/INDEX.md` says which ecc-icm stage or workspace each maps to. Legacy shims (tdd, verify, e2e, eval, orchestrate, claw and the rest) live under `$PLUGIN/library/legacy-command-shims/commands/`. Roles named above are files under `$PLUGIN/library/roles/`. ecc-icm runs one agent: take a role in this context by loading its file. Do not spawn or delegate unless the current stage contract says `Delegate: yes`; the Agent tool is gated by a hook.

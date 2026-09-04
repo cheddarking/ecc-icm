@@ -2,7 +2,7 @@
 
 Everything Claude Code, reshaped as a single-agent workspace on Jake Van Clief's Interpretable Context Methodology.
 
-One agent. Folder-routed stage contracts instead of 68 sub-agents. A Layer 0 map of under 800 tokens instead of 286 registered skill descriptions. Mechanical scripts at stage boundaries instead of 53 per-tool hooks. Every stage writes a file a human edits before the next stage reads it.
+One agent. Folder-routed stage contracts instead of 68 sub-agents. A Layer 0 map of about 950 tokens, run status included, instead of 286 registered skill descriptions. Five mechanical hooks and scripts at stage boundaries instead of 53 per-tool hooks. Every stage writes a file a human edits before the next stage reads it.
 
 ## What is inside
 
@@ -18,13 +18,16 @@ workspaces/
 library/                 a mirror of ECC at one commit, unregistered: skills, rules, roles (from agents),
                          procedures (from commands), scripts, hooks, mcp-configs, contexts, docs (English),
                          the Codex skill mirror, the writing guides; ECC-MAPPING.md says how each maps here
-scripts/icm/             new, run, status, verify, validate-workspace, context-budget, hooks, sync-library
+scripts/icm/             new, run, status, verify, validate-workspace, context-budget, the five hooks,
+                         sync-library, adapt-library, convert-roles, build-library-index
 _core/                   ICM conventions and templates, plus the ECC-ICM adaptations
+docs/                    PLAN.md (decisions, phases, status) and baseline.md (measurements)
+benchmarks/              protocol and prompts for the dynamic comparison, not yet run
 ```
 
 The library is rebuilt from an ECC checkout with `scripts/icm/sync-library.sh <ecc-checkout>`. Skills, roles, procedures, rules and guides are then adapted by `scripts/icm/adapt-library.js`: `/command` mentions become procedures, `<name> agent` becomes a role, ECC paths point into `library/`, and each adapted file ends with a short "ECC-ICM notes" paragraph. Docs, the Codex mirror and ECC's root markdown stay pristine. `library/_meta/adaptation-report.json` lists every rewrite.
 
-Static context this plugin adds per turn: about 1,400 tokens (run `npm run budget`). The same measurement over ECC's `developer` profile is about 30,000.
+Static context this plugin adds per turn: 1,007 tokens as measured by `npm run budget` (one skill description plus the Layer 0 injection). The same measurement over the ECC checkout is 32,706. Details and the hook comparison are in `docs/baseline.md`.
 
 ## Install
 
@@ -49,13 +52,13 @@ In any repository:
 2. `new add-rate-limit` starts a run. The agent reads `stages/01-intake/CONTEXT.md` and nothing else.
 3. `next` moves to the next stage. Each stage writes one file under `.claude/runs/add-rate-limit/`. Edit it before saying `next`.
 4. Two gates stop the agent: after the plan, before the commit.
-5. `status` renders the pipeline. `verify 05-review` runs the mechanical audit for a stage.
+5. `status` renders the pipeline. `verify 05-review` runs the mechanical audit for that stage of the active run and writes `verify.md` next to its output.
 
 `/icm` is the only registered skill; it does the same routing when you prefer a slash command.
 
 ## Hooks
 
-Four, all mechanical, none call a model:
+Five, all mechanical, none call a model. At most one fires per tool call:
 
 | Event | Script | Does |
 |---|---|---|
@@ -68,14 +71,15 @@ Four, all mechanical, none call a model:
 ## Develop
 
 ```bash
-npm test               # node --test tests/*.test.js
-npm run validate       # every workspace against _core/CONVENTIONS.md
-npm run budget         # static context estimate for this plugin
-claude plugin validate .
+npm test                                  # node --test tests/*.test.js (13 tests)
+npm run validate                          # every workspace against _core/CONVENTIONS.md
+npm run budget                            # static context estimate for this plugin
+npm run plugin:validate                   # claude plugin validate .
+npm run library:sync -- /path/to/ECC      # mirror ECC, convert roles, adapt references, rebuild indexes
 ```
 
-Resync the whole library from an ECC checkout: `scripts/icm/sync-library.sh <ecc-root>` (mirror, convert roles, adapt references, regenerate indexes). Local edits inside `library/` are lost on sync by design.
+`library:roles` and `library:index` run the last two steps of the sync on their own. Local edits inside `library/` are lost on sync by design; durable changes belong in a workspace contract or reference file.
 
 ## Provenance
 
-ECC content is MIT, Affaan Mustafa. ICM conventions, templates and the workspace builder are MIT, Model Workspace Protocol Contributors. See `NOTICE.md`. The plan that led here is in `docs/PLAN.md`.
+ECC content is MIT, Affaan Mustafa; the mirrored commit is recorded in `library/_meta/ecc-source-commit.txt`. ICM conventions, templates and the workspace builder are MIT, Model Workspace Protocol Contributors. See `NOTICE.md`. The plan that led here is in `docs/PLAN.md`, the measurements in `docs/baseline.md`.

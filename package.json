@@ -11,6 +11,7 @@
     "budget": "node scripts/icm/context-budget.js .",
     "plugin:validate": "claude plugin validate .",
     "library:index": "node scripts/icm/build-library-index.js",
-    "library:roles": "node scripts/icm/convert-roles.js"
+    "library:roles": "node scripts/icm/convert-roles.js",
+    "library:sync": "bash scripts/icm/sync-library.sh"
   }
 }

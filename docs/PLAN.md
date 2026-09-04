@@ -35,7 +35,7 @@ Static context this plugin adds: 1,007 tokens (one registered skill description 
 
 Delegation is a harness property: `scripts/icm/agent-gate.js` denies the Agent tool while a run is active unless the current stage contract says `Delegate: yes`. Two stages say yes with conditions: engineering 02-research on large repositories, research 02-gather at deep depth. Everything else is one agent.
 
-Hooks: four mechanical scripts, no model calls. Per-tool-call sub-invocations went from about 13 to 1: the Bash guard on Bash, config protection on Edit and Write, the agent gate on Agent. Nothing fires on Read, Grep or Glob.
+Hooks: five mechanical scripts, no model calls. Per-tool-call sub-invocations went from about 13 to 1: the Bash guard on Bash, config protection on Edit and Write, the agent gate on Agent. Nothing fires on Read, Grep or Glob.
 
 The edit-source loop from the paper's section 6.3 is mechanical: `verify.js` keeps the agent's copy of each artifact under `.agent/`, `run.js` diffs it when the next stage starts and appends human edits to `_edits.jsonl`, and the learn stages turn recurrences into proposed contract changes that the human applies.
 

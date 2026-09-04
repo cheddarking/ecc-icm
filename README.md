@@ -32,7 +32,14 @@ Static context this plugin adds per turn: 1,034 tokens as measured by `npm run b
 
 ## Install
 
-From a marketplace path, on any machine with Claude Code 2.1 or later:
+From GitHub, on any machine with Claude Code 2.1 or later and `gh` logged in to an account that can read the repository (it is private):
+
+```bash
+claude plugin marketplace add cheddarking/ecc-icm
+claude plugin install ecc-icm@ecc-icm
+```
+
+From a local checkout:
 
 ```bash
 claude plugin marketplace add /home/elvis/Projects/ecc-icm

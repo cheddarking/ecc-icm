@@ -1,0 +1,27 @@
+# Skills: operator-workflows
+
+Connected-app operator workflows for setup audits, billing operations, program tracking, Google Workspace, and network optimization.
+
+Load one SKILL.md by path when a stage contract or the task needs it. Do not load this whole domain.
+
+| Skill | What it provides |
+|---|---|
+| `$PLUGIN/library/skills/api-connector-builder/SKILL.md` | Build a new API connector or provider by matching the target repo's existing integration pattern exactly. Use when adding one more integration without inventing a second architecture. |
+| `$PLUGIN/library/skills/automation-audit-ops/SKILL.md` | Evidence-first automation inventory and overlap audit workflow for ECC. Use when the user wants to know which jobs, hooks, connectors, MCP servers, or wrappers are live, broken, redundant, or missing before fixing anythi |
+| `$PLUGIN/library/skills/connections-optimizer/SKILL.md` | Reorganize the user's X and LinkedIn network with review-first pruning, add/follow recommendations, and channel-specific warm outreach drafted in the user's real voice. Use when the user wants to clean up following lists |
+| `$PLUGIN/library/skills/cost-tracking/SKILL.md` | Track and report Claude Code token usage, spending, and budgets from the local ECC cost-tracker metrics log. Use when the user asks about costs, spending, usage, tokens, budgets, or cost breakdowns by model, session, or  |
+| `$PLUGIN/library/skills/customer-billing-ops/SKILL.md` | Operate customer billing workflows such as subscriptions, refunds, churn triage, billing-portal recovery, and plan analysis using connected billing tools like Stripe. Use when the user needs to help a customer, inspect s |
+| `$PLUGIN/library/skills/dashboard-builder/SKILL.md` | Build monitoring dashboards that answer real operator questions for Grafana, SigNoz, and similar platforms. Use when turning metrics into a working dashboard instead of a vanity board. |
+| `$PLUGIN/library/skills/ecc-tools-cost-audit/SKILL.md` | Evidence-first ECC Tools burn and billing audit workflow. Use when investigating runaway PR creation, quota bypass, premium-model leakage, duplicate jobs, or GitHub App cost spikes in the ECC Tools repo. |
+| `$PLUGIN/library/skills/email-ops/SKILL.md` | Evidence-first mailbox triage, drafting, send verification, and sent-mail-safe follow-up workflow for ECC. Use when the user wants to organize email, draft or send through the real mail surface, or prove what landed in S |
+| `$PLUGIN/library/skills/finance-billing-ops/SKILL.md` | Evidence-first revenue, pricing, refunds, team-billing, and billing-model truth workflow for ECC. Use when the user wants a sales snapshot, pricing comparison, duplicate-charge diagnosis, or code-backed billing reality i |
+| `$PLUGIN/library/skills/github-ops/SKILL.md` | GitHub repository operations, automation, and management. Issue triage, PR management, CI/CD operations, release management, and security monitoring using the gh CLI. Use when the user wants to manage GitHub issues, PRs, |
+| `$PLUGIN/library/skills/google-workspace-ops/SKILL.md` | Operate across Google Drive, Docs, Sheets, and Slides as one workflow surface for plans, trackers, decks, and shared documents. Use when the user needs to find, summarize, edit, migrate, or clean up Google Workspace asse |
+| `$PLUGIN/library/skills/jira-integration/SKILL.md` | Use this skill when retrieving Jira tickets, analyzing requirements, updating ticket status, adding comments, or transitioning issues. Provides Jira API patterns via MCP or direct REST calls. |
+| `$PLUGIN/library/skills/knowledge-ops/SKILL.md` | Knowledge base management, ingestion, sync, and retrieval across multiple storage layers (local files, MCP memory, vector stores, Git repos). Use when the user wants to save, organize, sync, deduplicate, or search across |
+| `$PLUGIN/library/skills/mailtrap-email-integration/SKILL.md` | Guides agents through integrating transactional email sending via Mailtrap's Email API, including sandbox testing, domain verification, and API authentication. Use when implementing email-sending features, debugging deli |
+| `$PLUGIN/library/skills/messages-ops/SKILL.md` | Evidence-first live messaging workflow for ECC. Use when the user wants to read texts or DMs, recover a recent one-time code, inspect a thread before replying, or prove which message source was actually checked. |
+| `$PLUGIN/library/skills/project-flow-ops/SKILL.md` | Operate execution flow across GitHub and Linear by triaging issues and pull requests, linking active work, and keeping GitHub public-facing while Linear remains the internal execution layer. Use when the user wants backl |
+| `$PLUGIN/library/skills/terminal-ops/SKILL.md` | Evidence-first repo execution workflow for ECC. Use when the user wants a command run, a repo checked, a CI failure debugged, or a narrow fix pushed with exact proof of what was executed and verified. |
+| `$PLUGIN/library/skills/unified-notifications-ops/SKILL.md` | Operate notifications as one ECC-native workflow across GitHub, Linear, desktop alerts, hooks, and connected communication surfaces. Use when the real problem is alert routing, deduplication, escalation, or inbox collaps |
+| `$PLUGIN/library/skills/workspace-surface-audit/SKILL.md` | Audit the active repo, MCP servers, plugins, connectors, env surfaces, and harness setup, then recommend the highest-value ECC-native skills, hooks, agents, and operator workflows. Use when the user wants help setting up |

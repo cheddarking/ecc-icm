@@ -1,0 +1,27 @@
+# Skills: security
+
+Security review and security-focused framework guidance.
+
+Load one SKILL.md by path when a stage contract or the task needs it. Do not load this whole domain.
+
+| Skill | What it provides |
+|---|---|
+| `$PLUGIN/library/skills/defi-amm-security/SKILL.md` | Security checklist for Solidity AMM contracts, liquidity pools, and swap flows. Covers reentrancy, CEI ordering, donation or inflation attacks, oracle manipulation, slippage, admin controls, and integer math. Use when au |
+| `$PLUGIN/library/skills/django-security/SKILL.md` | Django security best practices, authentication, authorization, CSRF protection, SQL injection prevention, XSS prevention, and secure deployment configurations. Use when reviewing Django authentication, authorization, inp |
+| `$PLUGIN/library/skills/evm-token-decimals/SKILL.md` | Prevent silent decimal mismatch bugs across EVM chains. Covers runtime decimal lookup, chain-aware caching, bridged-token precision drift, and safe normalization for bots, dashboards, and DeFi tools. Use when handling to |
+| `$PLUGIN/library/skills/gateguard/SKILL.md` | Fact-forcing gate that blocks Edit/Write/Bash (including MultiEdit) and demands concrete investigation (importers, data schemas, user instruction) before allowing the action. Measurably improves output quality by +2.25 p |
+| `$PLUGIN/library/skills/healthcare-cdss-patterns/SKILL.md` | Clinical Decision Support System (CDSS) development patterns. Drug interaction checking, dose validation, clinical scoring (NEWS2, qSOFA), alert severity classification, and integration into EMR workflows. Use when build |
+| `$PLUGIN/library/skills/healthcare-emr-patterns/SKILL.md` | EMR/EHR development patterns for healthcare applications. Clinical safety, encounter workflows, prescription generation, clinical decision support integration, and accessibility-first UI for medical data entry. Use when  |
+| `$PLUGIN/library/skills/healthcare-eval-harness/SKILL.md` | Patient safety evaluation harness for healthcare application deployments. Automated test suites for CDSS accuracy, PHI exposure, clinical workflow integrity, and integration compliance. Blocks deployments on safety failu |
+| `$PLUGIN/library/skills/healthcare-phi-compliance/SKILL.md` | Protected Health Information (PHI) and Personally Identifiable Information (PII) compliance patterns for healthcare applications. Covers data classification, access control, audit trails, encryption, and common leak vect |
+| `$PLUGIN/library/skills/hipaa-compliance/SKILL.md` | HIPAA-specific entrypoint for healthcare privacy and security work. Use when a task is explicitly framed around HIPAA, PHI handling, covered entities, BAAs, breach posture, or US healthcare compliance requirements. |
+| `$PLUGIN/library/skills/laravel-security/SKILL.md` | Laravel security best practices — authentication, authorization, Eloquent safety, CSRF, XSS prevention, API security, and secure deployment configurations. Use when reviewing Laravel auth, Eloquent safety, CSRF, XSS, API |
+| `$PLUGIN/library/skills/llm-trading-agent-security/SKILL.md` | Security patterns for autonomous trading agents with wallet or transaction authority. Covers prompt injection, spend limits, pre-send simulation, circuit breakers, MEV protection, and key handling. Use when an autonomous |
+| `$PLUGIN/library/skills/nodejs-keccak256/SKILL.md` | Prevent Ethereum hashing bugs in JavaScript and TypeScript. Node's sha3-256 is NIST SHA3, not Ethereum Keccak-256, and silently breaks selectors, signatures, storage slots, and address derivation. Use when hashing for Et |
+| `$PLUGIN/library/skills/perl-security/SKILL.md` | Comprehensive Perl security covering taint mode, input validation, safe process execution, DBI parameterized queries, web security (XSS/SQLi/CSRF), and perlcritic security policies. Use when reviewing Perl input handling |
+| `$PLUGIN/library/skills/quarkus-security/SKILL.md` | Quarkus Security best practices for authentication, authorization, JWT/OIDC, RBAC, input validation, CSRF, secrets management, and dependency security. Use when reviewing Quarkus authn/authz, JWT or OIDC, RBAC, validatio |
+| `$PLUGIN/library/skills/safety-guard/SKILL.md` | Use this skill to prevent destructive operations when working on production systems or running agents autonomously. |
+| `$PLUGIN/library/skills/security-bounty-hunter/SKILL.md` | Hunt for exploitable, bounty-worthy security issues in repositories. Focuses on remotely reachable vulnerabilities that qualify for real reports instead of noisy local-only findings. Use when hunting reportable, remotely |
+| `$PLUGIN/library/skills/security-review/SKILL.md` | Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist and patterns. |
+| `$PLUGIN/library/skills/security-scan/SKILL.md` | Scan your Claude Code configuration (.claude/ directory) for security vulnerabilities, misconfigurations, and injection risks using AgentShield. Checks CLAUDE.md, settings.json, MCP servers, hooks, and agent definitions. |
+| `$PLUGIN/library/skills/springboot-security/SKILL.md` | Spring Security best practices for authn/authz, validation, CSRF, secrets, headers, rate limiting, and dependency security in Java Spring Boot services. Use when reviewing Spring Security authn/authz, validation, CSRF, s |

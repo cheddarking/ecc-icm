@@ -1,0 +1,16 @@
+{
+  "name": "ecc-icm",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Everything Claude Code as a single-agent ICM workspace plugin",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "validate": "node scripts/icm/validate-workspace.js --all",
+    "budget": "node scripts/icm/context-budget.js .",
+    "plugin:validate": "claude plugin validate .",
+    "library:index": "node scripts/icm/build-library-index.js",
+    "library:roles": "node scripts/icm/convert-roles.js"
+  }
+}

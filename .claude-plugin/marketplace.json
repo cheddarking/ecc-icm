@@ -1,0 +1,19 @@
+{
+  "name": "ecc-icm",
+  "owner": {
+    "name": "Elvis Bicharri"
+  },
+  "metadata": {
+    "description": "ECC re-shaped as a single-agent ICM workspace plugin"
+  },
+  "plugins": [
+    {
+      "name": "ecc-icm",
+      "source": "./",
+      "description": "One agent, folder-routed stage contracts, human gates, mechanical scripts. Replaces ECC's 68 agents, 286 registered skills, 94 commands and 53 hooks with a Layer 0 map, seven engineering stages, and an unregistered library.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "category": "workflow"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ecc-icm",
+  "version": "0.1.0",
+  "description": "Everything Claude Code, re-shaped as a single-agent Interpretable Context Methodology workspace: one agent, folder-routed stage contracts, human gates, and mechanical scripts instead of sub-agents and per-tool hooks.",
+  "author": {
+    "name": "Elvis Bicharri"
+  },
+  "license": "MIT",
+  "keywords": ["icm", "single-agent", "context-engineering", "workflow", "tdd", "code-review"],
+  "skills": ["./skills/"],
+  "hooks": "./hooks/hooks.json"
+}

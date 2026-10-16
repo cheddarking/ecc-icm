@@ -1,5 +1,7 @@
 # ecc-icm
 
+[Watch the launch walkthrough on The Augmented Expert (7:46)](https://youtu.be/5RYlCP2ym8o).
+
 Everything Claude Code, reshaped as a single-agent workspace on Jake Van Clief's Interpretable Context Methodology.
 
 One agent. Folder-routed stage contracts instead of 68 sub-agents. A Layer 0 map of about 950 tokens, run status included, instead of 286 registered skill descriptions. Five mechanical hooks and scripts at stage boundaries instead of 53 per-tool hooks. Every stage writes a file a human edits before the next stage reads it.

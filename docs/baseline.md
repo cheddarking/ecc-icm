@@ -6,6 +6,8 @@ Measured 2026-09-04. Tokens are chars divided by four unless a row says otherwis
 
 `node scripts/icm/context-budget.js <root>` over both checkouts.
 
+These are characters-divided-by-four estimates, not tokenizer measurements. The comparison uses the pinned ECC snapshot below and assumes its common rules are installed. It does not measure total session tokens, billed cost, latency, or output quality.
+
 | Surface | ECC `e04ea0b9` | ecc-icm 0.1.0 |
 |---|---:|---:|
 | Registered skill descriptions | 286 skills, 21,617 | 1 skill, 59 |
@@ -29,7 +31,7 @@ Reduction: 97% of the harness's own static overhead. The ECC figure excludes its
 
 ## Headless smoke test
 
-Scratch repository, `claude -p "status" --plugin-dir /home/elvis/Projects/ecc-icm --model haiku`, MCP servers disabled.
+Scratch repository, `claude -p "status" --plugin-dir /absolute/path/to/ecc-icm --model haiku`, MCP servers disabled.
 
 | Measure | Value |
 |---|---:|

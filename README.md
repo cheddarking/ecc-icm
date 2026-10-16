@@ -28,28 +28,30 @@ benchmarks/              protocol and prompts for the dynamic comparison, not ye
 
 The library is rebuilt from an ECC checkout with `scripts/icm/sync-library.sh <ecc-checkout>`. Skills, roles, procedures, legacy shims, rules, the hook markdown and the guides are then adapted by `scripts/icm/adapt-library.js`: `/command` mentions become procedures, `<name> agent` becomes a role, ECC paths point into `library/`, and each adapted file ends with a short "ECC-ICM notes" paragraph. Docs, examples, the Codex mirror, ECC's scripts and root markdown stay byte-identical. `library/_meta/adaptation-report.json` holds the per-file rule counts. `$PLUGIN` in library text is a documentation token for the plugin root; substitute it before running a command.
 
-Static context this plugin adds per turn: 1,034 tokens as measured by `npm run budget` (one skill description plus the Layer 0 injection). The same measurement over the ECC checkout is 32,706. Details and the hook comparison are in `docs/baseline.md`.
+Estimated static context this plugin adds: 1,034 tokens as measured by `npm run budget` (one skill description plus the Layer 0 injection). The same script estimates 32,706 for the pinned ECC snapshot `e04ea0b9`, including common rules when installed. That is about 97% less modeled static overhead. The script estimates tokens as characters divided by four; these are not tokenizer counts or a claim about API cost, speed, or task quality. Details and the hook comparison are in `docs/baseline.md`; the dynamic task benchmark has not been run.
 
 ## Install
 
-From GitHub, on any machine with Claude Code 2.1 or later and `gh` logged in to an account that can read the repository (it is private):
+Requires Claude Code 2.1 or later, Node.js 18 or later, and Git. From GitHub:
 
 ```bash
 claude plugin marketplace add cheddarking/ecc-icm
 claude plugin install ecc-icm@ecc-icm
 ```
 
-From a local checkout:
+For a local checkout:
 
 ```bash
-claude plugin marketplace add /home/elvis/Projects/ecc-icm
+git clone https://github.com/cheddarking/ecc-icm.git
+cd ecc-icm
+claude plugin marketplace add "$PWD"
 claude plugin install ecc-icm@ecc-icm
 ```
 
 Or for one session without installing:
 
 ```bash
-claude --plugin-dir /home/elvis/Projects/ecc-icm
+claude --plugin-dir "$PWD"
 ```
 
 ## Use
@@ -63,6 +65,8 @@ In any repository:
 5. `status` renders the pipeline. `verify 05-review` runs the mechanical audit for that stage of the active run and writes `verify.md` next to its output.
 
 `/icm` is the only registered skill; it does the same routing when you prefer a slash command.
+
+The human approval gates are instructions in the stage contracts. They are not a sandbox or a cryptographic approval mechanism: the CLI can select a stage directly, and `status` reports artifact presence rather than audit success. Run `verify` explicitly to check a stage's required files and supported mechanical checks. A missing transcript skips the Agent-tool audit. Review the outputs before approving a plan or commit.
 
 ## Hooks
 
@@ -79,7 +83,7 @@ Five, all mechanical, none call a model. At most one fires per tool call:
 ## Develop
 
 ```bash
-npm test                                  # node --test tests/*.test.js (13 tests)
+npm test                                  # node --test tests/*.test.js (17 tests)
 npm run validate                          # every workspace against _core/CONVENTIONS.md
 npm run budget                            # static context estimate for this plugin
 npm run plugin:validate                   # claude plugin validate .

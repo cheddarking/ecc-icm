@@ -30,7 +30,7 @@ Install ECC with its `developer` profile into the scratch repository and run eac
 
 ```bash
 cd <scratch repo>
-claude --plugin-dir /home/elvis/Projects/ecc-icm
+claude --plugin-dir /absolute/path/to/ecc-icm
 # then: setup, new <slug>, next ... through the gates
 ```
 
